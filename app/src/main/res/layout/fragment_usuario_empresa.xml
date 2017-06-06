@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.findandgoapp.fragment.PerfilEmpresaFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+
+
+        <ImageView
+            android:id="@+id/ivEmpresaFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:layout_marginBottom="@dimen/size_10"
+
+            tools:ignore="ContentDescription" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmpresaNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/ivEmpresaFoto"
+            app:errorEnabled="true"
+
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEmpresaNombre"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tilEmpresaNombre"
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginRight="@dimen/size_20"
+                android:hint="@string/sNombreHint"
+                android:paddingTop="@dimen/size_20"
+                android:textSize="@dimen/siize_letras_evento"
+                app:font="@string/font_name_source_amatic_regular" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmpresaEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilEmpresaNombre"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEmpresaEmail"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginRight="@dimen/size_20"
+                android:hint="@string/sEmailHint"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/siize_letras_evento"
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmpresaPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilEmpresaEmail"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEmpresaPassword"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginRight="@dimen/size_20"
+                android:hint="@string/sPasswordHint"
+                android:inputType="textPassword"
+                android:textColor="@color/negro"
+                android:textSize="@dimen/siize_letras_evento"
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/idSpEmpresaCategoria"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tilEmpresaPassword"
+            android:layout_marginLeft="@dimen/size_20"
+            android:layout_marginRight="@dimen/size_20"
+            android:background="@drawable/btn_dropdown" />
+
+        <Spinner
+            android:id="@+id/idSpEmpresaTipo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idSpEmpresaCategoria"
+            android:layout_marginLeft="@dimen/size_20"
+            android:layout_marginRight="@dimen/size_20"
+            android:background="@drawable/btn_dropdown" />
+
+        <Spinner
+            android:id="@+id/idSpEmpresaCiudad"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idSpEmpresaTipo"
+            android:layout_marginLeft="@dimen/size_20"
+            android:layout_marginRight="@dimen/size_20"
+            android:background="@drawable/btn_dropdown" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmpresaLocalidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idSpEmpresaCiudad"
+            app:errorEnabled="true"
+
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/idEtEmpresaLocalidad"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginRight="@dimen/size_20"
+                android:hint="@string/sLocalidad"
+                android:textSize="@dimen/siize_letras_evento" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/idSpEmpresaVia"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tilEmpresaLocalidad"
+            android:layout_marginLeft="@dimen/size_20"
+            android:layout_marginRight="@dimen/size_20"
+            android:background="@drawable/btn_dropdown" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmpesaCalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idSpEmpresaVia"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEmpresaCalle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginRight="@dimen/size_20"
+                android:hint="@string/sCalle"
+                android:textSize="@dimen/siize_letras_evento"
+                app:font="@string/font_name_source_amatic_regular" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmpresaNumero"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilEmpesaCalle"
+            app:errorEnabled="true"
+
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEmpresaNumero"
+                android:layout_width="@dimen/size_100"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginRight="@dimen/size_20"
+                android:hint="@string/sNumero"
+                android:inputType="number"
+                android:textSize="@dimen/siize_letras_evento"
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmpresaCp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/tilEmpresaNumero"
+            app:errorEnabled="true"
+            android:layout_alignParentLeft="true">
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEmpresaCp"
+                android:layout_width="@dimen/size_100"
+                android:layout_height="wrap_content"
+                android:hint="@string/sCodigoPostal"
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginRight="@dimen/size_20"
+                android:inputType="number"
+                android:textSize="@dimen/siize_letras_evento"
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmpresaDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilEmpresaCp"
+
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEmpresaDescripcion"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginRight="@dimen/size_20"
+                android:hint="@string/sDescripcion"
+                android:textSize="@dimen/siize_letras_evento"
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEmpresaWeb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilEmpresaDescripcion"
+
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEmpresaWeb"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/size_20"
+                android:layout_marginRight="@dimen/size_20"
+                android:hint="@string/sWeb"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/siize_letras_evento"
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/idIvEmpresaRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilEmpresaWeb"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_save"
+            android:text="@string/sRegistrar"
+            tools:ignore="ContentDescription" />
+    </RelativeLayout>
+</ScrollView>

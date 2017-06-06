@@ -1,0 +1,116 @@
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
+
+
+   <dimen name="activity_horizontal_margin">20dp</dimen>
+    <dimen name="size_500">500dp</dimen>
+    <dimen name="fotoAlto">200dp</dimen>
+    <dimen name="fotoAncho">150dp</dimen>
+    <dimen name="fotoAltoMenu">100dp</dimen>
+    <dimen name="size_button">30dp</dimen>
+    <dimen name="tamano_fuente_menu">40dp</dimen>
+    <dimen name="text_menu">40dp</dimen>
+    <dimen name="tamano_subtitulo_menu">20dp</dimen>
+    <dimen name="size_list">25sp</dimen>
+    <dimen name="fotoAltoFull">400dp</dimen>
+    <dimen name="fotoAnchoFull">300dp</dimen>
+    <dimen name="size_checkBox">12sp</dimen>
+    <dimen name="tamano_letra">35sp</dimen>
+    <dimen name="size_validados">15sp</dimen>
+    <dimen name="size_marginTop">30sp</dimen>
+    <dimen name="tamano_listado">40sp</dimen>
+    <dimen name="size_tituloMenu">25sp</dimen>
+    <dimen name="size_circulo">10sp</dimen>
+
+  -->
+
+<resources>
+
+
+    <dimen name="activity_horizontal_margin">16sp</dimen>
+    <dimen name="activity_vertical_margin">16sp</dimen>
+    <dimen name="appbar_padding_top">8sp</dimen>
+    <dimen name="fotoAlto">150dp</dimen>
+    <dimen name="fotoAncho">150dp</dimen>
+
+    <dimen name="size_spinner">15sp</dimen>
+    <dimen name="margen_izq">5sp</dimen>
+    <dimen name="margen_dcho">5sp</dimen>
+    <dimen name="size_image">300dp</dimen>
+    <dimen name="dimen_nav_header">200dp</dimen>
+    <dimen name="fotoAltoFull">500dp</dimen>
+    <dimen name="fotoAnchoComentario">80dp</dimen>
+    <dimen name="fotoAltoComentario">80dp</dimen>
+    <dimen name="size_checkBox">12sp</dimen>
+    <dimen name="size_validados">15sp</dimen>
+
+    <dimen name="size_marginTop">30sp</dimen>
+    <dimen name="sumatorio_margen_15">15sp</dimen>
+    <dimen name="sumatorio_margen_10">10sp</dimen>
+
+    <dimen name="size_penalizacion">40dp</dimen>
+    <dimen name="size_tituloMenu">25sp</dimen>
+
+
+    <dimen name="tamano_fuente_menu">26dp</dimen>
+    <dimen name="text_menu">35dp</dimen>
+    <dimen name="tamano_subtitulo_menu">30dp</dimen>
+    <dimen name="size_list">20sp</dimen>
+
+    <dimen name="size_button">25sp</dimen>
+    <dimen name="size_circulo">40sp</dimen>
+    <dimen name="size_numeros">30sp</dimen>
+    <dimen name="tamano_listado">30sp</dimen>
+    <dimen name="tamano_letra">25sp</dimen>
+    <dimen name="size_aviso">15sp</dimen>
+    <dimen name="siize_letras_evento">20sp</dimen>
+
+</resources>

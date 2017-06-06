@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <string-array name="categoria">
+
+        <item>"Choose category"</item>
+        <item>"Music"</item>
+        <item>"Audiovisual"</item>
+        <item>"Scene"</item>
+        <item>"Literature"</item>
+        <item>"Art"</item>
+        <item>"Sport"</item>
+        <item>"Games"</item>
+        <item>"Social"</item>
+        <item>"Other"</item>
+
+
+    </string-array>
+
+    <string-array name="categoriaConsulta">
+
+        <item>"Choose category"</item>
+        <item>"Music"</item>
+        <item>"Audiovisual"</item>
+        <item>"Scene"</item>
+        <item>"Literature"</item>
+        <item>"Art"</item>
+        <item>"Sport"</item>
+        <item>"Games"</item>
+        <item>"Social"</item>
+        <item>"Any"</item>
+
+    </string-array>
+
+
+    <string-array name="otroSolo">
+        <item>"Other"</item>
+    </string-array>
+
+    <string-array name="tipoVia">
+        <item>Type</item>
+        <item>Highway</item>
+        <item>Motorway</item>
+        <item>Avenue</item>
+        <item>Boulevar</item>
+        <item>Street</item>
+        <item>Peatonal street</item>
+        <item>Alley</item>
+        <item>Way</item>
+        <item>Royal Cattle Track</item>
+        <item>Road</item>
+        <item>motorway ring road</item>
+        <item>Rail</item>
+        <item>Rail bike</item>
+        <item>Park</item>
+        <item>Passageway</item>
+        <item>Passage</item>
+        <item>Promenade</item>
+        <item>Seafront promenade</item>
+        <item>Square</item>
+        <item>Bridge</item>
+        <item>Rambla</item>
+        <item>Path</item>
+        <item>Journey</item>
+        <item>Tunnel</item>
+        <item>Service road</item>
+        <item>Cattle route</item>
+        <item>Fast lane</item>
+        <item>Green route</item>
+        <item>Other</item>
+
+    </string-array>
+
+    <string-array name="tipo">
+        <item>"Choose room"</item>
+        <item>"Bar"</item>
+        <item>"Restaurant"</item>
+        <item>"Pub"</item>
+        <item>"Room party"</item>
+        <item>"Association"</item>
+        <item>"Cine"</item>
+        <item>"Disco"</item>
+        <item>"Compound"</item>
+        <item>"Theatre"</item>
+        <item>"Assembly Hall"</item>
+        <item>"Other"</item>
+
+    </string-array>
+
+    <string-array name="musica"
+
+        >
+        <item>"Choose music"</item>
+        <item>"Concert"</item>
+        <item>"Festival"</item>
+        <item>"Jam Session"</item>
+        <item>"Other"</item>
+    </string-array>
+
+    <string-array name="audiovisual"
+
+        >
+        <item>"Choose audiovisual"</item>
+        <item>"Film"</item>
+        <item>"Serie"</item>
+        <item>"Short film"</item>
+        <item>"Other"</item>
+    </string-array>
+
+    <string-array name="escena"
+
+        >
+        <item>"Choose escena"</item>
+        <item>"Theatre"</item>
+        <item>"Dancing"</item>
+        <item>"Contest"</item>
+        <item>"Other"</item>
+    </string-array>
+
+    <string-array name="literatura"
+
+        >
+        <item>"Choose literature"</item>
+        <item>"Presentation of a book"</item>
+        <item>"Reading workshop"</item>
+        <item>"Literary symposium"</item>
+        <item>"Poetry"</item>
+        <item>"Prose"</item>
+        <item>"Other"</item>
+    </string-array>
+
+    <string-array name="arte"
+
+        >
+        <item>"Choose art"</item>
+        <item>"Exposition"</item>
+        <item>"Street market"</item>
+        <item>"Other"</item>
+    </string-array>
+
+
+    <string-array name="deporte">
+        <item>"Choose sport"</item>
+        <item>"Run"</item>
+        <item>"Walk"</item>
+        <item>"Triatlon"</item>
+        <item>"Football"</item>
+        <item>"Bike ride"</item>
+        <item>"Basketball"</item>
+        <item>"Padel"</item>
+        <item>"Tennis"</item>
+        <item>"Other"</item>
+    </string-array>
+
+    <string-array name="juegos"
+
+        >
+        <item>"Choose games"</item>
+        <item>"Videogames"</item>
+        <item>"Chess"</item>
+        <item>"Go Moku"</item>
+        <item>"Risk"</item>
+        <item>"Póker"</item>
+        <item>"Billiard"</item>
+        <item>"Futbolín"</item>
+        <item>"Other"</item>
+
+    </string-array>
+    <string-array name="social">
+        <item>"Choose social"</item>
+        <item>"Meeting"</item>
+        <item>"Assembly"</item>
+        <item>"Offer"</item>
+        <item>"Other"</item>
+
+
+    </string-array>
+
+    <string-array name="ciudades"
+
+        >
+        <item>"Choose city"</item>
+        <item>"Álava"</item>
+        <item>"Albacete"</item>
+        <item>"Alicante"</item>
+        <item>"Almería"</item>
+        <item>"Ávila"</item>
+        <item>"Badajoz"</item>
+        <item>"Baleares"</item>
+        <item>"Barcelona"</item>
+        <item>"Burgos"</item>
+        <item>"Cáceres"</item>
+        <item>"Cádiz"</item>
+        <item>"Castellón"</item>
+        <item>"Ciudad Real"</item>
+        <item>"Córdoba"</item>
+        <item>"Coruña, La"</item>
+        <item>"Cuenca"</item>
+        <item>"Gerona"</item>
+        <item>"Granada"</item>
+        <item>"Guadalajara"</item>
+        <item>"Guipuzcoa"</item>
+        <item>"Huelva"</item>
+        <item>"Huesca"</item>
+        <item>"Jaen"</item>
+        <item>"León"</item>
+        <item>"Lérida"</item>
+        <item>"Rioja (La)"</item>
+        <item>"Lugo"</item>
+        <item>"Madrid"</item>
+        <item>"Málaga"</item>
+        <item>"Murcia"</item>
+        <item>"Navarra"</item>
+        <item>"Orense"</item>
+        <item>"Asturias"</item>
+        <item>"Palencia"</item>
+        <item>"Palmas (Las)"</item>
+        <item>"Pontevedra"</item>
+        <item>"Salamanca"</item>
+        <item>"S.C.Tenerife"</item>
+        <item>"Cantabria"</item>
+        <item>"Segovia"</item>
+        <item>"Sevilla"</item>
+        <item>"Soria"</item>
+        <item>"Tarragona"</item>
+        <item>"Teruel"</item>
+        <item>"Toledo"</item>
+        <item>"Valencia"</item>
+        <item>"Valladolid"</item>
+        <item>"Vizcaya"</item>
+        <item>"Zamora"</item>
+        <item>"Zaragoza"</item>
+        <item>"Ceuta"</item>
+        <item>"Melilla"</item>
+    </string-array>
+
+    <string-array name="clasificacion">
+        <item>"Choose clasification</item>
+        <item>"Concert"</item>
+        <item>"Festival"</item>
+        <item>"Jam Session"</item>
+        <item>"Film"</item>
+        <item>"Serie"</item>
+        <item>"Short film"</item>
+        <item>"Theatre"</item>
+        <item>"Dancing"</item>
+        <item>"Contest"</item>
+        <item>"Presentation of a book"</item>
+        <item>"Reading workshop"</item>
+        <item>"Literary symposium"</item>
+        <item>"Poetry"</item>
+        <item>"Prose"</item>
+        <item>"Exposition"</item>
+        <item>"Street market"</item>
+        <item>"Run"</item>
+        <item>"Walk"</item>
+        <item>"Triatlon"</item>
+        <item>"Football"</item>
+        <item>"Bike ride"</item>
+        <item>"Basketball"</item>
+        <item>"Padel"</item>
+        <item>"Tennis"</item>
+        <item>"Videogames"</item>
+        <item>"Chess"</item>
+        <item>"Go Moku"</item>
+        <item>"Risk"</item>
+        <item>"Póker"</item>
+        <item>"Billiard"</item>
+        <item>"Futbolín"</item>
+        <item>"Meeting"</item>
+        <item>"Assembly"</item>
+        <item>"Offer"</item>
+        <item>"Choose music"</item>
+        <item>"Choose audiovisual"</item>
+        <item>"Choose scene"</item>
+        <item>"Choose literature"</item>
+        <item>"Choose art"</item>
+        <item>"Choose sport"</item>
+        <item>"Choose games"</item>
+        <item>"Choose social"</item>
+        <item>"Other"</item>
+        <item>"Other"</item>
+        <item>"Other"</item>
+        <item>"Other"</item>
+        <item>"Other"</item>
+        <item>"Other"</item>
+        <item>"Other"</item>
+        <item>"Other"</item>
+        <item>"Other"</item>
+
+
+    </string-array>
+
+    <string-array name="campos" id="idCampos">
+        <item>"Name of event"</item>
+        <item>"Description"</item>
+        <item>"Category"</item>
+        <item>"Classification"</item>
+        <item>"Tipe"</item>
+        <item>"City"</item>
+        <item>"Address"</item>
+        <item>"Date"</item>
+        <item>"Hour"</item>
+        <item>"Artist"</item>
+        <item>"Price"</item>
+    </string-array>
+
+
+    <string-array name="adminPenaliza"
+
+        >
+        <item>"Inappropriate comment."</item>
+        <item>"Limit of penalties received excessed."</item>
+        <item>"Publishing unsuitable events."</item>
+        <item>"Wrong information published."</item>
+    </string-array>
+
+
+    <string-array name="musica_cualquiera"
+
+        >
+        <item>"Choose music"</item>
+        <item>"Concert"</item>
+        <item>"Festival"</item>
+        <item>"Jam Session"</item>
+        <item>"Any"</item>
+    </string-array>
+
+    <string-array name="audiovisual_cualquiera"
+
+        >
+        <item>"Choose audiovisual"</item>
+        <item>"Film"</item>
+        <item>"Serie"</item>
+        <item>"Short film"</item>
+        <item>"Any"</item>
+    </string-array>
+
+    <string-array name="escena_cualquiera"
+
+        >
+        <item>"Choose escena"</item>
+        <item>"Theatre"</item>
+        <item>"Dancing"</item>
+        <item>"Contest"</item>
+        <item>"Any"</item>
+    </string-array>
+
+    <string-array name="literatura_cualquiera"
+
+        >
+        <item>"Choose literature"</item>
+        <item>"Presentation of a book"</item>
+        <item>"Reading workshop"</item>
+        <item>"Literary symposium"</item>
+        <item>"Poetry"</item>
+        <item>"Prose"</item>
+        <item>"Any"</item>
+    </string-array>
+
+    <string-array name="arte_cualquiera"
+
+        >
+        <item>"Choose art"</item>
+        <item>"Exposition"</item>
+        <item>"Street market"</item>
+        <item>"Any"</item>
+    </string-array>
+
+
+    <string-array name="deporte_cualquiera">
+        <item>"Choose sport"</item>
+        <item>"Run"</item>
+        <item>"Walk"</item>
+        <item>"Triatlon"</item>
+        <item>"Football"</item>
+        <item>"Bike ride"</item>
+        <item>"Basketball"</item>
+        <item>"Padel"</item>
+        <item>"Tennis"</item>
+        <item>"Any"</item>
+    </string-array>
+
+    <string-array name="juegos_cualquiera"
+
+        >
+        <item>"Choose games"</item>
+        <item>"Videogames"</item>
+        <item>"Chess"</item>
+        <item>"Go Moku"</item>
+        <item>"Risk"</item>
+        <item>"Póker"</item>
+        <item>"Billiard"</item>
+        <item>"Futbolín"</item>
+        <item>"Any"</item>
+
+    </string-array>
+    <string-array name="social_cualquiera">
+        <item>"Choose social"</item>
+        <item>"Meeting"</item>
+        <item>"Assembly"</item>
+        <item>"Offer"</item>
+        <item>"Any"</item>
+
+
+    </string-array>
+
+
+</resources>

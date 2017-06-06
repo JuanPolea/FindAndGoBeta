@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlPenalizaciones"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin">
+
+
+    <com.findandgoapp.custom.CustomFontTextView
+        app:font="@string/font_name_source_amatic_regular"
+        android:id="@+id/idTvNombreUsuarioPenalizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="left"
+        android:textColor="@color/negro"
+        android:layout_below="@id/tool_bar" />
+
+    <ImageView
+        android:id="@+id/idIvUsuarioPenalizado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/btn_user_locked"
+        android:layout_below="@id/tool_bar"
+        tools:ignore="ContentDescription" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        app:font="@string/font_name_source_amatic_regular"
+        android:id="@+id/idTvDescripcionPenalizacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTvNombreUsuarioPenalizado"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="right"
+
+        />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        app:font="@string/font_name_source_amatic_regular"
+        android:id="@+id/idTvMotivo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTvDescripcionPenalizacion"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="left"
+
+        />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        app:font="@string/font_name_source_amatic_regular"
+        android:id="@+id/idTvFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTvMotivo"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="left"
+
+        />
+
+</RelativeLayout>

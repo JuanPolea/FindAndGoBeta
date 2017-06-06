@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+    <color name="amarillo">#FCC11B</color>
+    <color name="azul">#6a95f7</color>
+    <color name="azulOscuro">#3B5998</color>
+    <color name="transparente">#00000000</color>
+    <color name="negro">#000</color>
+    <color name="blancoTpte">#11000000</color>
+    <color name="blanco">#ffffff</color>
+    <color name="rojo">#ff0303</color>
+    <color name="verdeAgua">#00968c</color>
+    <color name="verdeClaro">#11b000</color>
+    <color name="gris">#f8f8f8</color>
+    <color name="grisOscuro">#dedede</color>
+    <color name="link">#3366BB</color>
+    <color name="ColorPrimary">#00000000</color>
+    <color name="azulVioleta">#4900de</color>
+    <color name="grisMuyOscuro">#747474</color>
+    <color name="grisClaro">#969696</color>
+    <color name="white">#ffffff</color>
+    <color name="lista">#30bababa</color>
+
+
+</resources>
+

@@ -1,0 +1,92 @@
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_informacion"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context="com.findandgoapp.adapter.ListAdapterInformacion"
+    android:background="@drawable/blanco"
+    tools:showIn="@layout/activity_informacion"
+
+    >
+
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/tvContadorInfo"
+        android:layout_width="@dimen/size_30"
+        android:layout_height="@dimen/size_30"
+        style="@style/Texto"
+        android:text="@string/iCero"
+        app:font="@string/font_name_source_amatic_regular"
+        android:background="@drawable/borde_rojo"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/blanco"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/ivNextI"
+        android:layout_toStartOf="@+id/ivNextI"
+        android:layout_marginRight="@dimen/size_10"
+        android:layout_marginLeft="@dimen/size_5" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/tvInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Texto"
+        android:text=""
+        app:font="@string/font_name_source_amatic_regular"
+        android:paddingRight="@dimen/size_10"
+        android:layout_alignParentTop="true"
+        android:gravity="left"
+        android:textSize="@dimen/size_list_notificacion"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="false"
+        tools:ignore="RelativeOverlap" />
+
+
+    <ImageView
+        android:id="@+id/ivNextI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_arrow"
+        android:layout_alignBottom="@+id/tvInfo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        tools:ignore="ContentDescription" />
+
+
+</RelativeLayout>

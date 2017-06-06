@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_20"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+
+        >
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilArtistaNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@+id/ivArtistaFoto"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtArtistaNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tilArtistaNombre"
+                android:hint="@string/sNombreHint"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilArtistaEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilArtistaNombre"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtArtistaEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sEmailHint"
+                android:inputType="textEmailAddress"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilArtistaPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilArtistaEmail"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtArtistaPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sPasswordHint"
+                android:inputType="textPassword"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/idSpArtistaCiudad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tilArtistaPassword"
+            android:background="@drawable/btn_dropdown" />
+
+
+        <Spinner
+            android:id="@+id/idSpArtistaCategoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/idSpArtistaCiudad"
+            android:background="@drawable/btn_dropdown" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilArtistaDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idSpArtistaCategoria"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtArtistaDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/sDescripcionHint"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilArtistaWeb"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilArtistaDescripcion"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtArtistaWeb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="@string/sWebHint"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/idBArtistaRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/iCero"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_save"
+            android:layout_below="@id/tilArtistaWeb" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/size_12"
+            android:layout_marginTop="@dimen/size_50"
+
+            />
+
+        <ImageView
+            android:id="@+id/ivArtistaFoto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="invisible"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_marginBottom="@dimen/size_10"
+            tools:ignore="ContentDescription" />
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>
+

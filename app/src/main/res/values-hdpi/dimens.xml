@@ -1,0 +1,82 @@
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+
+
+  -->
+
+<resources>
+
+
+    <dimen name="activity_vertical_margin">16sp</dimen>
+    <dimen name="appbar_padding_top">8sp</dimen>
+
+    <dimen name="fotoAncho">300dp</dimen>
+
+
+    <dimen name="size_spinner">15sp</dimen>
+    <dimen name="tamano_listado">26sp</dimen>
+    <dimen name="tamano_letra">25sp</dimen>
+    <dimen name="size_numeros">30sp</dimen>
+    <dimen name="size_circulo">40sp</dimen>
+
+    <dimen name="tamano_fuente_menu">30sp</dimen>
+    <dimen name="text_menu">35sp</dimen>
+    <dimen name="tamano_subtitulo_menu">25sp</dimen>
+    <dimen name="size_list">20sp</dimen>
+    <dimen name="size_list_notificacion">18sp</dimen>
+    <dimen name="size_circulitos">30sp</dimen>
+
+    <dimen name="siize_letras_evento">12sp</dimen>
+
+    <dimen name="margen_izq">15sp</dimen>
+    <dimen name="margen_dcho">15sp</dimen>
+
+</resources>
+

@@ -1,0 +1,228 @@
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerVertical="true"
+
+    android:layout_centerInParent="true"
+    android:layout_gravity="center"
+
+
+    >
+
+    <RelativeLayout android:layout_width="250dp"
+        android:layout_height="320dp"
+        android:id="@+id/gridLayout"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:paddingBottom="@dimen/size_10"
+        android:paddingTop="@dimen/size_10"
+        android:background="@drawable/fondito"
+
+        >
+
+        <com.findandgoapp.custom.CustomFontTextView
+            android:id="@+id/idShare"
+            android:text="@string/share"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            app:font="@string/font_name_source_amatic_regular_bold"
+            android:textColor="@color/verdeAgua"
+
+            android:textSize="@dimen/size_cabecera"
+            android:layout_alignBottom="@+id/bCancelaShare"
+            android:layout_alignStart="@+id/ivShareMail" />
+
+        <ImageView
+            android:id="@+id/ivShareGoogle"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:background="@drawable/google_icon"
+            android:layout_below="@+id/ivShareGMail"
+
+            android:layout_marginStart="@dimen/size_10"
+            android:layout_marginBottom="@dimen/size_10"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivShareFacebook"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:layout_below="@id/ivShareGoogle"
+            android:background="@drawable/facebook_icon"
+            android:layout_marginStart="@dimen/size_10"
+            android:layout_marginBottom="@dimen/size_10"
+            tools:ignore="ContentDescription" />
+
+
+        <ImageView
+            android:id="@+id/ivShareMail"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:background="@drawable/email_icon"
+            android:layout_marginStart="@dimen/size_10"
+            android:layout_below="@id/idShare"
+            android:layout_marginBottom="@dimen/size_10"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivShareGMail"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:background="@drawable/gmail_icon"
+            android:layout_below="@+id/ivShareMail"
+            android:layout_alignStart="@+id/ivShareMail"
+            android:layout_marginBottom="@dimen/size_10"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivShareText"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:layout_below="@id/ivShareFacebook"
+            android:background="@drawable/mensajeria_icon"
+            android:layout_marginStart="@dimen/size_10"
+            android:layout_marginBottom="@dimen/size_10"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivShareTwitter"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:layout_below="@id/ivShareText"
+            android:background="@drawable/twitter_icon"
+            android:layout_marginStart="@dimen/size_10"
+            android:layout_marginBottom="@dimen/size_10"
+            tools:ignore="ContentDescription" />
+
+        <ImageView
+            android:id="@+id/ivShareWhatsapp"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:layout_below="@id/ivShareTwitter"
+            android:background="@drawable/mensaje_icon"
+            android:layout_marginStart="@dimen/size_10"
+            tools:ignore="ContentDescription" />
+
+        <com.findandgoapp.custom.CustomFontTextView
+            android:id="@+id/idShareMail"
+            app:font="@string/font_name_source_amatic_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sEmail"
+
+            android:textColor="@color/link"
+            android:layout_below="@+id/idShare"
+            android:layout_marginStart="@dimen/size_50" />
+
+
+        <com.findandgoapp.custom.CustomFontTextView
+            android:id="@+id/idShareGmail"
+            app:font="@string/font_name_source_amatic_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Gmail"
+            android:textColor="@color/link"
+            android:layout_below="@+id/ivShareMail"
+            android:layout_marginStart="@dimen/size_50" />
+
+        <com.findandgoapp.custom.CustomFontTextView
+            android:id="@+id/idShareGoogle"
+            app:font="@string/font_name_source_amatic_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/GoogleMas"
+
+            android:textColor="@color/link"
+            android:layout_alignTop="@+id/ivShareGoogle"
+            android:layout_alignStart="@+id/idShareGmail" />
+
+        <com.findandgoapp.custom.CustomFontTextView
+            android:id="@+id/idShareText"
+            app:font="@string/font_name_source_amatic_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Mensajeria"
+            android:textColor="@color/link"
+            android:layout_below="@+id/ivShareFacebook"
+            android:layout_alignStart="@+id/idShareFacebook" />
+
+        <com.findandgoapp.custom.CustomFontTextView
+            android:id="@+id/idShareFacebook"
+            app:font="@string/font_name_source_amatic_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Facebook"
+            android:textColor="@color/link"
+            android:layout_below="@+id/ivShareGoogle"
+            android:layout_alignStart="@+id/idShareGoogle" />
+
+        <com.findandgoapp.custom.CustomFontTextView
+            android:id="@+id/idShareTwitter"
+            app:font="@string/font_name_source_amatic_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Twitter"
+            android:textColor="@color/link"
+
+            android:layout_below="@+id/ivShareText"
+            android:layout_alignStart="@+id/idShareText" />
+
+        <com.findandgoapp.custom.CustomFontTextView
+            android:id="@+id/idShareWhatsapp"
+            app:font="@string/font_name_source_amatic_regular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Whatsapp"
+
+            android:textColor="@color/link"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/idShareTwitter" />
+
+        <ImageView
+            android:id="@+id/bCancelaShare"
+            android:layout_width="@dimen/size_30"
+            android:layout_height="@dimen/size_30"
+            android:background="@drawable/btn_exit"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/idShareText"
+            tools:ignore="ContentDescription" />
+
+
+    </RelativeLayout>
+
+
+</ScrollView>

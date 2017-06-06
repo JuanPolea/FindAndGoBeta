@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <string name="app_name">"Find And Go"</string>
+
+    <string name="action_settings">Settings</string>
+    <!--
+         Copyright (C) 2010 The Android Open Source Project
+
+         Licensed under the Apache License, Version 2.0 (the "License");
+         you may not use this file except in compliance with the License.
+         You may obtain a copy of the License at
+
+              http://www.apache.org/licenses/LICENSE-2.0
+
+         Unless required by applicable law or agreed to in writing, software
+         distributed under the License is distributed on an "AS IS" BASIS,
+         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+         See the License for the specific language governing permissions and
+         limitations under the License.
+    -->
+
+
+    <!-- Elementos Comunes -->
+    <string name="sRegistrar">New User</string>
+
+    <string name="sCancelar">Cancel</string>
+    <string name="sAceptar">Accept</string>
+    <string name="sActualizar">Update</string>
+    <string name="sEnviar">Send</string>
+    <string name="sSalir">Exit</string>
+    <string name="sVacio">Vacio</string>
+    <string name="sGET">GET</string>
+    <string name="sRepetir">Every days</string>
+
+    <string name="sValidar">Validating data, please wait…</string>
+
+    <!-- Actividad Principal -->
+
+    <string name="sEmailHint">Insert your email</string>
+    <string name="sPassword">Password: </string>
+    <string name="spassword">Password</string>
+    <string name="sPasswordHint">Insert your password</string>
+    <string name="sUsuarioNuevo">New User</string>
+    <string name="sOlvidoPassword">forgotten password?</string>
+
+    <!-- Administrador -->
+
+    <!-- Facebook -->
+
+    <!-- Nuevo Usuario -->
+    <string name="sAsistenteInformacion">This profile is recommended for all people who want to go to events</string>
+    <string name="sArtistaInformacion">This profile is recommended for all artist who want to publish their events</string>
+    <string name="sEmpresaInformacion">This profile is recommended for all companies who want to publish events that willl take place in this company</string>
+    <string name="sSeleccionaAsistente">Opening attendands form…</string>
+    <string name="sSeleccionaArtista">Opening artist form…</string>
+    <string name="sSeleccionaEmpresa">Opening company form…</string>
+    <string name="sBienvenido">Welcome</string>
+    <string name="sEstado">State</string>
+
+
+    <!-- Usuarios -->
+
+    <string name="sDescripcion">Description</string>
+    <string name="sDescripcionHint">You can write a short description here</string>
+    <string name="sWebHint">You can insert your web here</string>
+    <string name="sNombreHint">User name</string>
+
+    <!-- Nuevo Asistente -->
+
+    <string name="sUsuarioAsistente">New attendant</string>
+    <string name="sAsistente">Attendant</string>
+
+
+    <!-- Nuevo Artista -->
+    <string name="sArtista">Artist</string>
+    <string name="sUsuarioArtista">New Artist</string>
+
+
+    <!-- Nuevo Empresa -->
+    <string name="sEmpresa">Company</string>
+    <string name="sUsuarioEmpresa">New Company</string>
+    <string name="sCalle">Address</string>
+    <string name="sNumero">Number</string>
+    <string name="sTipo">Type</string>
+
+    <!-- Menú de usuario -->
+    <string name="slEventoEliminar">Delete event</string>
+
+    <!-- de un Evento -->
+
+    <string name="sEventoNombre">Insert a title for the event</string>
+    <string name="sElijaCategoria">"Choose category"</string>
+    <string name="sElijaClasificacion">"Choose classification"</string>
+    <string name="sPrecio">"Price"</string>
+
+    <!-- Lista Dinámica -->
+
+    <!-- Listado -->
+
+    <!-- EventoDenuncia -->
+
+    <!-- Evento Eliminar Listado -->
+
+    <!-- Alerta  de  Usuario -->
+    <!-- Alerta Menu -->
+    <string name="sAlerta">New alert</string>
+    <string name="sAlertaNombre">Title of the alert</string>
+    <string name="sAlertaLugar">Place</string>
+
+    <!-- Administrador -->
+    <!-- BuscarUsuario -->
+    <string name="sBuscarPorNombre">Username</string>
+    <string name="sBuscarPorEmail">User Email</string>
+    <!-- PagerUsuarios -->
+    <string name="sBloqueado">Locked</string>
+
+    <!-- PagerEventos -->
+
+    <!-- Administrador Listar Usuario penalizado -->
+    <string name="sTipoPenalizacion">Tipe of report</string>
+
+    <!-- Administrador Listar Eventos -->
+    <string name="sBuscarPorDatos">Search event</string>
+
+    <!-- Usuario -->
+    <string name="sNombre">"Username"</string>
+
+    <!-- Usuario  -> DatosUsuario -->
+
+    <!-- Olvido Password -->
+
+    <!-- GoogleMaps -->
+
+
+    <string name="title_activity_usuario_nuevo">Select user</string>
+
+    <!-- Nuevos -->
+    <!-- Usuarios -->
+    <string name="sActivo">Active</string>
+    <string name="sActivado">Enabled</string>
+    <string name="sDesactivado">Disabled</string>
+    <string name="sConfirmaciones">Confirmations</string>
+    <string name="sPenalizaciones">Penalties</string>
+    <string name="sRealizadas">Done</string>
+    <string name="sDenuncias">Report</string>
+    <string name="sRecibidas">Received</string>
+
+    <!-- Genéricos -->
+    <string name="sCargando">Loading data, please wait…</string>
+
+    <string name="sConsultar">Search</string>
+
+    <!-- Categorías -->
+
+    <string name="sMusica">Music</string>
+    <string name="sAudioVisual">Audiovisual</string>
+    <string name="sEscena">Scene</string>
+    <string name="sLiteratura">Literature</string>
+    <string name="sArte">Art</string>
+    <string name="sSocial">Social</string>
+    <string name="sDeporte">Sport</string>
+    <string name="sJuegos">Games</string>
+
+    <!-- Eventos -->
+    <string name="title_activity_evento_">Evento</string>
+    <string name="sEventosDenunciadosTipo3">Offensive content</string>
+    <string name="sEventosDenunciadosTipo2">Nonexistent event</string>
+    <string name="sEventosDenunciadosTipo1">Wrong information</string>
+    <string name="sEventosDenunciados">Reported</string>
+    <string name="sArtistasInvolucrados">"Artist involved"</string>
+    <string name="sTipoSala">Insert the place of the event</string>
+    <string name="title_activity_evento_listado">List</string>
+    <string name="title_activity_listado">List</string>
+    <string name="title_activity_evento_seleccionado">Information</string>
+    <string name="sComenta">Add comment</string>
+    <string name="sComentario">Comments</string>
+    <string name="sComoLlegar">How to go</string>
+    <string name="sComentar">Add comment</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="sDenuncia1">Event does not exist</string>
+    <string name="sDenuncia2">"Wrong data inserted"</string>
+    <string name="sDenuncia3">Offensive information</string>
+    <string name="sDenunciaSeleccionado1">Event does not exist</string>
+    <string name="sDenunciaSeleccionado3">Offensive information</string>
+    <string name="title_activity_perfil_asistente">Attendant</string>
+    <string name="sCodigoPostal">Postal code</string>
+    <string name="title_activity_perfil_artista">Artist</string>
+    <string name="title_activity_perfil_empresa">Company</string>
+    <string name="toggle_turn_on">ON</string>
+    <string name="toggle_turn_off">OFF</string>
+    <string name="sAddAlerta">Add new</string>
+    <string name="sIdEventoNombre">Title of the event</string>
+    <string name="sNombreSala">Name of the room</string>
+    <string name="title_activity_alerta_update">Alerta update</string>
+    <string name="sMisEventos">My events</string>
+    <string name="sCrearEvento">Register event</string>
+    <string name="title_activity_usuario_listado">User List</string>
+    <string name="title_activity_admin_usuario_consulta">Search User</string>
+    <string name="title_activity_tab_admin_evento_listado">Event List</string>
+    <string name="sEditar">Edit</string>
+    <string name="title_activity_menu_ppal">Main Menu</string>
+    <string name="sEvento">Event</string>
+    <string name="sUsuario">User</string>
+    <string name="title_activity_alerta">Alert</string>
+    <string name="sAlertaMenu">Add alert</string>
+    <string name="sEliminar">Eliminar</string>
+    <string name="title_activity_tab_admin">Admin Menu</string>
+    <string name="title_activity_penalizacion_listado">Penalties list</string>
+    <string name="sNotificaciones">Notifications</string>
+    <string name="title_activity_evento_update">Update event</string>
+    <string name="sDescripcionCabecera">Description</string>
+    <string name="sCategoriaCabecera">Category</string>
+    <string name="sClasificacionCabecera">Classification</string>
+    <string name="sTipoCabecera">Type</string>
+    <string name="sDireccionCabecera">Address</string>
+    <string name="sFechaCabecera">Date</string>
+    <string name="sHoraCabecera">Hour</string>
+    <string name="sArtistaCabecera">Artist</string>
+    <string name="sPrecioCabecera">Price</string>
+    <string name="sCreadorCabecera">Creator</string>
+    <string name="sDarBajaUsuario">Delete user</string>
+    <string name="sEnviarEmail">Recovering password</string>
+    <string name="mensaje">mensaje</string>
+    <string name="success">success</string>
+    <string name="sErrorBBDD">Error data base access</string>
+    <string name="result">result</string>
+    <string name="nombreUsuario">nombreUsuario</string>
+    <string name="tipoUsuario">tipoUsuario</string>
+    <string name="DATOS">DATOS</string>
+    <string name="password">password</string>
+
+    <string name="sBuscarAlerta">Search</string>
+
+    <string name="sNotificacionesOk">We have found some events for the alert</string>
+
+
+    <string name="uploaded">data saved</string>
+
+    <string name="sRealizarFoto">Take picture</string>
+    <string name="sSeleccionarGaleria">Select existing picture</string>
+    <string name="sAddFoto">Change picture</string>
+    <string name="sSelecionarArchivo">Select File</string>
+
+    <string name="s_descripcion">description</string>
+
+    <string name="s_web">web</string>
+
+
+    <string name="sPrecioMax">Price</string>
+    <string name="sValorDelCampo">Please insert the correct value</string>
+    <string name="sSeleccioneCampo">Select the field that contains wrong data</string>
+
+    <string name="sInsertaFoto">Do you want to insert a picture?</string>
+    <string name="sNO">No</string>
+    <string name="title_activity_fullscreen">User image</string>
+    <string name="sEliminarComentario">Comment deleted</string>
+    <string name="sInsertarComentario">\"Comment inserted\"</string>
+
+    sComportamientoIndebido
+    <string name="sUsuarioBloqueado">Your user is locked. You can see notifications for more info.</string>
+    <string name="sModificaEliminaComentario">Update/delete comment</string>
+    <string name="sUpdateComentario">Comment updated</string>
+    <string name="sComentarioAutogenerado">You can not delete an automatic comment directly. You have to delete the report before.</string>
+    <string name="sComentarioOtroUsuario">You can not delete/edit comments from other user.</string>
+    <string name="tab">tab</string>
+    <string name="sEventoContieneDenuncias">The event has been reported. Plase review the comments for more information</string>
+
+    <string name="SValoraciones">Valuations</string>
+    <string name="sCampoNoModificable">This action onlu can be done by the admin. You can contact him by the mail</string>
+    <string name="sEmailAdminstrador">jfmateosredondo@gmail.com</string>
+    <string name="sElija">Choose</string>
+    <string name="sSeleccione">Choose</string>
+    <string name="sVia">Type</string>
+
+    <string name="sErrorProfileNull">Profile null</string>
+    <string name="sfirst_name">first_name</string>
+    <string name="sId">id</string>
+    <string name="sErrorFacebook">Facebook onError</string>
+    <string name="sDenunciasEventos">Report received</string>
+    <string name="sErrorUsuarioNoEncontrado">User not found</string>
+    <string name="sTituloNotificaciones">Current data of your interactions</string>
+    <string name="sAvisoSemana">Repeat</string>
+    <string name="sLunes">Monday</string>
+    <string name="sDomingo">Sunday</string>
+    <string name="sSabado">Saturday</string>
+    <string name="sViernes">Friday</string>
+    <string name="sJueves">Thursday</string>
+    <string name="sMiercoles">Wednesday</string>
+    <string name="sMartes">Tuesday</string>
+    <string name="title_activity_configuracion">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+    <string name="sSonido">Sound</string>
+    <string name="sAcercaDe">About us</string>
+
+    <string name="sContatco">Contact</string>
+    <string name="sContactoTexto">The project was developed by Juan F. Mateos Redondo. You can contact him by: jfmateosredondo@gmail.com</string>
+    <string name="sContacto">Developer information</string>
+    <string name="sLicencia">Licence and terms of use</string>
+    <string name="sMenuIdioma">Idioma / language</string>
+    <string name="sNumEventosCreados">Existing events</string>
+    <string name="sVerEventos">Events of the user</string>
+    <string name="sConfirmacione">Confirmations</string>
+    <string name="sAcciones">Activity resume</string>
+    <string name="sAddPenalizacion">Penalize</string>
+    <string name="sElijaPenalizacion">Choose report</string>
+    <string name="sUsuarioEliminado">This user was deleted by admin. Please try with other email.</string>
+    <string name="sTipoEstado">"Type\\State"</string>
+    <string name="sEliminarAlerta">Alert will be deleted</string>
+    <string name="sCerrarSesion">Do you want to end session?</string>
+    <string name="sCamara">Take picture</string>
+
+    <string name="sEmailEnviado">Email sent</string>
+    <string name="sOtro">Other</string>
+    <string name="sDeseaAddCategoria">Dont you find your  category? Please add one</string>
+    <string name="sSugerenciaExito">Suggestion added. Thank you for your colaboration</string>
+    <string name="sEscribaSugerencia">Add suggestion</string>
+    <string name="sSugerirClasificacion">Suggest</string>
+    <string name="sDeseaAddClasificacion">Dont you find your classification?Please add one </string>
+    <string name="sDeseaAddTipo">Dont you find your tipe? Please add one</string>
+
+    <string name="sEventosConfirmados">Validated</string>
+    <string name="sLocalidad">Add city</string>
+    <string name="sNoImagenDownload">Picture did not received due to writting permissions</string>
+    <string name="sSi">Yes</string>
+    <string name="sWarning">Warning</string>
+    <string name="title_activity_admin_usuario_penalizar">Penalties menu</string>
+    <string name="sElijaCiudad">Choose city</string>
+    <string name="sElijaSala">Choose room</string>
+
+    <string name="sElijaMusica">Choose music</string>
+    <string name="sElijaAudiovisual">Choose audiovisual</string>
+    <string name="sElijaEscena">Choose scene</string>
+    <string name="sElijaLiterartura">Choose literature</string>
+    <string name="sElijaArte">Choose art</string>
+    <string name="sElijaSocial">Choose social</string>
+    <string name="sElijaDeporte">Choose Sport</string>
+    <string name="sElijaJuegos">Choose games</string>
+    <string name="sInicialLunes">Mon,</string>
+    <string name="sInicialMartes">Tu,</string>
+    <string name="sInicialMiercoles">Wed,</string>
+    <string name="sInicialJueves">Th,</string>
+    <string name="sInicialViernes">Fry,</string>
+    <string name="sInicialSabado">Sat,</string>
+    <string name="sInicialDomingo">Su</string>
+    <string name="sAAMMDD">yyyy-mm-dd</string>
+    <string name="sHHMM">hh:mm</string>
+    <string name="sValoracionPositiva">The event was confirmed</string>
+    <string name="sValoracionNegativa">Event penalized</string>
+    <string name="sRectificacion">Rectification successfully</string>
+    <string name="sMenuDenuncias">Penalties menu</string>
+    <string name="sNoPuedeValorarSusEventos">You cannot value your events </string>
+    <string name="sMostrandoEventos">Events found, loading…</string>
+    <string name="sNoSeHanEncontradoDatos">No data found, we are sorry</string>
+    <string name="ExisteArtista">The user exist in the sistem. In order to avoid duplicates values you can not create this event. Thank you for using Find And Go!</string>
+    <string name="Localidad">Localidad</string>
+    <string name="sNotieneNotificaciones">You have not any notificacion</string>
+    <string name="sCampo">The field</string>
+    <string name="sDeberiaContener">should be</string>
+    <string name="sEliminarUsuario">Do you want to delete this user from the app?</string>
+    <string name="sErrorFormatoEmail">Wrong email format, please review it</string>
+    <string name="sTotalEventos">Total events</string>
+    <string name="sInteracciones">Activity summary</string>
+    <string name="sSancion">Received penaltyes</string>
+    <string name="sReferencias">Allusions in events</string>
+    <string name="sContactoSancion">Penaltyes are the result of the data saved in the APP. For any question, please contact with the admin.</string>
+    <string name="sFechaSancion">Date of penalty</string>
+    <string name="sAlusion1">User </string>
+    <string name="sAlusion2"> indicates that you will take part of the event </string>
+    <string name="sAlusion3"> on </string>
+    <string name="sactivity">activity</string>
+    <string name="sAvisoBloqueado">User was blocked. For more information, please see Notifications in user menu</string>
+    <string name="sNoHayEventos">You have not interacted with any events yet</string>
+    <string name="sNoHaySancion">You have not any penalties</string>
+    <string name="sNoHayAlusiones">You have not any reference</string>
+
+    <string name="locality">locality</string>
+    <string name="subAdmin">subAdmin</string>
+
+    <string name="sEliminarEvento">Delete event</string>
+    <string name="sDeseaEliminarEvento">The selected event will be removed</string>
+    <string name="sAviso">Warning</string>
+    <string name="sNoEventos">There is not any events with this search ,try again.</string>
+
+    <string name="sNoEliminaEvento">The event was not deleted</string>
+    <string name="sEventos">Events</string>
+    <string name="sUsuarios">User</string>
+    <string name="sAlertas">Alert</string>
+    <string name="errorModoVacio">Empty mode</string>
+
+    <string name="usuarioModificado">User modified</string>
+    <string name="usuarioNoModificado">User was not modified</string>
+    <string name="usuarioNocreado">User was not created</string>
+
+    <string name="sNoAccion">Action not allowed</string>
+    <string name="hacomentado">has commented</string>
+    <string name="hasidopenalizado">You have benn blocked until</string>
+    <string name="Motivo">Motive</string>
+    <string name="noPenalizaciones">You have not penalties</string>
+    <string name="siPenalizaciones">Loading penalties</string>
+    <string name="UsuarioEliminado">User deleted</string>
+    <string name="EventoNoActualiza">Event was not updated</string>
+    <string name="comentarioNoInsertado">Comment was not inserted</string>
+    <string name="alertaActivada">Alert on</string>
+    <string name="alertaDesactivada">Alert off</string>
+    <string name="noActualizaAlerta">Alert was not updated</string>
+    <string name="alertaModificada">Alert updated</string>
+    <string name="alertaNoModificada">Alert was not modified</string>
+    <string name="NoseEliminaAlerta">Alert was not deleted</string>
+    <string name="NoComentarios">There is not comments</string>
+    <string name="usuarioYaExiste">User already exist</string>
+    <string name="RecuperarPassword">Recovering password</string>
+    <string name="eventoExiste">Event already exist</string>
+    <string name="noRealizaFoto">Pickture was not done. Try it again.</string>
+    <string name="NoRegistraEvento">Event was not saved.</string>
+    <string name="compruebeCampos">Missing required field</string>
+    <string name="compruebeDesplegable">Please </string>
+    <!-- <string name="sFormatoAlusion">User %%$1s has indicated that you will take part in the event %%$2s on %%$3s</string> -->
+    <string name="noExistenDatos">No data found for selection</string>
+    <string name="noActualizaCampo">field does not updated</string>
+    <string name="campoActualizadoPorOtroUsuario">The field was updated by other user and you can not modify it</string>
+    <string name="actualizaCampo">Field updated</string>
+    <string name="noInsertado">Not executed</string>
+    <string name="noEliminaPenalizacion">Penalty was not deleted</string>
+    <string name="eventoValorado">Event rated</string>
+    <string name="title_activity_sancion_recibida">Penalties</string>
+    <string name="title_activity_admin_evento_listado">Events list</string>
+    <string name="Eliminado">Deleted</string>
+    <string name="LugarExiste">The place is registered yet. Thank you for colaborating with Find And Go!</string>
+    <string name="direccionExiste">Adreess is registered yet</string>
+    <string name="NoEliminaUsuario">User was not deleted</string>
+    <string name="perfil">User profile</string>
+    <string name="sDeseaSalir">Do you really want to close the APP?</string>
+    <string name="fotoPerfil">Profile picture</string>
+    <string name="Leyenda">Leyend</string>
+
+
+     <string name="licencia">"GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. https://fsf.org/
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+
+  This version of the GNU Lesser General Public License incorporates
+the terms and conditions of version 3 of the GNU General Public
+License, supplemented by the additional permissions listed below.
+
+  0. Additional Definitions.
+
+  As used herein, "this License" refers to version 3 of the GNU Lesser
+General Public License, and the "GNU GPL" refers to version 3 of the GNU
+General Public License.
+
+  "The Library" refers to a covered work governed by this License,
+other than an Application or a Combined Work as defined below.
+
+  An "Application" is any work that makes use of an interface provided
+by the Library, but which is not otherwise based on the Library.
+Defining a subclass of a class defined by the Library is deemed a mode
+of using an interface provided by the Library.
+
+  A "Combined Work" is a work produced by combining or linking an
+Application with the Library.  The particular version of the Library
+with which the Combined Work was made is also called the "Linked
+Version".
+
+  The "Minimal Corresponding Source" for a Combined Work means the
+Corresponding Source for the Combined Work, excluding any source code
+for portions of the Combined Work that, considered in isolation, are
+based on the Application, and not on the Linked Version.
+
+  The "Corresponding Application Code" for a Combined Work means the
+object code and/or source code for the Application, including any data
+and utility programs needed for reproducing the Combined Work from the
+Application, but excluding the System Libraries of the Combined Work.
+
+  1. Exception to Section 3 of the GNU GPL.
+
+  You may convey a covered work under sections 3 and 4 of this License
+without being bound by section 3 of the GNU GPL.
+
+  2. Conveying Modified Versions.
+
+  If you modify a copy of the Library, and, in your modifications, a
+facility refers to a function or data to be supplied by an Application
+that uses the facility (other than as an argument passed when the
+facility is invoked), then you may convey a copy of the modified
+version:
+
+   a) under this License, provided that you make a good faith effort to
+   ensure that, in the event an Application does not supply the
+   function or data, the facility still operates, and performs
+   whatever part of its purpose remains meaningful, or
+
+   b) under the GNU GPL, with none of the additional permissions of
+   this License applicable to that copy.
+
+  3. Object Code Incorporating Material from Library Header Files.
+
+  The object code form of an Application may incorporate material from
+a header file that is part of the Library.  You may convey such object
+code under terms of your choice, provided that, if the incorporated
+material is not limited to numerical parameters, data structure
+layouts and accessors, or small macros, inline functions and templates
+(ten or fewer lines in length), you do both of the following:
+
+   a) Give prominent notice with each copy of the object code that the
+   Library is used in it and that the Library and its use are
+   covered by this License.
+
+   b) Accompany the object code with a copy of the GNU GPL and this license
+   document.
+
+  4. Combined Works.
+
+  You may convey a Combined Work under terms of your choice that,
+taken together, effectively do not restrict modification of the
+portions of the Library contained in the Combined Work and reverse
+engineering for debugging such modifications, if you also do each of
+the following:
+
+   a) Give prominent notice with each copy of the Combined Work that
+   the Library is used in it and that the Library and its use are
+   covered by this License.
+
+   b) Accompany the Combined Work with a copy of the GNU GPL and this license
+   document.
+
+   c) For a Combined Work that displays copyright notices during
+   execution, include the copyright notice for the Library among
+   these notices, as well as a reference directing the user to the
+   copies of the GNU GPL and this license document.
+
+   d) Do one of the following:
+
+       0) Convey the Minimal Corresponding Source under the terms of this
+       License, and the Corresponding Application Code in a form
+       suitable for, and under terms that permit, the user to
+       recombine or relink the Application with a modified version of
+       the Linked Version to produce a modified Combined Work, in the
+       manner specified by section 6 of the GNU GPL for conveying
+       Corresponding Source.
+
+       1) Use a suitable shared library mechanism for linking with the
+       Library.  A suitable mechanism is one that (a) uses at run time
+       a copy of the Library already present on the user's computer
+       system, and (b) will operate properly with a modified version
+       of the Library that is interface-compatible with the Linked
+       Version.
+
+   e) Provide Installation Information, but only if you would otherwise
+   be required to provide such information under section 6 of the
+   GNU GPL, and only to the extent that such information is
+   necessary to install and execute a modified version of the
+   Combined Work produced by recombining or relinking the
+   Application with a modified version of the Linked Version. (If
+   you use option 4d0, the Installation Information must accompany
+   the Minimal Corresponding Source and Corresponding Application
+   Code. If you use option 4d1, you must provide the Installation
+   Information in the manner specified by section 6 of the GNU GPL
+   for conveying Corresponding Source.)
+
+  5. Combined Libraries.
+
+  You may place library facilities that are a work based on the
+Library side by side in a single library together with other library
+facilities that are not Applications and are not covered by this
+License, and convey such a combined library under terms of your
+choice, if you do both of the following:
+
+   a) Accompany the combined library with a copy of the same work based
+   on the Library, uncombined with any other library facilities,
+   conveyed under the terms of this License.
+
+   b) Give prominent notice with the combined library that part of it
+   is a work based on the Library, and explaining where to find the
+   accompanying uncombined form of the same work.
+
+  6. Revised Versions of the GNU Lesser General Public License.
+
+  The Free Software Foundation may publish revised and/or new versions
+of the GNU Lesser General Public License from time to time. Such new
+versions will be similar in spirit to the present version, but may
+differ in detail to address new problems or concerns.
+
+  Each version is given a distinguishing version number. If the
+Library as you received it specifies that a certain numbered version
+of the GNU Lesser General Public License "or any later version"
+applies to it, you have the option of following the terms and
+conditions either of that published version or of any later version
+published by the Free Software Foundation. If the Library as you
+received it does not specify a version number of the GNU Lesser
+General Public License, you may choose any version of the GNU Lesser
+General Public License ever published by the Free Software Foundation.
+
+  If the Library as you received it specifies that a proxy can decide
+whether future versions of the GNU Lesser General Public License shall
+apply, that proxy's public statement of acceptance of any version is
+permanent authorization for you to choose that version for the
+Library.</string>
+
+    <string name="listadoEvento">Event list</string>
+    <string name="noInforme">There is not any data.</string>
+    <string name="ErrorInforme">No data for the creator.</string>
+    <string name="recordar">Reminder</string>
+    <string name="sCualquierHora">Any hour</string>
+    <string name="sCualquierFecha">Any date</string>
+    <string name="nunca">Never</string>
+    <string name="noLocation">Google Maps can not find the location</string>
+    <string name="verTodos">Coming soon</string>
+    <string name="cualquiera">any</string>
+    <string name="localidadNoEncontrada">Locality not found</string>
+    <string name="reviseCampos">Review the following data:</string>
+    <string name="Cp">PC</string>
+    <string name="sActualEventos">Current events</string>
+    <string name="home">Events menu</string>
+    <string name="errorConexion">Connection error</string>
+
+    <string name="Sugerencia">Suggestions</string>
+    <string name="sCargandoEventos">Loading events, please wait…</string>
+    <string name="activarGps">To show you events close to your ubication, you should activate GPS. Do you want to access to GPS settings?</string>
+    <string name="activarWifi">No connection detected. Do you want to access to wifi settings?</string>
+    <string name="sNoEventosCercanos">No events found close to your ubication. you can search manually.</string>
+    <string name="sCampoObligatorio">Required field</string>
+    <string name="gratis">Free</string>
+    <string name="sBuscarUsuario">Search user</string>
+
+
+    <string name="permission_storage">The following permission is required</string>
+    <string name="permission_storage_success">Permission acepted</string>
+    <string name="sCampoFacebook">This field is obtained from external API, you can not modify it.</string>
+    <string name="sElijaVia">Way</string>
+    <string name="sDeseaAddVia">Did not find the type of street? Please suggest us..</string>
+    <string name="Categoria">Category</string>
+    <string name="Tipo">Type</string>
+    <string name="sProvincia">Province </string>
+    <string name="sugerenciaNoInsertada">Suggestion was not registered.</string>
+    <string name="title_activity_informacion">Information</string>
+    <string name="sala">Room</string>
+    <string name="aceptarPermiso">You must accept the requested permission in order to execute this action.</string>
+    <string name="share">Share with…</string>
+    <string name="Mensajeria">Mensaje</string>
+    <string name="appNoinstalada">We can not find the APP required for this action.</string>
+    <string name="Provincia">Province</string>
+    <string name="pueblo">Village</string>
+    <string name="Fecha">Date</string>
+    <string name="Hora">Hour</string>
+    <string name="Lugar">Place</string>
+    <string name="en">on </string>
+    <string name="alas">at </string>
+    <string name="PuedesDescargar">Download Find And Go at:</string>
+    <string name="nombreDelEvento">Name of the event:</string>
+    <string name="apiNoConnect">We can not connect with the APP required.</string>
+    <string name="almacen">Storage</string>
+    <string name="menuPermisos">Go to Permissions to grant storage</string>
+</resources>

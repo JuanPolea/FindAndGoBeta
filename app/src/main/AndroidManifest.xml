@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.findandgoapp.activity">
+    />
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="true"
+        android:smallScreens="true" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.hardware.camera" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--
+     The following two permissions are not required to use
+     Google Maps Android API v2.
+     These two permissions will be used if you want to trace current location
+    -->
+
+
+    <permission
+        android:name="com.findandgoapp.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.findandgoapp.permission.MAPS_RECEIVE" />
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:supportsRtl">
+        <uses-library android:name="android.test.runner" />
+
+        <provider
+            android:authorities="com.facebook.app.FacebookContentProvider1441438812573798"
+            android:name="com.facebook.FacebookContentProvider"
+            android:exported="true"
+            tools:ignore="ExportedContentProvider" />
+
+
+        <!--
+           Para test de instrumentación
+
+          <instrumentation
+                 android:name="android.support.test.runner.AndroidJUnitRunner"
+                 android:targetPackage="com.findandgoapp.activity" />
+     -->
+
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.facebook.FacebookActivity"
+
+            android:label="@string/app_name" />
+
+        <meta-data
+            android:name="com.facebook.sdk.ApplicationId"
+            android:value="@string/facebook_app_id" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+
+        <activity
+            android:name=".UsuarioNuevo"
+            android:label="@string/title_activity_usuario_nuevo" />
+        <activity
+            android:name=".MenuPrincipal"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_menu_ppal"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.findandgoapp.activity.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Alerta"
+            android:label="@string/title_activity_alerta"
+            android:parentActivityName=".MenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:configChanges="orientation|screenSize|fontScale"
+                android:value="com.findandgoapp.activity.MenuPrincipal" />
+        </activity>
+        <activity
+            android:name=".Evento"
+            android:label="@string/title_activity_evento_"
+            android:parentActivityName=".MenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.findandgoapp.activity.MenuPrincipal" />
+        </activity>
+        <activity
+            android:name=".EventoSeleccionado"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_evento_seleccionado"
+            android:parentActivityName=".MenuPrincipal" />
+        <activity
+            android:name=".PerfilUsuario"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/fragment_perfil_empresa"
+            android:parentActivityName=".MenuPrincipal">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.findandgoapp.activity.MenuPrincipal" />
+        </activity>
+        <activity
+            android:name=".UsuarioEmpresa"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/fragment_perfil_empresa"
+            android:parentActivityName=".UsuarioNuevo" />
+        <activity
+            android:name=".UsuarioArtista"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/artista"
+            android:parentActivityName=".UsuarioNuevo" />
+        <activity
+            android:name=".UsuarioAsistente"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/sAsistente"
+            android:parentActivityName=".UsuarioNuevo" />
+        <activity
+            android:name=".Informacion"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/sAsistente"
+            android:parentActivityName=".MenuPrincipal" />
+        <activity
+            android:name=".Notificaciones"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/sAsistente"
+            android:parentActivityName=".Informacion" />
+        <activity
+            android:name=".SancionRecibida"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/sAsistente"
+            android:parentActivityName=".Informacion" />
+        <activity
+            android:name=".Alusiones"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/sAsistente"
+            android:parentActivityName=".Informacion" />
+        <activity
+            android:name=".Valoracion"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/sAsistente"
+            android:parentActivityName=".MenuPrincipal" />
+        <activity
+            android:name=".RealizarFotoActivity"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_fullscreen" />
+        <activity
+            android:name=".TabAdmin"
+            android:label="@string/title_activity_tab_admin"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".TabAdminEventoList"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_tab_admin"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UsuarioListado"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_usuario_listado"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AdminUsuarioPenalizar"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_admin_usuario_penalizar"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".PenalizacionListado"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_penalizacion_listado"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AdminEventoListado"
+            android:label="@string/title_activity_admin_evento_listado"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".AdminUsuarioConsulta"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_admin_usuario_consulta"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EventoListado"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_evento_listado"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EventoUpdate"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_evento_update"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".EnviarEmail"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/sEnviarEmail"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".UsuarioPorNombre"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_usuario_por_nombre"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Configuracion"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_configuracion"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".FullscreenActivity"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_fullscreen"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".SettingsActivity"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+
+        <activity
+            android:name=".MapsActivity"
+            android:configChanges="orientation|screenSize|fontScale"
+            android:label="@string/title_activity_maps" />
+
+    </application>
+
+</manifest>

@@ -1,0 +1,14 @@
+nombre|email|password|ciudad|categoria|s_descripcion|web|tipo|localidad|via|direccion|numero|cp
+PruebaAsistente|pruebaasistente@gmail.com|a|Barcelona|||||||||-->Asistente de prueba 1
+PruebaAsistente2|pruebaasistente@gmail.com|aa|Badajoz|||||||||-->Asistente de prueba modifica 2
+PruebaArtista|pruebaartista@gmail.com|a|Madrid|Arte|Soy un artistazo|www.artista.com||||||--> Artista de prueba 3
+PruebaArtistaM|pruebaartista@gmail.com|aa|Sevilla|Social|ArtistazoM|www.artistam.com||||||--> Artista de prueba 4
+PruebaAsistenteBlq|asistentebloqueado@gmail.com|a|Barcelona|||||||||-->Asistente para bloquear 5
+PruebaAsistenteBlq|as@gmail.com|a|Barcelona|||||||||-->Asistente con notificaciones 6
+Admin|admin@findandgo.com|a |-->Usuario Admin 7
+ArtistaBloqueado|pruebartbloqueado@gmail.com|a|Barcelona|Deporte|Art Bloqueado|www.artbloqeo.com|-->ARtsita bloqeado 8
+PruebaEmpresa|pruebaempresa@gmail.com|aa|Madrid|Literatura|Empresa de prueba|www.empresa.com|Bar|Madrid|Calle|Gran Via|34|28013    -> 9 Prueba Empresa
+PruebaEmpresaM|pruebaempresa@gmail.com|aa|Sevilla|Escena|Empresa de pruebam|www.empresas.com|Restaurante|Sevilla|Parque|Abades|34|41004    -> 10 Prueba Empresa modificada
+PruebaEmpBloq|pruebaempresablq@gmail.com|aa|Barcelona|Escena|Empresa bloqueada de prueba |www.empresablq.com|Bar|Sevilla|Calle|Sierpes|34|41004    -> 11 Prueba Empresa bloqueada
+PruebaAsistente3|pruebaasistente3@gmail.com|a|Sevilla|||||||||-->Asistente de prueba 3 12
+PruebaAsistente3M|pruebaasistente3@gmail.com|a|Granada|||||||||-->Asistente de prueba 3 modificado 13

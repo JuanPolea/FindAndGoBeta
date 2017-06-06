@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.findandgoapp.fragment.EventoFragment"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:contentDescription="@string/fragment_evento_nuevo">
+
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+
+        android:padding="@dimen/size_20"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin">
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEventoNuevoNombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEventoNuevoNombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/idSpEventoNuevoCategoria"
+                android:layout_alignStart="@+id/idSpEventoNuevoCategoria"
+
+                android:hint="@string/sEventoNombre"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEventoNuevoLugar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilEventoNuevoNombre"
+
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEventoNuevoLugar"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/idSpEventoNuevoCiudad"
+                android:layout_alignStart="@+id/idSpEventoNuevoCiudad"
+
+                android:hint="@string/sTipoSala"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/idSpEventoNuevoCategoria"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tilEventoNuevoLugar"
+            android:background="@drawable/btn_dropdown"
+
+            />
+
+        <Spinner
+            android:id="@+id/idSpEventoNuevoClasificacion"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idSpEventoNuevoCategoria"
+            android:background="@drawable/btn_dropdown"
+
+
+            />
+
+        <Spinner
+            android:id="@+id/idSpEventoNuevoTipo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idSpEventoNuevoClasificacion"
+            android:background="@drawable/btn_dropdown" />
+
+        <Spinner
+            android:id="@+id/idSpEventoNuevoCiudad"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idSpEventoNuevoTipo"
+            android:background="@drawable/btn_dropdown" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEventoNuevoLocalidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/idSpEventoNuevoCiudad"
+
+            app:errorEnabled="true"
+
+            >
+
+            <AutoCompleteTextView
+                android:id="@+id/idEtEventoNuevoLocalidad"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sLocalidad"
+                android:textSize="@dimen/size_12"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/idSpEventoNuevoVia"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tilEventoNuevoLocalidad"
+            android:background="@drawable/btn_dropdown" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEventoNuevoCalle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/idSpEventoNuevoVia"
+
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEventoNuevoCalle"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sCalle"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEventoNuevoNumero"
+            android:layout_width="@dimen/size_70"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilEventoNuevoCalle"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEventoNuevoNumero"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sNumero"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular"
+
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <TableLayout
+            android:id="@+id/tlTabla2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_10"
+            android:orientation="vertical"
+            android:layout_below="@+id/tilEventoNuevoNumero">
+
+
+            <TableRow
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:padding="5dip">
+
+                <ImageButton
+                    android:id="@+id/idBEventoNuevoFecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+                    android:layout_marginBottom="@dimen/size_4"
+                    android:layout_marginTop="@dimen/size_4"
+                    android:background="@drawable/btn_fecha"
+                    android:clickable="true"
+                    android:enabled="true"
+                    android:focusable="true"
+                    android:contentDescription="@string/idBEventoNuevoFecha" />
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/tilEventoNuevoFecha"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_column="1"
+                    app:errorEnabled="true"
+                    android:layout_marginLeft="@dimen/size_10">
+
+                    <com.findandgoapp.custom.CustomFontTextView
+                        app:font="@string/font_name_source_amatic_regular"
+                        android:id="@+id/idTvEventoNuevoFecha"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginLeft="@dimen/size_10"
+                        android:textSize="@dimen/size_14"
+                        android:layout_column="1" />
+                </android.support.design.widget.TextInputLayout>
+
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/tlTabla"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tlTabla2"
+            android:orientation="vertical">
+
+            <TableRow
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:padding="5dip">
+
+                <ImageButton
+                    android:id="@+id/idBEventoNuevoHora"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_column="0"
+
+                    android:background="@drawable/btn_hora"
+                    android:clickable="true"
+                    android:contentDescription="@string/idBEventoNuevoHora" />
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_column="2"
+                    android:id="@+id/tilEventoNuevoHora"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    app:errorEnabled="true"
+                    android:layout_marginLeft="@dimen/size_10">
+
+                    <com.findandgoapp.custom.CustomFontTextView
+                        app:font="@string/font_name_source_amatic_regular"
+                        android:id="@+id/idTvEventoNuevoHora"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:textSize="@dimen/size_14"
+                        android:layout_marginLeft="@dimen/size_10" />
+                </android.support.design.widget.TextInputLayout>
+            </TableRow>
+        </TableLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEventoNuevoArtista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tlTabla"
+
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEventoNuevoArtista"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tilEventoNuevoArtista"
+                android:hint="@string/sArtistasInvolucrados"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEventoNuevoPrecio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tilEventoNuevoArtista"
+            app:errorEnabled="true">
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEventoNuevoPrecio"
+                android:layout_width="@dimen/size_60"
+                android:layout_height="wrap_content"
+                android:hint="@string/sPrecioMax"
+                android:inputType="numberDecimal"
+                android:textSize="@dimen/size_12"
+
+                app:font="@string/font_name_source_amatic_regular" />
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEventoNuevoDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tilEventoNuevoPrecio"
+            app:errorEnabled="true"
+
+            >
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEventoNuevoDescripcion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sDescripcion"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular" />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+        <ImageButton
+            android:id="@+id/idBEventoNuevoRegistrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_save"
+            android:textStyle="bold"
+            android:layout_below="@id/tilEventoNuevoDescripcion"
+            android:contentDescription="@string/idBEventoNuevoRegistrar" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/tilEventoNuevoCp"
+            android:layout_width="@dimen/size_100"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+
+            android:layout_below="@+id/tilEventoNuevoCalle"
+            android:layout_toEndOf="@+id/idBEventoNuevoRegistrar">
+
+            <com.findandgoapp.custom.CustomFontEditText
+                android:id="@+id/idEtEventoNuevoCp"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/sCodigoPostal"
+                android:textSize="@dimen/size_12"
+                app:font="@string/font_name_source_amatic_regular"
+
+                />
+
+        </android.support.design.widget.TextInputLayout>
+
+
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

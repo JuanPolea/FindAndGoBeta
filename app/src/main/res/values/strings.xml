@@ -1,0 +1,989 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <string name="app_name">"Find And Go"</string>
+
+    <string name="action_settings">Configuración</string>
+    <!--
+         Copyright (C) 2010 The Android Open Source Project
+
+         Licensed under the Apache License, Version 2.0 (the "License");
+         you may not use this file except in compliance with the License.
+         You may obtain a copy of the License at
+
+              http://www.apache.org/licenses/LICENSE-2.0
+
+         Unless required by applicable law or agreed to in writing, software
+         distributed under the License is distributed on an "AS IS" BASIS,
+         WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+         See the License for the specific language governing permissions and
+         limitations under the License.
+    -->
+
+
+    <!-- Elementos Comunes -->
+    <string name="sRegistrar">Registrar</string>
+    <string name="sCancelar">Cancelar</string>
+    <string name="sAceptar">Aceptar</string>
+    <string name="sActualizar">Actualizar</string>
+    <string name="sEnviar">Entrar</string>
+    <string name="sSalir">Salir</string>
+    <string name="sVacio">Vacio</string>
+    <string name="sGET">GET</string>
+    <string name="sRepetir">Todos los días</string>
+    <string name="iCero">0</string>
+    <string name="sValidar">Validando datos, por favor espere...</string>
+
+    <!-- Actividad Principal -->
+    <string name="sEmail">Email</string>
+    <string name="sEmailHint">Introduzca su email</string>
+    <string name="sPassword">Contraseña: </string>
+    <string name="spassword">Contraseña</string>
+    <string name="sPasswordHint">Introduzca su contraseña</string>
+    <string name="sUsuarioNuevo">Registrar</string>
+    <string name="sOlvidoPassword">Olvidé la contraseña</string>
+    <string name="sUrlLogin">"http://gooutapp.morethandev.es/php/login.php"</string>
+    <string name="sUrlLoginFacebook">"http://gooutapp.morethandev.es/php/loginFacebook.php"</string>
+    <string name="sUrlLoginApiExterna">"http://gooutapp.morethandev.es/php/loginApiExterna.php"</string>
+
+    <string name="sNombreUsuario">nombreUsuario</string>
+
+    <!-- Administrador -->
+
+    <string name="sUrlInformePenalizados">"http://gooutapp.morethandev.es/php/selectInformePenalizados.php"</string>
+
+    <!-- Facebook -->
+    <string name="facebook_app_id">1441438812573798</string>
+
+    <!-- Nuevo Usuario -->
+    <string name="sAsistenteInformacion">Este perfil está destinado para aquellas personas que deseen asistir a eventos</string>
+    <string name="sArtistaInformacion">Este perfil está destinado a aquell@s artistas que deseen publicitar sus eventos</string>
+    <string name="sEmpresaInformacion">Este perfil está destinado a aquell@s empresas que deseen publicitar sus eventos</string>
+    <string name="sSeleccionaAsistente">Accediendo al formulario de asistentes...</string>
+    <string name="sSeleccionaArtista">Accediendo al formulario de artistas...</string>
+    <string name="sSeleccionaEmpresa">Accediendo al formulario de empresas...</string>
+    <string name="sBienvenido">Bienvenid@</string>
+    <string name="sEstado">Estado</string>
+    <string name="estado">estado</string>
+
+
+    <!-- Usuarios -->
+
+    <string name="sIdUsuario">idUsuario</string>
+    <string name="s_IdUsuario">sIdUsuario</string>
+    <string name="sDescripcion">Descripción</string>
+    <string name="sDescripcionHint">Puede introducir hasta 120 caracteres</string>
+    <string name="sWeb">Web</string>
+    <string name="sWebHint">Puede introducir su página web</string>
+    <string name="sNombreHint">Introduzca su nombre de usuario</string>
+
+    <!-- Nuevo Asistente -->
+
+    <string name="sUsuarioAsistente">Nuevo asistente</string>
+    <string name="sAsistente">Asistente</string>
+
+
+    <!-- Nuevo Artista -->
+    <string name="sArtista">Artista</string>
+    <string name="sUsuarioArtista">Nuevo artista</string>
+
+    <!-- Nuevo Empresa -->
+    <string name="sEmpresa">Empresa</string>
+    <string name="sUsuarioEmpresa">Nueva empresa</string>
+    <string name="sCalle">Dirección</string>
+    <string name="sNumero">Número</string>
+    <string name="sUrlEmpresaNueva">http://gooutapp.morethandev.es/php/EmpresaNuevo.php</string>
+    <string name="sTipo">Tipo</string>
+
+    <!-- Menú de usuario -->
+    <string name="slEventoEliminar">Eliminar evento</string>
+
+    <!-- de un Evento -->
+    <string name="sEventoNombre">Introduzca el nombre del evento</string>
+    <string name="sElijaCategoria">"Elija categoría"</string>
+    <string name="sElijaClasificacion">"Elija clasificación"</string>
+    <string name="sPrecio">"Precio del Evento"</string>
+
+    <!-- Lista Dinámica -->
+
+    <!-- Listado -->
+
+    <!-- EventoDenuncia -->
+
+    <!-- Evento Eliminar Listado -->
+
+    <!-- Alerta  de  Usuario -->
+    <!-- Alerta Menu -->
+    <string name="sAlerta">Registrar alarma</string>
+    <string name="sAlertaNombre">Título de la Alerta</string>
+    <string name="sAlertaLugar">Lugar</string>
+
+    <!-- Administrador -->
+    <!-- BuscarUsuario -->
+    <string name="sBuscarPorNombre">Nombre del usuario</string>
+    <string name="sBuscarPorEmail">Email del usuario</string>
+    <!-- PagerUsuarios -->
+    <string name="sBloqueado">Bloquead@</string>
+
+    <!-- PagerEventos -->
+    <string name="sUrl_informeEventos">http://gooutapp.morethandev.es/php/selectInformeEventos.php</string>
+
+    <!-- Administrador Listar Usuario penalizado -->
+    <string name="sTipoPenalizacion">Tipo de penalización: </string>
+
+    <!-- Administrador Listar Eventos -->
+    <string name="sBuscarPorDatos">Buscar evento</string>
+
+    <!-- Usuario -->
+    <string name="sNombre">"Nombre de Usuario"</string>
+
+    <!-- Usuario  -> DatosUsuario -->
+
+    <!-- Olvido Password -->
+
+    <!-- GoogleMaps
+    <string name="API_KEY">AIzaSyAh1I5EfG7YlEZfR3JNJryLVFVEq4Yml9g</string>-->
+    <string name="title_activity_usuario_nuevo">Selección de usuario</string>
+
+    <!-- Nuevos -->
+    <!-- Usuarios -->
+    <string name="sActivo">Activ@</string>
+    <string name="sActivado">Activado</string>
+    <string name="sDesactivado">Desactivado</string>
+    <string name="sConfirmaciones">Confirmaciones</string>
+    <string name="sPenalizaciones">Penalizaciones</string>
+    <string name="sRealizadas">Realizadas</string>
+    <string name="sDenuncias">Denuncias</string>
+    <string name="sRecibidas">Recibidas</string>
+
+    <!-- Genéricos -->
+    <string name="sCargando">Realizando operación...</string>
+
+    <string name="sConsultar">Consultar</string>
+
+    <!-- Categorías -->
+
+    <string name="sMusica">Música</string>
+    <string name="sAudioVisual">Audiovisual</string>
+    <string name="sEscena">Escena</string>
+    <string name="sLiteratura">Literatura</string>
+    <string name="sArte">Arte</string>
+    <string name="sSocial">Social</string>
+    <string name="sDeporte">Deporte</string>
+    <string name="sJuegos">Juegos</string>
+
+    <!-- Eventos -->
+    <string name="title_activity_evento_">Evento</string>
+    <string name="sEventosDenunciadosTipo3">Contenido ofensivo</string>
+    <string name="sEventosConfirmados">Confirmados</string>
+    <string name="sEventosDenunciadosTipo2">Evento inexistente</string>
+    <string name="sEventosDenunciadosTipo1">Información errónea</string>
+    <string name="sEventosDenunciados">Denunciados</string>
+    <string name="sArtistasInvolucrados">"Artistas involucrados"</string>
+    <string name="sTipoSala">Introduzca el nombre del lugar del evento</string>
+    <string name="sUrl_selectPuntuaciones">http://gooutapp.morethandev.es/php/selectPuntuaciones.php</string>
+    <string name="sUrl_selectEventos">http://gooutapp.morethandev.es/php/selectEventos.php</string>
+    <string name="title_activity_evento_listado">List</string>
+    <string name="title_activity_listado">Listado</string>
+    <string name="title_activity_evento_seleccionado">Evento</string>
+    <string name="sComenta">Añade un comentario</string>
+    <string name="sComentario">Comentarios</string>
+    <string name="sUrl_selectAllEventoSeleccionado">http://gooutapp.morethandev.es/php/selectAllEventoSeleccionado.php</string>
+    <string name="sUrl_updatePuntuacionEvento">http://gooutapp.morethandev.es/php/updatePuntuacionEvento.php</string>
+    <string name="sUrl_updateCampo">http://gooutapp.morethandev.es/php/updateCampo.php</string>
+    <string name="sComoLlegar">Cómo llegar</string>
+    <string name="sComentar">Comentar</string>
+    <string name="sUrl_insertComentario">http://gooutapp.morethandev.es/php/insertComentario.php</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="sDenuncia1">Evento no existente</string>
+    <string name="sDenuncia2">"Contiene datos erróneos"</string>
+    <string name="sDenuncia3">Contenido ofensivo</string>
+    <string name="sDenunciaSeleccionado1">Evento no existente</string>
+    <string name="sDenunciaSeleccionado3">Contenido ofensivo</string>
+    <string name="title_activity_perfil_asistente">Asistente</string>
+    <string name="sUrl_selectAllAsistente">http://gooutapp.morethandev.es/php/selectAllAsistente.php</string>
+    <string name="sUrl_insertArtista">http://gooutapp.morethandev.es/php/insertArtista.php</string>
+    <string name="sUrl_insertAsistente">"http://gooutapp.morethandev.es/php/insertAsistente.php"</string>
+    <string name="sUrl_insertEmpresa">http://gooutapp.morethandev.es/php/insertEmpresa.php</string>
+    <string name="sCodigoPostal">Código Postal</string>
+    <string name="title_activity_perfil_artista">Artista</string>
+    <string name="sUrl_selectAllArtista">http://gooutapp.morethandev.es/php/selectAllArtista.php</string>
+    <string name="sLocalidad">Inserte la localidad</string>
+    <string name="title_activity_perfil_empresa">Empresa</string>
+    <string name="sUrl_updateAsistente">http://gooutapp.morethandev.es/php/updateAsistente.php</string>
+    <string name="toggle_turn_on">ON</string>
+    <string name="toggle_turn_off">OFF</string>
+    <string name="sAddAlerta">Añadir alerta</string>
+    <string name="sUrlInformeAlerta">http://gooutapp.morethandev.es/php/selectAllAlertaByIdUsuario.php</string>
+    <string name="sIdEventoNombre">Título del evento</string>
+    <string name="sNombreSala">Nombre de la Sala</string>
+    <string name="nombreSala">nombreSala</string>
+    <string name="sUrl_insertAlerta">http://gooutapp.morethandev.es/php/insertAlerta.php</string>
+    <string name="sUrl_updateAlerta">http://gooutapp.morethandev.es/php/updateEstadoAlerta.php</string>
+    <string name="title_activity_alerta_update">Actualizar alerta</string>
+    <string name="sUrl_selectAllAlerta">http://gooutapp.morethandev.es/php/selectAllAlertaByIdAlerta.php</string>
+    <string name="sUrl_selectAllEmpresa">http://gooutapp.morethandev.es/php/selectAllEmpresa.php</string>
+    <string name="sUrl_updateEmpresa">http://gooutapp.morethandev.es/php/updateEmpresa.php</string>
+    <string name="sUrl_updateArtista">http://gooutapp.morethandev.es/php/updateArtista.php</string>
+    <string name="sUrl_selectAllEvento">http://gooutapp.morethandev.es/php/selectAllEvento.php</string>
+    <string name="sMisEventos">Mis eventos</string>
+    <string name="sCrearEvento">Crear evento</string>
+    <string name="sUrl_insertEvento">http://gooutapp.morethandev.es/php/insertEvento.php</string>
+    <string name="title_activity_usuario_listado">Listado de usuarios</string>
+    <string name="sUrl_selectUsuariosPenalizados">http://gooutapp.morethandev.es/php/selectUsuariosByPenalizacion.php</string>
+    <string name="title_activity_admin_usuario_consulta">Buscar Usuario</string>
+    <string name="sUrl_selectUsuariobyNameOrByEmail">http://gooutapp.morethandev.es/php/selectUsuariobyNameOrByEmail.php</string>
+    <string name="title_activity_admin_usuario_penalizar">Menú Penalizaciones</string>
+    <string name="sUrl_selectPuntuacionesById">"http://gooutapp.morethandev.es/php/selectPuntuacionesById.php"</string>
+    <string name="title_activity_tab_admin_evento_listado">Listado de Eventos</string>
+    <string name="sUrl_selectEventosByPenalizacion">"http://gooutapp.morethandev.es/php/selectEventosByPenalizacion.php"</string>
+    <string name="sEditar">Editar</string>
+    <string name="sUrl_deleteEventoSeleccionado">"http://gooutapp.morethandev.es/php/deleteEvento.php"</string>
+    <string name="title_activity_menu_ppal">Menú principal</string>
+    <string name="sEvento">Evento</string>
+    <string name="sUsuario">Usuario</string>
+    <string name="sOnCreate">OnCreate</string>
+    <string name="sDATOS">DATOS</string>
+    <string name="sOnViewCreated">onViewCreated</string>
+    <string name="sOnResume">onResume</string>
+    <string name="sOnStop">onStop</string>
+    <string name="sOnActivityResult">onActivityResult</string>
+    <string name="sOnDestroy">onDestroy</string>
+    <string name="sUrl_deleteComentario">http://gooutapp.morethandev.es/php/deleteComentario.php</string>
+    <string name="title_activity_alerta">Alerta</string>
+    <string name="sAlertaMenu">Crear alerta</string>
+    <string name="sEliminar">Eliminar</string>
+    <string name="sUrl_deleteAlerta">http://gooutapp.morethandev.es/php/deleteAlerta.php</string>
+    <string name="title_activity_tab_admin">Administrador</string>
+    <string name="sUrl_insertUsuarioPenalizacion">http://gooutapp.morethandev.es/php/insertUsuarioPenalizacion.php</string>
+    <string name="sUrl_deletePenalizacionUsuario">http://gooutapp.morethandev.es/php/deletePenalizacionUsuario.php</string>
+    <string name="title_activity_penalizacion_listado">Listado de Penalizaciones</string>
+    <string name="sUrl_selectPenalizacionByIdUsuario">http://gooutapp.morethandev.es/php/selectPenalizacionByIdUsuario.php</string>
+    <string name="sUrl_deleteUsuario">http://gooutapp.morethandev.es/php/deleteUsuario.php</string>
+    <string name="sNotificaciones">Notificaciones</string>
+    <string name="sUrl_selectAllNotificacion">http://gooutapp.morethandev.es/php/selectAllNotificacion.php</string>
+    <string name="title_activity_evento_update">Editar evento</string>
+    <string name="sUrl_updateEvento">http://gooutapp.morethandev.es/php/updateEvento.php</string>
+    <string name="sUrl_updateDatosAlerta">http://gooutapp.morethandev.es/php/updateDatosAlerta.php</string>
+    <string name="sDescripcionCabecera">Descripción</string>
+    <string name="sCategoriaCabecera">Categoría</string>
+    <string name="sClasificacionCabecera">Clasificación</string>
+    <string name="sTipoCabecera">Tipo</string>
+    <string name="sDireccionCabecera">Dirección</string>
+    <string name="sFechaCabecera">Fecha</string>
+    <string name="sHoraCabecera">Hora</string>
+    <string name="sArtistaCabecera">Artista</string>
+    <string name="sPrecioCabecera">Precio</string>
+    <string name="sCreadorCabecera">Creador</string>
+    <string name="sDarBajaUsuario">Dar de baja al Usuario</string>
+    <string name="sUrl_selectConfirmacion">http://gooutapp.morethandev.es/php/selectConfirmacion.php</string>
+    <string name="sUrl_selectDenuncia">http://gooutapp.morethandev.es/php/selectDenuncia.php</string>
+    <string name="sEnviarEmail">Recuperar contraseña</string>
+    <string name="sUrl_recuperarPassword">http://gooutapp.morethandev.es/php/selectRecuperarPassword.php</string>
+    <string name="mensaje">mensaje</string>
+    <string name="success">success</string>
+    <string name="sErrorBBDD">Error al acceder a la base de datos</string>
+    <string name="result">result</string>
+    <string name="nombreUsuario">nombreUsuario</string>
+    <string name="tipoUsuario">tipoUsuario</string>
+    <string name="DATOS">DATOS</string>
+    <string name="password">password</string>
+
+    <string name="sOnCancel">onCancel</string>
+    <string name="sBuscarAlerta">Buscar</string>
+    <string name="sIdSesion">idSesion</string>
+    <string name="penalizacion">penalizacion</string>
+    <string name="comentario">comentario</string>
+    <string name="sIdEvento">idEvento</string>
+    <string name="sResultado">result</string>
+    <string name="sresultado">resultado</string>
+    <string name="tipo">tipo</string>
+    <string name="puntuacion">puntuacion</string>
+    <string name="confirmacionRecibida">confirmacionRecibida</string>
+    <string name="confirmacionRealizada">confirmacionRealizada</string>
+    <string name="denunciaRecibida">denunciaRecibida</string>
+    <string name="denunciaRealizada">denunciaRealizada</string>
+    <string name="sIdAlerta">idAlerta</string>
+    <string name="sNotificacionesOk">Se han encontrado eventos para alerta registrada</string>
+    <string name="sUrl_selectAlertaNotificacion">http://gooutapp.morethandev.es/php/selectAlertaNotificacion.php</string>
+    <string name="sUrl_saveToFile">http://gooutapp.morethandev.es/php/savetofile.php</string>
+    <string name="sSeleccion">seleccion</string>
+    <string name="sRes">resultado</string>
+    <string name="uploaded">datos guardados correctamente</string>
+    <string name="sRutaImagenes">http://gooutapp.morethandev.es/uploads/</string>
+    <string name="sFormatoPerfil">.jpg</string>
+    <string name="sImagenes">image</string>
+    <string name="sMessage">message</string>
+    <string name="sRealizarFoto">Añadir foto</string>
+    <string name="sSeleccionarGaleria">Seleccionar foto existente</string>
+    <string name="sAddFoto">Cambiar foto</string>
+    <string name="sSelecionarArchivo">Select File</string>
+    <string name="sidCategoria">idCategoria</string>
+    <string name="smail">email</string>
+    <string name="sDireccion">direccion</string>
+    <string name="sResult">result</string>
+    <string name="sUsuarioApp">usuarioApp</string>
+    <string name="sTipoEmpresa">tipoEmpresa</string>
+    <string name="sidCiudad">idCiudad</string>
+    <string name="sidTipoVia">idTipoCalle</string>
+    <string name="slocalidad">localidad</string>
+    <string name="sProvincia">Provincia: </string>
+    <string name="snumero">numero</string>
+    <string name="sCP">codigoPostal</string>
+    <string name="descripcion">descripcion</string>
+
+    <string name="s_web">web</string>
+    <string name="sNombreProvincia">nombreProvincia</string>
+    <string name="sidProvincia">idProvincia</string>
+    <string name="sPrecioMax">Precio</string>
+    <string name="sValorDelCampo">Indique el valor correcto</string>
+    <string name="sSeleccioneCampo">Seleccione el campo que contiene datos erróneos</string>
+    <string name="sInsertaFoto">¿Desea insertar una foto?</string>
+    <string name="sNO">No</string>
+    <string name="sSi">Sí</string>
+    <string name="sFormatoEvento">_imagen</string>
+    <string name="sEliminarComentario">Comentario eliminado</string>
+    <string name="sInsertarComentario">"Comentario insertado correctamente"</string>
+    <string name="title_activity_realizar_foto">RealizarFotoActivity</string>
+    <string name="sActivity">activity</string>
+    sComportamientoIndebido
+    <string name="sUsuarioBloqueado">No puede realizar la acción debido a que su usuario está temporalmente bloqueado. Para más información consulte la opción notificaciones del menú de usuarios.</string>
+    <string name="sModificaEliminaComentario">Modificar/eliminar comentario</string>
+    <string name="sIdComentario">idComentario</string>
+    <string name="sUrl_updateComentario">http://gooutapp.morethandev.es/php/updateComentario.php</string>
+    <string name="sUpdateComentario">Comentario actualizado</string>
+    <string name="sNoUpdateComentario">Comentario no actualizado</string>
+    <string name="sComentarioAutogenerado">No puede eliminar un comentario proveniente de una denuncia. Elimine la denuncia y se elimina el comentario.</string>
+    <string name="sComentarioOtroUsuario">No puede eliminar/editar comentarios de otra persona.</string>
+    <string name="tab">tab</string>
+    <string name="sEventoContieneDenuncias">El evento contiene denuncias, puede contener datos erróneos. Revise los comentarios para más información</string>
+    <string name="sfacebook">facebook</string>
+    <string name="fontAmaticRegular">"AmorE-Regular.ttf"</string>
+    <string name="fontAmaticRegularBold">"AmorE-Regular.ttf"</string>
+    <string name="font_name_source_amatic_regular">"AmorE-Regular.ttf"</string>
+    <string name="font_name_source_amatic_regular_bold">"AmorE-Regular.ttf"</string>
+
+    <string name="SValoraciones">Valoraciones</string>
+    <string name="sCampoNoModificable">Esta acción sólo la puede realizar el administrador. Puede contactar con esta persona a través del correo</string>
+    <string name="sEmailAdminstrador">jfmateosredondo@gmail.com</string>
+    <string name="sElija">Elija</string>
+    <string name="sSeleccione">Seleccione</string>
+    <string name="sVia">Vía</string>
+    <string name="sErrorProfileNull">Profile null</string>
+    <string name="sfirst_name">first_name</string>
+    <string name="sId">id</string>
+    <string name="sErrorFacebook">Facebook onError</string>
+    <string name="sDenunciasEventos">Denuncias recibidas</string>
+    <string name="sErrorUsuarioNoEncontrado">No se ha encontrado el usuario indicado</string>
+    <string name="sTituloNotificaciones">Estado actual de los eventos en los que has interaccionado</string>
+    <string name="sUrl_selectAllEstadoNotificacion">http://gooutapp.morethandev.es/php/selectAllEstadoNotificacion.php</string>
+    <string name="sAvisoSemana">Repetir: </string>
+    <string name="sLunes">Lunes</string>
+    <string name="sDomingo">Domingo</string>
+    <string name="sSabado">Sábado</string>
+    <string name="sViernes">Viernes</string>
+    <string name="sJueves">Jueves</string>
+    <string name="sMiercoles">Miércoles</string>
+    <string name="sMartes">Martes</string>
+    <string name="title_activity_configuracion">Configuración</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+    <string name="sSonido">Sonido</string>
+    <string name="sAcercaDe">Acerca de</string>
+
+    <string name="sContatco">Contacto</string>
+    <string name="sContactoTexto">El proyecto ha sido desarrollado por Juan F. Mateos Redondo.
+        Puede contactar con esta persona a través del email: jfmateosredondo@gmail.com</string>
+    <string name="sContacto">Datos del desarrollador</string>
+    <string name="sLicencia">Licencia y términos de uso</string>
+    <string name="sMenuIdioma">Idioma / language</string>
+    <string name="sNumEventosCreados">Eventos creados</string>
+    <string name="sVerEventos">Eventos del usuario</string>
+    <string name="sConfirmacione">Confirmaciones</string>
+    <string name="sAcciones">Resumen de actividad</string>
+    <string name="sAddPenalizacion">Penalizar</string>
+    <string name="sElijaPenalizacion">Elija el motivo de penalización</string>
+    <string name="sUsuarioEliminado">El usuario ha sido eliminado por el administrador y no puede ser readmitido. Pruebe con otro email.</string>
+    <string name="sTipoEstado">"Tipo\\Estado"</string>
+    <string name="sEliminarAlerta">Se va a proceder el eliminado de la alerta seleccionada</string>
+    <string name="sNoImagenDownload">No se ha podido recibir la imagen debido a permisos de escritura</string>
+    <string name="sCerrarSesion">¿Desea cerrar sesión?</string>
+    <string name="sWarning">Aviso</string>
+    <string name="sCamara">Añadir foto</string>
+    <string name="sFotoNueva">fotoNueva</string>
+    <string name="sEmailEnviado">Email enviado a: </string>
+    <string name="sOtro">Otro</string>
+    <string name="sDeseaAddCategoria">¿No encuentra su categoría? Escriba una y pronto será añadida</string>
+    <string name="sUrl_insertSugerencia">http://gooutapp.morethandev.es/php/insertSugerencia.php</string>
+    <string name="sSugerenciaExito">Inserción realizada. Gracias por colaborar</string>
+    <string name="sEscribaSugerencia">Escriba la sugerencia</string>
+    <string name="sSugerirClasificacion">Sugerir clasificación</string>
+    <string name="sDeseaAddClasificacion">¿No encuentra su clasificación? Escriba una y pronto será añadida</string>
+    <string name="sDeseaAddTipo">¿No encuentra su tipo? Escriba uno y pronto será añadida</string>
+    <string name="sElijaCiudad">Seleccione una provincia</string>
+    <string name="sElijaSala">Elija el tipo de sala</string>
+
+    <string name="sElijaMusica">Elija el tipo de música</string>
+
+    <string name="sElijaAudiovisual">Elija el tipo de audiovisual</string>
+    <string name="sElijaEscena">Elija el tipo de escena</string>
+    <string name="sElijaLiterartura">Elija el tipo de literatura</string>
+    <string name="sElijaArte">Elija el tipo para arte</string>
+    <string name="sElijaSocial">Elija el tipo para social</string>
+    <string name="sElijaDeporte">Elija deporte</string>
+    <string name="sElijaJuegos">Elija el tipo de juegos</string>
+    <string name="sInicialLunes">"L,"</string>
+    <string name="sInicialMartes">M,</string>
+    <string name="sInicialMiercoles">X,</string>
+    <string name="sInicialJueves">J,</string>
+    <string name="sInicialViernes">V,</string>
+    <string name="sInicialSabado">S,</string>
+    <string name="sInicialDomingo">D</string>
+    <string name="sAAMMDD">aaaa-mm-dd</string>
+    <string name="sHHMM">hh:mm</string>
+    <string name="sValoracionPositiva">Evento valorado correctamente</string>
+    <string name="sValoracionNegativa">Evento penalizado</string>
+    <string name="sRectificacion">Rectificación realizada</string>
+    <string name="sMenuDenuncias">Menú Denuncias</string>
+    <string name="sNoPuedeValorarSusEventos">No puede valoras sus eventos</string>
+    <string name="sMostrandoEventos">Cargando eventos encontrados...</string>
+    <string name="sNoSeHanEncontradoDatos">No se han encontrado datos para esta búsqueda, pruebe con otra</string>
+    <string name="sHoraDummy">00:00:00</string>
+    <string name="sFechaDummy">2000-01-01</string>
+    <string name="ExisteArtista">El artista ya existe en el sistema. Para evitar posibles duplicados, se deja como responsabilidad al artista el crear el evento. Gracias por colaborar con Find And Go!</string>
+    <string name="Localidad">Localidad</string>
+    <string name="sNotieneNotificaciones">No tiene notificaciones</string>
+    <string name="sCampo">El campo</string>
+    <string name="sDeberiaContener">debería contener el valor</string>
+    <string name="sEliminarUsuario">¿Desea dar de baja al usuario?</string>
+    <string name="sErrorFormatoEmail">Error en el formato del email</string>
+    <string name="sCampoObligatorio">Campo obligatorio</string>
+    <string name="sTotalEventos">Eventos totales</string>
+    <string name="title_activity_informacion">Información</string>
+    <string name="sUrl_selectInformacion">http://gooutapp.morethandev.es/php/selectInformacionUsuario.php</string>
+    <string name="sInteracciones">Resumen de actividad</string>
+    <string name="sSancion">Sanciones recibidas</string>
+    <string name="sReferencias">Alusiones en eventos</string>
+    <string name="sevento">evento</string>
+    <string name="spenalizacion">penalizacion</string>
+    <string name="sreferencia">referencia</string>
+    <string name="title_activity_sancion_recibida">Sanciones</string>
+    <string name="sUrl_selectSancionUsuario">http://gooutapp.morethandev.es/php/selectSancionUsuario.php</string>
+    <string name="sContactoSancion">Las penalizaciones son obtenidas a través de los datos registrados en la aplicación. Para cualquier duda, contacte con el administrador.</string>
+    <string name="sFechaSancion">Fecha de la sanción: </string>
+    <string name="title_activity_alusiones">Alusiones</string>
+    <string name="sUrl_selectAlusionUsuario">http://gooutapp.morethandev.es/php/selectAlusionUsuario.php</string>
+    <string name="sAlusion1">El usuario </string>
+    <string name="sAlusion2"> ha indicado que participas en el evento </string>
+    <string name="sAlusion3"> el día </string>
+    <string name="sactivity">activity</string>
+    <string name="sAvisoBloqueado">El usuario ha sido bloqueado. Para más información consulte la opción Notificaciones del menú de usuario.</string>
+    <string name="bloqueado">bloqueado</string>
+    <string name="sNoHayEventos">No ha interaccionado en ningún evento todavía</string>
+    <string name="sNoHaySancion">No existen sanciones para ti</string>
+    <string name="sNoHayAlusiones">Nadie ha creado un evento nombrándote</string>
+    <string name="locality">locality</string>
+    <string name="subAdmin">subAdmin</string>
+    <string name="cp">cp</string>
+
+    <string name="sEliminarEvento">Eliminar evento</string>
+    <string name="sDeseaEliminarEvento">Se va a eliminar el evento</string>
+    <string name="seleccion">seleccion</string>
+    <string name="resultado">resultado</string>
+    <string name="sFecha00">0000-00-00</string>
+    <string name="sAviso">Aviso</string>
+    <string name="sNoEventos">No hay eventos para este tipo de búsqueda</string>
+    <string name="sNoEliminaEvento">No se ha podido eliminar el evento</string>
+    <string name="svacio">vacio</string>
+    <string name="nombre">nombre</string>
+    <string name="lugar">lugar</string>
+    <string name="categoria">categoria</string>
+    <string name="clasificacion">clasificacion</string>
+    <string name="ciudad">ciudad</string>
+    <string name="localidad">localidad</string>
+    <string name="fecha">fecha</string>
+    <string name="hora">hora</string>
+    <string name="artista">artista</string>
+    <string name="precio">precio</string>
+    <string name="sEventos">Eventos</string>
+    <string name="sUsuarios">Usuario</string>
+    <string name="sAlertas">Alerta</string>
+
+
+    <string name="fragment_evento_consulta">fragment_evento_consulta</string>
+    <string name="modo">modo</string>
+    <string name="crear">crear</string>
+    <string name="fragment_dialog_semana">fragment_dialog_semana</string>
+    <string name="errorModoVacio">Modo Vacío</string>
+    <string name="consultar">consultar</string>
+    <string name="fragment_evento_crear">fragment_evento_crear</string>
+    <string name="fragment_tab_menu_evento">fragment_tab_menu_evento</string>
+    <string name="calle">calle</string>
+    <string name="via">via</string>
+    <string name="email">email</string>
+    <string name="fragment_perfil_empresa">fragment_perfil_empresa</string>
+    <string name="usuarioModificado">Se ha modificado el usuario</string>
+    <string name="usuarioNoModificado">No se ha modificado el usuario</string>
+    <string name="usuarioNocreado">Usuario no creado</string>
+
+    <string name="title_activity_fullscreen">Imagen del usuario</string>
+    <string name="confirmados">confirmados</string>
+    <string name="idClasificacion">idClasificacion</string>
+    <string name="nombreLocalidad">nombreLocalidad</string>
+    <string name="nombreVia">nombreVia</string>
+    <string name="direccionEvento">direccionEvento</string>
+    <string name="numComentarios">numComentarios</string>
+    <string name="idMotivo">idMotivo</string>
+    <string name="cont">cont</string>
+    <string name="nombreEvento">nombreEvento</string>
+    <string name="descripcionEvento">descripcionEvento</string>
+    <string name="lugarEvento">lugarEvento</string>
+    <string name="horaEvento">horaEvento</string>
+    <string name="idTipo">idTipo</string>
+    <string name="fechaEvento">fechaEvento</string>
+    <string name="artistaEvento">artistaEvento</string>
+    <string name="precioEvento">precioEvento</string>
+    <string name="comment">comment</string>
+    <string name="sNoAccion">No puede realizar la acción</string>
+    <string name="elEventoContieneDenuncias">El evento contiene denuncias de este tipo</string>
+    <string name="sUrl_selectComentario">http://gooutapp.morethandev.es/php/selectComentario.php</string>
+    <string name="direccion">direccion</string>
+    <string name="fragment_notificaciones">fragment_notificaciones</string>
+    <string name="fragment_informacion">fragment_informacion</string>
+    <string name="titulo">titulo</string>
+    <string name="diaSeleccionado">diaSeleccionado</string>
+    <string name="repetir">repetir</string>
+    <string name="hacomentado">ha comentado</string>
+    <string name="hasidopenalizado">Ha sido penalizado hasta el</string>
+    <string name="Motivo">Motivo</string>
+    <string name="tituloAlerta">tituloAlerta</string>
+    <string name="update">update</string>
+
+    <string name="title_activity_admin_evento_listado">Listado de eventos</string>
+    <string name="noPenalizaciones">No está penalizado</string>
+    <string name="siPenalizaciones">Mostrando penalizaciones</string>
+    <string name="fragment_admin_usuario_penalizar">fragment_admin_usuario_penalizar</string>
+    <string name="fragment_evento_listado">fragment_evento_listado</string>
+    <string name="UsuarioEliminado">El usuairio se ha eliminado correctamente</string>
+    <string name="fragment_evento_update">fragment_evento_update</string>
+    <string name="EventoNoActualiza">No se ha actualizado el evento</string>
+    <string name="comentarioNoInsertado">No se ha insertado el comentario</string>
+    <string name="alertaActivada">Alerta activada</string>
+    <string name="alertaDesactivada">Alerta desactivada</string>
+    <string name="noActualizaAlerta">No se ha actualizado la alerta</string>
+    <string name="alertaModificada">Se ha actualizado la alerta</string>
+    <string name="alertaNoModificada">Alerta no modificada</string>
+    <string name="sHoraDummyPHP">05:05:05</string>
+    <string name="NoseEliminaAlerta">No se ha podido eliminar la alerta</string>
+    <string name="NoComentarios">No existen comentarios</string>
+    <string name="comentarioInicial">comentarioInicial</string>
+    <string name="usuarioYaExiste">El usuario ya existe en el sistema</string>
+    <string name="RecuperarPassword">Recuperar la contraseña</string>
+    <string name="eventoExiste">El evento existe en el sistema</string>
+    <string name="noRealizaFoto">Problema al realizar la foto. Pruebe desde el evento creado.</string>
+    <string name="NoRegistraEvento">No se ha registrado el evento. Revise los datos introducidos</string>
+    <string name="compruebeCampos">Falta algún dato obligatorio por insertar</string>
+    <string name="compruebeDesplegable">Por favor</string>
+    <string name="noExistenDatos">No existen datos para esta selección</string>
+    <string name="tipoValoracion">tipoValoracion</string>
+    <string name="s_descripcion">descripcion</string>
+    <string name="valor">valor</string>
+    <string name="noActualizaCampo">No se ha actualizado el campo</string>
+    <string name="posicion">posicion</string>
+    <string name="idPenalizacion">idPenalizacion</string>
+    <string name="sUrl_selectCampoPenalizado">http://gooutapp.morethandev.es/php/selectCampoPenalizado.php</string>
+    <string name="sUrl_deleteCampoPenalizado">http://gooutapp.morethandev.es/php/deleteCampoPenalizado.php</string>
+    <string name="campoActualizadoPorOtroUsuario">El campo ha sido actualizado por otro usuario y no tiene permisos para hacerlo</string>
+    <string name="actualizaCampo">Campo actualizado</string>
+    <string name="noInsertado">No insertado</string>
+    <string name="noEliminaPenalizacion">No se ha eliminado la penalización</string>
+    <string name="eventoValorado">Evento valorado</string>
+    <string name="inserta">inserta</string>
+    <string name="confirma">confirma</string>
+    <string name="tvNumDeComentarioDescripcion">tvNumDeComentarioDescripcion</string>
+    <string name="idBEventoNuevoRegistrar">idBEventoNuevoRegistrar</string>
+    <string name="idBEventoNuevoHora">idBEventoNuevoHora</string>
+    <string name="idBEventoNuevoFecha">idBEventoNuevoFecha</string>
+    <string name="toolbarImage">toolbarImage</string>
+    <string name="fragment_evento_nuevo">fragment_evento_nuevo</string>
+    <string name="title_activity_usuario_por_nombre">UsuarioPorNombre</string>
+    <string name="Eliminado">Eliminad@</string>
+    <string name="fromFragment">fromFragment</string>
+    <string name="LugarExiste">El lugar que mencionas está registrado en el sistema. Para evitar duplicados se deja como responsabilidad a este usuario. Gracias por colaborar con Fin And Go!</string>
+    <string name="direccionExiste">La dirección existe en el sistema</string>
+    <string name="NoEliminaUsuario">No se ha podido eliminar el usuario</string>
+    <string name="fragment_valoracion_item_list">fragment_valoracion_item_list</string>
+    <string name="valoracion">valoracion</string>
+    <string name="listadoEvento">Lista de eventos</string>
+    <string name="fragment_evento_item_list">fragment_evento_item_list</string>
+    <string name="fragment_evento_menu">fragment_evento_menu</string>
+    <string name="fragment_alerta">fragment_alerta</string>
+    <string name="upload">/uploads/</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="perfil">Perfil</string>
+    <string name="fragment_tab_menu_usuario">fragment_tab_menu_usuario</string>
+    <string name="sDeseaSalir">¿Cerrar la aplicación?</string>
+    <string name="fragment_full_screen">fragment_full_screen</string>
+    <string name="fotoPerfil">Foto del perfil</string>
+    <string name="usuario">usuario</string>
+    <string name="leyenda">leyenda</string>
+    <string name="Leyenda">Leyenda</string>
+    <string name="remitente">jfmateosredondo@gmail.com</string>
+    <string name="licencia">"GNU LESSER GENERAL PUBLIC LICENSE
+                       Version 3, 29 June 2007
+
+ Copyright (C) 2007 Free Software Foundation, Inc. https://fsf.org/
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+
+  This version of the GNU Lesser General Public License incorporates
+the terms and conditions of version 3 of the GNU General Public
+License, supplemented by the additional permissions listed below.
+
+  0. Additional Definitions.
+
+  As used herein, "this License" refers to version 3 of the GNU Lesser
+General Public License, and the "GNU GPL" refers to version 3 of the GNU
+General Public License.
+
+  "The Library" refers to a covered work governed by this License,
+other than an Application or a Combined Work as defined below.
+
+  An "Application" is any work that makes use of an interface provided
+by the Library, but which is not otherwise based on the Library.
+Defining a subclass of a class defined by the Library is deemed a mode
+of using an interface provided by the Library.
+
+  A "Combined Work" is a work produced by combining or linking an
+Application with the Library.  The particular version of the Library
+with which the Combined Work was made is also called the "Linked
+Version".
+
+  The "Minimal Corresponding Source" for a Combined Work means the
+Corresponding Source for the Combined Work, excluding any source code
+for portions of the Combined Work that, considered in isolation, are
+based on the Application, and not on the Linked Version.
+
+  The "Corresponding Application Code" for a Combined Work means the
+object code and/or source code for the Application, including any data
+and utility programs needed for reproducing the Combined Work from the
+Application, but excluding the System Libraries of the Combined Work.
+
+  1. Exception to Section 3 of the GNU GPL.
+
+  You may convey a covered work under sections 3 and 4 of this License
+without being bound by section 3 of the GNU GPL.
+
+  2. Conveying Modified Versions.
+
+  If you modify a copy of the Library, and, in your modifications, a
+facility refers to a function or data to be supplied by an Application
+that uses the facility (other than as an argument passed when the
+facility is invoked), then you may convey a copy of the modified
+version:
+
+   a) under this License, provided that you make a good faith effort to
+   ensure that, in the event an Application does not supply the
+   function or data, the facility still operates, and performs
+   whatever part of its purpose remains meaningful, or
+
+   b) under the GNU GPL, with none of the additional permissions of
+   this License applicable to that copy.
+
+  3. Object Code Incorporating Material from Library Header Files.
+
+  The object code form of an Application may incorporate material from
+a header file that is part of the Library.  You may convey such object
+code under terms of your choice, provided that, if the incorporated
+material is not limited to numerical parameters, data structure
+layouts and accessors, or small macros, inline functions and templates
+(ten or fewer lines in length), you do both of the following:
+
+   a) Give prominent notice with each copy of the object code that the
+   Library is used in it and that the Library and its use are
+   covered by this License.
+
+   b) Accompany the object code with a copy of the GNU GPL and this license
+   document.
+
+  4. Combined Works.
+
+  You may convey a Combined Work under terms of your choice that,
+taken together, effectively do not restrict modification of the
+portions of the Library contained in the Combined Work and reverse
+engineering for debugging such modifications, if you also do each of
+the following:
+
+   a) Give prominent notice with each copy of the Combined Work that
+   the Library is used in it and that the Library and its use are
+   covered by this License.
+
+   b) Accompany the Combined Work with a copy of the GNU GPL and this license
+   document.
+
+   c) For a Combined Work that displays copyright notices during
+   execution, include the copyright notice for the Library among
+   these notices, as well as a reference directing the user to the
+   copies of the GNU GPL and this license document.
+
+   d) Do one of the following:
+
+       0) Convey the Minimal Corresponding Source under the terms of this
+       License, and the Corresponding Application Code in a form
+       suitable for, and under terms that permit, the user to
+       recombine or relink the Application with a modified version of
+       the Linked Version to produce a modified Combined Work, in the
+       manner specified by section 6 of the GNU GPL for conveying
+       Corresponding Source.
+
+       1) Use a suitable shared library mechanism for linking with the
+       Library.  A suitable mechanism is one that (a) uses at run time
+       a copy of the Library already present on the user's computer
+       system, and (b) will operate properly with a modified version
+       of the Library that is interface-compatible with the Linked
+       Version.
+
+   e) Provide Installation Information, but only if you would otherwise
+   be required to provide such information under section 6 of the
+   GNU GPL, and only to the extent that such information is
+   necessary to install and execute a modified version of the
+   Combined Work produced by recombining or relinking the
+   Application with a modified version of the Linked Version. (If
+   you use option 4d0, the Installation Information must accompany
+   the Minimal Corresponding Source and Corresponding Application
+   Code. If you use option 4d1, you must provide the Installation
+   Information in the manner specified by section 6 of the GNU GPL
+   for conveying Corresponding Source.)
+
+  5. Combined Libraries.
+
+  You may place library facilities that are a work based on the
+Library side by side in a single library together with other library
+facilities that are not Applications and are not covered by this
+License, and convey such a combined library under terms of your
+choice, if you do both of the following:
+
+   a) Accompany the combined library with a copy of the same work based
+   on the Library, uncombined with any other library facilities,
+   conveyed under the terms of this License.
+
+   b) Give prominent notice with the combined library that part of it
+   is a work based on the Library, and explaining where to find the
+   accompanying uncombined form of the same work.
+
+  6. Revised Versions of the GNU Lesser General Public License.
+
+  The Free Software Foundation may publish revised and/or new versions
+of the GNU Lesser General Public License from time to time. Such new
+versions will be similar in spirit to the present version, but may
+differ in detail to address new problems or concerns.
+
+  Each version is given a distinguishing version number. If the
+Library as you received it specifies that a certain numbered version
+of the GNU Lesser General Public License "or any later version"
+applies to it, you have the option of following the terms and
+conditions either of that published version or of any later version
+published by the Free Software Foundation. If the Library as you
+received it does not specify a version number of the GNU Lesser
+General Public License, you may choose any version of the GNU Lesser
+General Public License ever published by the Free Software Foundation.
+
+  If the Library as you received it specifies that a proxy can decide
+whether future versions of the GNU Lesser General Public License shall
+apply, that proxy's public statement of acceptance of any version is
+permanent authorization for you to choose that version for the
+Library.</string>
+    <string name="title_activity_settings">Configuración</string>
+
+    <string name="fragment_alusiones">fragment_alusiones</string>
+    <string name="punto">.</string>
+    <string name="sUrl_selectInformeCreador">http://gooutapp.morethandev.es/php/selectInformeCreador.php</string>
+    <string name="noInforme">No se ha obtenido los datos del creador</string>
+    <string name="ErrorInforme">Error al obtener al creador del evento</string>
+    <string name="creados">creados</string>
+    <string name="recordar">Recordar</string>
+    <string name="sCualquierHora">Cualquier hora</string>
+    <string name="sCualquierFecha">Cualquier fecha</string>
+    <string name="nunca">Nunca</string>
+    <string name="noLocation">Google Maps no puede determinar la dirección: </string>
+    <string name="verTodos">Próximamente</string>
+    <string name="cualquiera">Cualquiera</string>
+    <string name="localidadNoEncontrada">No se han encontrado datos para: </string>
+    <string name="noLocalidad">noLocalidad</string>
+    <string name="noProvincia">noProvincia</string>
+    <string name="noCp">noCp</string>
+    <string name="noTipoVia">noTipoVia</string>
+    <string name="noCalle">noCalle</string>
+    <string name="noNumero">noNumero</string>
+    <string name="sUrl_selectLocalidad">http://gooutapp.morethandev.es/php/selectLocalidad.php</string>
+    <string name="categoria_dummy">-1</string>
+    <string name="reviseCampos">Revise los siguientes campos:</string>
+    <string name="Cp">Cp</string>
+    <string name="menciones">menciones</string>
+    <string name="sActualEventos">Eventos actuales</string>
+    <string name="fragment_tab_admin_evento">fragment_tab_admin_evento</string>
+    <string name="home">Menú eventos</string>
+    <string name="errorConexion">Error de conexión</string>
+    <string name="sUrl_updateActivarUsuario">http://gooutapp.morethandev.es/php/updateActivarUsuario.php</string>
+    <string name="No">No</string>
+    <string name="Admin">Admin</string>
+    <string name="eliminado">2</string>
+    <string name="tru">true</string>
+    <string name="Sugerencia">Sugerencias</string>
+    <string name="sugerencia">sugerencia</string>
+    <string name="totalActuales">totalActuales</string>
+    <string name="totalCreados">totalCreados</string>
+    <string name="tipo4">tipo4</string>
+    <string name="tipo3">tipo3</string>
+    <string name="tipo1">tipo1</string>
+    <string name="tipo2">tipo2</string>
+    <string name="sUrl_selectSugerencia">http://gooutapp.morethandev.es/php/selectSugerencia.php</string>
+    <string name="idAdmin">1</string>
+    <string name="login">login</string>
+    <string name="sCargandoEventos">Cargando eventos, por favor espere...</string>
+    <string name="activarGps">Para mostrar eventos cercanos se requiere la ubicación por GPS. ¿Desea activarlo?</string>
+    <string name="activarWifi">No se ha detectado conexión. ¿Desea acceder a las opciones de conexión?</string>
+    <string name="sNoEventosCercanos">No se han encontrado eventos cercanos a su ubicación. Pruebe manualmente.</string>
+    <string name="checked">checked</string>
+    <string name="CHECKED">checked</string>
+    <string name="gratis">Gratis</string>
+    <string name="sBuscarUsuario">Buscar usuario</string>
+    <string name="fragment_admin_usuario_consulta">fragment_admin_usuario_consulta</string>
+    <string name="estadoUsuario">estadoUsuario</string>
+    <string name="permission_storage">Se requiere el permiso</string>
+    <string name="permission_storage_success">Permiso aceptado</string>
+
+    <string name="last_name">last_name</string>
+    <string name="sCampoFacebook">Este campo es obtenido a través de una API externa y no puede modificarse</string>
+    <string name="espacio"> </string>
+
+    <string name="sugerenciaCategoria">1</string>
+    <string name="sugerenciaClasificacion">2</string>
+    <string name="sugerenciaTipo">3</string>
+    <string name="sugerenciaVia">4</string>
+    <string name="sElijaVia">Vía</string>
+    <string name="sDeseaAddVia">¿No encuentra el tipo de vía? Añádalo y pronto se lo mostraremos.</string>
+    <string name="Categoria">Categoría</string>
+    <string name="tipoEmpresa">tipoEmpresa</string>
+    <string name="idCategoria">idCategoria</string>
+    <string name="Tipo">Tipo</string>
+    <string name="sugerenciaNoInsertada">Sugerencia no insertada</string>
+    <string name="sala">Sala</string>
+    <string name="dospuntos">\n</string>
+    <string name="ALERTA">ALERTA</string>
+    <string name="aceptarPermiso">Debe aceptar el permiso solicitado para realizar esta operación.</string>
+    <string name="share">Compartir con…</string>
+    <string name="Facebook">Facebook</string>
+    <string name="Gmail">Gmail</string>
+    <string name="Twitter">Twitter</string>
+    <string name="Whatsapp">Whatsapp</string>
+    <string name="GoogleMas">Google +</string>
+    <string name="Mensajeria">Mensaje de texto</string>
+    <string name="appNoinstalada">Debe tener una aplicación instalada para realizar esta acción</string>
+    <string name="Provincia">Provincia</string>
+    <string name="pueblo">Localidad</string>
+    <string name="Fecha">Fecha</string>
+    <string name="Hora">Hora</string>
+    <string name="Lugar">Lugar</string>
+    <string name="en">El día </string>
+    <string name="alas">a las </string>
+    <string name="sRutaImagenesDummy">http://gooutapp.morethandev.es/uploads/ic_logo.jpg</string>
+    <string name="enlacePlayStore">https://play.google.com/store/apps/details?id=com.findandgoapp.activity</string>
+    <string name="PuedesDescargar">Puedes descarlar Find And Go en: </string>
+    <string name="nombreDelEvento">Nombre del evento:</string>
+    <string name="apiNoConnect">No se ha podido conectar con la API seleccionada</string>
+    <string name="almacen">Almacen</string>
+    <string name="paquete">package</string>
+    <string name="menuPermisos">Acceda a permisos y active almacén</string>
+    <string name="permissionStatus">permissionStatus</string>
+
+</resources>

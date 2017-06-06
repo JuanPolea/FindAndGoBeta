@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/fragment_tab_admin_evento"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvNumEventoDenuciadoTipo1"
+                style="@style/Texto"
+                android:layout_width="@dimen/size_circulo"
+                android:layout_height="@dimen/size_circulo"
+                android:layout_alignBaseline="@+id/idTvEventoDenunciadoTipo1"
+                android:layout_alignBottom="@+id/idTvEventoDenunciadoTipo1"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="24dp"
+                android:background="@drawable/borde_blanco"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/iCero"
+                android:textColor="@drawable/btn_redondo_azul"
+                android:textSize="@dimen/size_tituloMenu"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvNumEventoDenuciadoTipo2"
+                style="@style/Texto"
+                android:layout_width="@dimen/size_circulo"
+                android:layout_height="@dimen/size_circulo"
+                android:layout_alignStart="@+id/idTvNumEventoDenuciadoTipo1"
+                android:layout_below="@+id/idTvNumEventoDenuciadoTipo1"
+                android:layout_marginTop="13dp"
+                android:background="@drawable/borde_blanco"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/iCero"
+                android:textColor="@drawable/btn_redondo_azul"
+                android:textSize="@dimen/size_tituloMenu"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvNumEventoDenuciadoTipo3"
+
+                style="@style/Texto"
+                android:layout_width="@dimen/size_circulo"
+                android:layout_height="@dimen/size_circulo"
+                android:layout_alignStart="@+id/idTvNumEventoDenuciadoTipo2"
+                android:layout_below="@+id/idTvNumEventoDenuciadoTipo2"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/borde_blanco"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/iCero"
+                android:textColor="@drawable/btn_redondo_azul"
+                android:textSize="@dimen/size_tituloMenu"
+                app:font="@string/font_name_source_amatic_regular" />
+
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvEventoDenunciadoTipo3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/idTvNumEventoDenuciadoTipo3"
+
+                android:layout_alignBottom="@+id/idTvNumEventoDenuciadoTipo3"
+                android:layout_alignStart="@+id/idTvEventoDenunciadoTipo2"
+                android:text="@string/sEventosDenunciadosTipo3"
+
+                android:textColor="@color/negro"
+                android:textSize="@dimen/size_25"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvEventoDenunciadoTipo2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/idTvNumEventoDenuciadoTipo2"
+                android:layout_alignBottom="@+id/idTvNumEventoDenuciadoTipo2"
+                android:layout_alignStart="@+id/idTvEventoDenunciadoTipo1"
+                android:text="@string/sEventosDenunciadosTipo2"
+                android:textColor="@color/negro"
+                android:textSize="@dimen/size_25"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvEventoDenunciadoTipo1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/idTvDenunciados"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="@dimen/size_20"
+
+                android:text="@string/sEventosDenunciadosTipo1"
+                android:textColor="@color/negro"
+                android:textSize="@dimen/size_25"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvNumEventoConfirmado"
+                style="@style/Texto"
+                android:layout_width="@dimen/size_circulo"
+                android:layout_height="@dimen/size_circulo"
+                android:layout_alignBaseline="@+id/idTvConfirmados"
+                android:layout_alignBottom="@+id/idTvConfirmados"
+                android:layout_alignStart="@+id/idTvNumEventoDenuciadoTipo1"
+                android:background="@drawable/borde_blanco"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/iCero"
+                android:textColor="@drawable/btn_redondo_azul"
+                android:textSize="@dimen/size_tituloMenu"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvNumTotalEventos"
+                style="@style/Texto"
+                android:layout_width="@dimen/size_circulo"
+                android:layout_height="@dimen/size_circulo"
+                android:layout_alignParentTop="true"
+                android:layout_alignStart="@+id/idTvNumTotalActual"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/borde_blanco"
+                android:gravity="center_vertical|center_horizontal"
+
+                android:text="@string/iCero"
+                android:textColor="@drawable/btn_redondo_azul"
+                android:textSize="@dimen/size_tituloMenu"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvTotalEventos"
+                style="@style/Texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/idTvNumTotalEventos"
+                android:layout_alignBottom="@+id/idTvNumTotalEventos"
+                android:layout_alignStart="@+id/idTvEventoDenunciadoTipo1"
+                android:text="@string/sTotalEventos"
+                android:textColor="@color/negro"
+                android:textSize="@dimen/size_25"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvActualEventos"
+                style="@style/Texto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/idTvTotalEventos"
+                android:layout_below="@+id/idTvNumTotalEventos"
+                android:layout_marginTop="19dp"
+                android:text="@string/sActualEventos"
+                android:textColor="@color/negro"
+                android:textSize="@dimen/size_25"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvNumTotalActual"
+                style="@style/Texto"
+                android:layout_width="@dimen/size_circulo"
+                android:layout_height="@dimen/size_circulo"
+                android:layout_alignBaseline="@+id/idTvActualEventos"
+                android:layout_alignBottom="@+id/idTvActualEventos"
+                android:layout_alignStart="@+id/idTvNumEventoConfirmado"
+                android:background="@drawable/borde_blanco"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/iCero"
+                android:textColor="@drawable/btn_redondo_azul"
+                android:textSize="@dimen/size_tituloMenu"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvConfirmados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/idTvActualEventos"
+                android:layout_below="@+id/idTvNumTotalActual"
+                android:layout_marginTop="18dp"
+                android:text="@string/sEventosConfirmados"
+                android:textColor="@color/negro"
+                android:textSize="@dimen/size_25"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvDenunciados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/idTvConfirmados"
+                android:layout_marginStart="@dimen/size_10"
+                android:layout_marginTop="18dp"
+                android:text="@string/sEventosDenunciados"
+                android:textColor="@color/verdeAgua"
+                android:textSize="@dimen/size_20"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvNumSugerencias"
+                style="@style/Texto"
+                android:layout_width="@dimen/size_circulo"
+                android:layout_height="@dimen/size_circulo"
+                android:layout_alignParentBottom="true"
+                android:layout_alignStart="@+id/idTvNumEventoDenuciadoTipo3"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/borde_blanco"
+                android:gravity="center_vertical|center_horizontal"
+                android:text="@string/iCero"
+                android:textColor="@drawable/btn_redondo_azul"
+                android:textSize="@dimen/size_tituloMenu"
+                app:font="@string/font_name_source_amatic_regular" />
+
+            <com.findandgoapp.custom.CustomFontTextView
+                android:id="@+id/idTvSugerencia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/size_10"
+                android:text="@string/Sugerencia"
+                android:textColor="@color/negro"
+                android:textSize="@dimen/size_25"
+                app:font="@string/font_name_source_amatic_regular"
+                android:layout_alignBaseline="@+id/idTvNumSugerencias"
+                android:layout_alignBottom="@+id/idTvNumSugerencias"
+                android:layout_alignStart="@+id/idTvEventoDenunciadoTipo3" />
+        </RelativeLayout>
+
+    </android.support.v4.widget.NestedScrollView>
+</FrameLayout>

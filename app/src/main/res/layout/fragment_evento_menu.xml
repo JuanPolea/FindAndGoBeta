@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlEventoMenu"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/blanco"
+    android:name="@string/fragment_evento_menu">
+
+    <LinearLayout
+        android:id="@+id/thumbnail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="3dip"
+
+        >
+
+        <ImageView
+            android:id="@+id/idIvEventoMenuImagen"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/borde_social"
+            android:scaleType="fitXY"
+            tools:ignore="ContentDescription" />
+
+    </LinearLayout>
+
+
+    <com.findandgoapp.custom.CustomFontTextView
+
+        android:id="@+id/idTvEventoMenuNombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="@id/thumbnail"
+        android:layout_alignTop="@+id/thumbnail"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="left"
+        android:textColor="@color/negro"
+        app:font="@string/font_name_source_amatic_regular_bold"
+        android:textSize="@dimen/tamano_listado"
+        android:text=""
+        android:maxLines="1"
+        android:ellipsize="end"
+
+
+        />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/idTvEventoMenuCategoria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/idTvEventoMenuNombre"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="left"
+        android:textColor="@color/negro"
+        app:font="@string/font_name_source_amatic_regular_bold"
+        android:textSize="@dimen/tamano_listado" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/idTvEventoMenuClasificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTvEventoMenuCategoria"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="left"
+        android:textColor="@color/negro"
+        app:font="@string/font_name_source_amatic_regular_bold"
+        android:textSize="@dimen/tamano_listado" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/idTvEventoMenuTipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTvEventoMenuClasificacion"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="left"
+        app:font="@string/font_name_source_amatic_regular_bold"
+        android:textColor="@color/negro"
+        android:textSize="@dimen/tamano_listado" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/idTvEventoMenuFecha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTvEventoMenuTipo"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="left"
+        app:font="@string/font_name_source_amatic_regular_bold"
+        android:textColor="@color/negro"
+        android:textSize="@dimen/tamano_listado" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/idTvEventoMenuCiudad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/idTvEventoMenuFecha"
+        android:layout_toEndOf="@+id/thumbnail"
+        android:layout_toRightOf="@+id/thumbnail"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="left"
+        app:font="@string/font_name_source_amatic_regular_bold"
+        android:textColor="@color/negro"
+        android:textSize="@dimen/tamano_listado"
+        android:maxLines="1"
+        android:ellipsize="end"
+
+        />
+
+    <TableLayout
+        android:layout_below="@id/idTvEventoMenuCiudad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/size_20">
+
+        <TableRow>
+
+            <ImageView
+                android:layout_width="@dimen/size_25"
+                android:layout_height="@dimen/size_25"
+                android:background="@drawable/btn_aceptar"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/TvNumValidados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iCero"
+                android:textSize="@dimen/size_validados"
+                android:textColor="@color/link"
+                android:paddingRight="@dimen/size_20" />
+
+            <ImageView
+                android:layout_width="@dimen/size_25"
+                android:layout_height="@dimen/size_25"
+                android:background="@drawable/btn_unlike"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/TvNumDenunciados"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iCero"
+                android:textSize="@dimen/size_validados"
+                android:textColor="@color/link"
+                android:paddingRight="@dimen/size_20" />
+
+            <ImageView
+                android:layout_width="@dimen/size_25"
+                android:layout_height="@dimen/size_25"
+                android:background="@drawable/btn_comentario"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/TvNumComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/iCero"
+                android:textSize="@dimen/size_validados"
+                android:textColor="@color/link" />
+        </TableRow>
+
+    </TableLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_flecha"
+        android:layout_marginRight="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_alignTop="@+id/idTvEventoMenuTipo"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        tools:ignore="ContentDescription" />
+
+
+</RelativeLayout>

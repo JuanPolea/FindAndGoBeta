@@ -1,0 +1,143 @@
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_notificaciones"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.findandgoapp.adapter.ListAdapterValoracion"
+    android:background="@drawable/blanco">
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/tvNotificacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/linked"
+        android:textSize="@dimen/size_list_notificacion"
+        android:text=""
+        app:font="@string/font_name_source_amatic_regular"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:paddingRight="@dimen/size_10"
+
+        android:layout_toLeftOf="@+id/ivNext"
+        android:layout_toStartOf="@+id/ivNext"
+        android:layout_marginBottom="@dimen/size_5" />
+
+
+    <ImageView
+        android:id="@+id/ivConfirmaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_like"
+        android:layout_below="@+id/tvNotificacion"
+        android:layout_toLeftOf="@+id/tvNumConfirmaciones"
+        android:layout_toStartOf="@+id/tvNumConfirmaciones"
+        tools:ignore="ContentDescription" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/tvNumConfirmaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iCero"
+        app:font="@string/font_name_source_amatic_regular"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_alignTop="@+id/ivComentarios"
+        android:layout_toLeftOf="@+id/ivPenalizaciones"
+        android:layout_toStartOf="@+id/ivPenalizaciones"
+        android:textColor="@color/link" />
+
+    <ImageView
+        android:id="@+id/ivPenalizaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_unlike"
+        android:layout_alignTop="@+id/ivComentarios"
+        android:layout_toLeftOf="@+id/tvNumPenalizaciones"
+        android:layout_toStartOf="@+id/tvNumPenalizaciones"
+        tools:ignore="ContentDescription" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/tvNumPenalizaciones"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iCero"
+        app:font="@string/font_name_source_amatic_regular"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_below="@+id/tvNotificacion"
+        android:layout_toLeftOf="@+id/ivComentarios"
+        android:layout_toStartOf="@+id/ivComentarios"
+        android:textColor="@color/link" />
+
+    <ImageView
+        android:id="@+id/ivComentarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_comentario"
+        android:layout_alignBottom="@+id/ivConfirmaciones"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/link"
+        tools:ignore="ContentDescription" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/tvNumComentarios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/iCero"
+        app:font="@string/font_name_source_amatic_regular"
+        android:layout_below="@+id/tvNotificacion"
+        android:layout_toRightOf="@+id/ivComentarios"
+        android:layout_toEndOf="@+id/ivComentarios"
+        android:textColor="@color/link" />
+
+    <ImageView
+        android:id="@+id/ivNext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_arrow"
+        android:layout_alignTop="@+id/tvNotificacion"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        tools:ignore="ContentDescription" />
+
+</RelativeLayout>

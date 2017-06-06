@@ -1,0 +1,74 @@
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.findango.activity.EventoSeleccionadoFragment">
+
+    <item xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/idMIFotoEvento"
+        android:icon="@drawable/ic_camara"
+        android:title="@string/sCamara"
+        android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/idMIDejaTuComentario"
+        android:icon="@drawable/ic_add_comentario"
+        android:title="@string/sComentar"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orderInCategory="300"
+        app:showAsAction="never" />
+    <item android:id="@+id/idMIModificarEvento"
+        android:icon="@drawable/ic_action_edit"
+        android:title="@string/sEditar"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orderInCategory="200"
+        app:showAsAction="never" />
+    <item android:id="@+id/idMIEliminarEvento"
+        android:icon="@drawable/ic_action_delete"
+        android:title="@string/slEventoEliminar"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orderInCategory="500"
+        app:showAsAction="never" />
+
+    <item android:id="@+id/menu_item_share"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:actionProviderClass="android.widget.ShareActionProvider"
+        android:title="@string/share"
+        android:icon="@drawable/share"
+        android:orderInCategory="400"
+        app:actionProviderClass="android.support.v7.widget.ShareActionProvider" />
+
+
+</menu>

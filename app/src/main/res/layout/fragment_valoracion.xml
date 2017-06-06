@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rlEventoValor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="@dimen/margen_izq"
+    android:background="@drawable/blanco">
+
+
+    <com.findandgoapp.custom.CustomFontTextView
+
+        android:id="@+id/idTvEventoValorNombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/size_list_notificacion"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:gravity="start"
+        app:font="@string/font_name_source_amatic_regular_bold"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:text=""
+        android:maxWidth="@dimen/margen_valoracion"
+        android:layout_marginBottom="@dimen/size_10" />
+
+
+    <ImageView
+        android:id="@+id/idIvFlechaEventoValor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/btn_flecha"
+        android:layout_marginRight="26dp"
+        android:layout_marginEnd="26dp"
+        android:layout_alignTop="@+id/idTvEventoValorNombre"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        tools:ignore="ContentDescription" />
+
+    <com.findandgoapp.custom.CustomFontTextView
+        android:id="@+id/tvContadorNotificacion"
+        android:layout_width="@dimen/size_30"
+        android:layout_height="@dimen/size_30"
+        style="@style/Texto"
+        android:text="@string/iCero"
+        app:font="@string/font_name_source_amatic_regular"
+        android:background="@drawable/borde_rojo"
+        android:gravity="center_vertical|center_horizontal"
+        android:textColor="@color/blanco"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/idIvFlechaEventoValor"
+        android:layout_toStartOf="@+id/idIvFlechaEventoValor"
+        android:layout_marginRight="13dp"
+        android:layout_marginLeft="@dimen/size_10"
+        android:layout_marginEnd="13dp" />
+
+
+</RelativeLayout>

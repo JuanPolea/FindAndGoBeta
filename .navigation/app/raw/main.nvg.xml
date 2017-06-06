@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<navigationModel
+    ns="http://schemas.android.com?import=com.android.tools.idea.editors.navigation.model.*">
+    <locations class="java.util.ArrayList">
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.MapsActivity" />
+            <point x="500" y="1480" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.MapsActivity" />
+            <point x="1768" y="1480" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.AdminUsuarioPenalizar" />
+            <point x="500" y="4240" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.AdminUsuarioPenalizar" />
+            <point x="1768" y="4240" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.MainActivity" />
+            <point x="500" y="8380" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.MainActivity" />
+            <point x="1768" y="8380" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.PerfilEmpresa" />
+            <point x="500" y="9760" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.PerfilEmpresa" />
+            <point x="1768" y="9760" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.PerfilAsistente" />
+            <point x="500" y="12520" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.PerfilAsistente" />
+            <point x="1768" y="12520" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.MenuPpal" />
+            <point x="600" y="34700" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.UsuarioNuevo" />
+            <point x="500" y="15280" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.UsuarioNuevo" />
+            <point x="1768" y="15280" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.TabMenuUsuario" />
+            <point x="500" y="16660" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.TabMenuUsuario" />
+            <point x="1768" y="16660" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.EventoConsulta" />
+            <point x="500" y="18040" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.EventoConsulta" />
+            <point x="1768" y="18040" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.facebook.FacebookActivity" />
+            <point x="700" y="34800" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.EventoUpdate" />
+            <point x="500" y="22180" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.EventoUpdate" />
+            <point x="1768" y="22180" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.Comentario" />
+            <point x="500" y="23560" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.Comentario" />
+            <point x="1768" y="23560" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.PerfilArtista" />
+            <point x="500" y="24940" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.PerfilArtista" />
+            <point x="1768" y="24940" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.TabMenuAlarma" />
+            <point x="500" y="27700" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.TabMenuAlarma" />
+            <point x="1768" y="27700" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.UsuarioArtista" />
+            <point x="500" y="30460" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.UsuarioArtista" />
+            <point x="1768" y="30460" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.Alerta" />
+            <point x="500" y="33220" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.Alerta" />
+            <point x="1768" y="33220" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.UsuarioEmpresa" />
+            <point x="500" y="100" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.UsuarioEmpresa" />
+            <point x="1768" y="100" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.TabAdminUsuario" />
+            <point x="164" y="34600" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.AlertaUpdate" />
+            <point x="500" y="2860" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.AlertaUpdate" />
+            <point x="1768" y="2860" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.TabAdmin" />
+            <point x="1464" y="34768" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.fragment.EventoListadoFragment" />
+            <point x="500" y="5620" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.fragment.EventoListadoFragment" />
+            <point x="1768" y="5620" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.PenalizacionListado" />
+            <point x="500" y="7000" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.PenalizacionListado" />
+            <point x="1768" y="7000" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.UsuarioAsistente" />
+            <point x="500" y="11140" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.UsuarioAsistente" />
+            <point x="1768" y="11140" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.UsuarioListado" />
+            <point x="500" y="13900" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.UsuarioListado" />
+            <point x="1768" y="13900" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.TabMenuEvento" />
+            <point x="650" y="34750" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.TabAdminEvento" />
+            <point x="500" y="19420" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.TabAdminEvento" />
+            <point x="1768" y="19420" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.fragment.TabAdminEventoListado" />
+            <point x="500" y="20800" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.fragment.TabAdminEventoListado" />
+            <point x="1768" y="20800" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.EventoSeleccionado" />
+            <point x="750" y="34850" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.Notificacion" />
+            <point x="500" y="26320" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.Notificacion" />
+            <point x="1768" y="26320" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.AdminUsuarioConsulta" />
+            <point x="500" y="29080" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.AdminUsuarioConsulta" />
+            <point x="1768" y="29080" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.ActivityState"
+                className="com.findandgoapp.activity.Evento" />
+            <point x="500" y="31840" />
+        </statePointEntry>
+        <statePointEntry>
+            <state class="com.android.tools.idea.editors.navigation.model.MenuState"
+                className="com.findandgoapp.activity.Evento" />
+            <point x="1768" y="31840" />
+        </statePointEntry>
+    </locations>
+</navigationModel>

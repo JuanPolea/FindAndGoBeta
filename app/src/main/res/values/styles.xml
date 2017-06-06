@@ -1,0 +1,120 @@
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+        <item name="colorPrimary">#00000000</item>
+        <item name="colorPrimaryDark">#3366BB</item>
+        <item name="android:windowBackground">@drawable/fondo</item>
+        <item name="android:colorBackgroundCacheHint">#ffffff</item>
+        <item name="android:textSize">@dimen/tamano_letra</item>
+        <item name="android:textColor">#00968c</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="colorControlNormal">#3366BB</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        />
+
+
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="color">#3366BB</item>
+    </style>
+
+
+    <style name="linked" parent="Base.TextAppearance.AppCompat.Large">
+
+        <item name="android:textColor">@color/link</item>/>
+    </style>
+
+    <style name="cabecera" parent="Base.TextAppearance.AppCompat.Small">
+        <item name="android:textSize">@dimen/size_cabecera</item>
+        <item name="android:textColor">@color/grisMuyOscuro</item>/>
+
+    </style>
+
+    <style name="Texto" parent="Base.TextAppearance.AppCompat.Small">
+        <item name="android:textSize">@dimen/size_text_admin</item>
+        <item name="android:textColor">@color/verdeAgua</item>/>
+    </style>
+
+    <style name="eventoTexto" parent="Base.TextAppearance.AppCompat">
+        <item name="android:textSize">@dimen/evento_texto</item>
+        <item name="android:textColor">@color/negro</item>/>
+
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <item name="colorPrimary">@color/rojo</item>
+        <item name="colorPrimaryDark">@color/verdeClaro</item>
+
+    </style>
+
+    <style name="AppTheme.AppCompat.Light" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+
+
+        <item name="colorPrimary">@color/ColorPrimary</item>
+        <item name="colorPrimaryDark">#00000000</item>
+
+    </style>
+
+
+    <style name="sizeToolbar" parent="AppTheme">
+        <item name="android:textSize">@dimen/evento_texto</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@color/transparente</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">#00000000</item>
+    </style>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+</resources>

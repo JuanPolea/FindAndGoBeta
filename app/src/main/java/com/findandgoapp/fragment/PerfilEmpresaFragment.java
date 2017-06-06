@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 
@@ -160,37 +194,30 @@ public class PerfilEmpresaFragment extends Fragment {
     private static final int REQUEST_PERMISSION_SETTING = 101;
     private static final int EXTERNAL_STORAGE_PERMISSION_CONSTANT = 100;
     private static final int SIZE_FOTO = 300;
-
-    private File destination;
-    private static Activity activity;
     private static final Utilidades utilidades = new Utilidades();
+    private static final String TIPO_USUARIO = String.valueOf(2);
+    private static Activity activity;
+    private File destination;
     private boolean facebook;
-
     /**
      * Interfaz
      */
     private ImageView iv_perfil;
-
     private CustomFontEditText et_nombre;
     private CustomFontEditText et_password;
     private CustomFontEditText et_email;
     private Spinner sp_ciudad;
     private AutoCompleteTextView ac_localidad;
-
     private CustomFontEditText et_calle;
     private CustomFontEditText et_numero;
     private CustomFontEditText et_codigoPostal;
-
     private CustomFontEditText et_descripcion;
     private CustomFontEditText et_web;
-
     private ImageView iv_registrar;
-
     private Spinner sp_categoria;
     private Spinner sp_tipo;
     private Spinner sp_via;
     private String modo;
-
     private TextInputLayout tilNombre;
     private TextInputLayout tilEmail;
     private TextInputLayout tilPassword;
@@ -198,14 +225,71 @@ public class PerfilEmpresaFragment extends Fragment {
     private TextInputLayout tilLocalidad;
     private TextInputLayout tilDireccion;
     private TextInputLayout tilNumero;
-
     private TextInputLayout tilCp;
-
-    private static final String TIPO_USUARIO = String.valueOf(2);
     private SugerenciaPOJO sugerenciaPOJO;
     private SharedPreferences permissionStatus;
 
     public PerfilEmpresaFragment() {
+
+    }
+
+    /**
+     * @param activity
+     */
+    private static void launchPicasso(Activity activity) {
+
+        ImageView imageView = (ImageView) activity.findViewById(R.id.ivEmpresaFoto);
+        if (usuarioEmpresaPOJO.isImage()) {
+
+
+            Picasso.
+                    with(activity).
+                    load(activity.getResources().getString(R.string.sRutaImagenes) +
+                            String.valueOf(usuarioEmpresaPOJO.getI_idUsuario()) + activity.getResources().getString(R.string.sFormatoPerfil)).
+                    memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
+                    .
+                            error(R.drawable.icono_usuario).
+                    into(imageView);
+
+        } else {
+
+            imageView.setImageDrawable(activity.getResources().getDrawable(R.drawable.icono_usuario));
+        }
+        utilidades.clearImageDiskCache(activity.getApplicationContext());
+
+    }
+
+    /**
+     * @param context
+     * @param isImage
+     * @param image
+     * @param file
+     */
+    private static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
+
+
+        image.setVisibility(View.VISIBLE);
+
+        if (isImage) {
+
+            Picasso.
+                    with(context).
+                    load(file)
+                    .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
+                    .transform(new BordesRedondos(SIZE_FOTO, 0))
+                    .resize((int) context.getResources().getDimension(R.dimen.fotoPerfil), (int) context.getResources().getDimension(R.dimen.fotoPerfil))
+                    .centerInside()
+                    .error(R.drawable.icono_usuario)
+                    .into(image);
+
+
+            Utilidades utilidades = new Utilidades();
+            utilidades.clearImageDiskCache(context.getApplicationContext());
+        } else {
+
+            image.setBackground(context.getResources().getDrawable(R.drawable.icono_usuario));
+
+        }
 
     }
 
@@ -581,7 +665,6 @@ public class PerfilEmpresaFragment extends Fragment {
         return rootView;
     }
 
-
     /**
      * @param editText
      * @param textInputLayout
@@ -711,7 +794,6 @@ public class PerfilEmpresaFragment extends Fragment {
 
 
     }
-
 
     /**
      * Función que da de alta una nueva empresa en el sistema
@@ -903,7 +985,6 @@ public class PerfilEmpresaFragment extends Fragment {
 
     }
 
-
     /**
      * @return
      */
@@ -971,7 +1052,6 @@ public class PerfilEmpresaFragment extends Fragment {
 
     }
 
-
     /**
      * @param menu
      * @param inflater
@@ -986,7 +1066,6 @@ public class PerfilEmpresaFragment extends Fragment {
         }
         super.onCreateOptionsMenu(menu, inflater);
     }
-
 
     /**
      * @param item
@@ -1084,7 +1163,6 @@ public class PerfilEmpresaFragment extends Fragment {
         }
     }
 
-
     /**
      *
      */
@@ -1178,33 +1256,6 @@ public class PerfilEmpresaFragment extends Fragment {
             mi.setTitle(newTitle);
 
         }
-
-    }
-
-
-    /**
-     * @param activity
-     */
-    private static void launchPicasso(Activity activity) {
-
-        ImageView imageView = (ImageView) activity.findViewById(R.id.ivEmpresaFoto);
-        if (usuarioEmpresaPOJO.isImage()) {
-
-
-            Picasso.
-                    with(activity).
-                    load(activity.getResources().getString(R.string.sRutaImagenes) +
-                            String.valueOf(usuarioEmpresaPOJO.getI_idUsuario()) + activity.getResources().getString(R.string.sFormatoPerfil)).
-                    memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
-                    .
-                            error(R.drawable.icono_usuario).
-                    into(imageView);
-
-        } else {
-
-            imageView.setImageDrawable(activity.getResources().getDrawable(R.drawable.icono_usuario));
-        }
-        utilidades.clearImageDiskCache(activity.getApplicationContext());
 
     }
 
@@ -1408,7 +1459,6 @@ public class PerfilEmpresaFragment extends Fragment {
         }
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         Log.e(getClass().getName(), "request " + requestCode);
@@ -1479,223 +1529,6 @@ public class PerfilEmpresaFragment extends Fragment {
 
     private void setAc_localidad(AutoCompleteTextView ac_localidad) {
         this.ac_localidad = ac_localidad;
-    }
-
-
-    /**
-     *
-     */
-    public class UploadImage extends AsyncTask<Void, Void, Void> {
-
-
-        private final Bitmap bitmaps;
-        private ProgressDialog progressDialog;
-
-        public UploadImage(Bitmap bitmaps) {
-            this.bitmaps = bitmaps;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            progressDialog = new ProgressDialog(getActivity());
-            progressDialog.show();
-
-        }
-
-
-        @Override
-        protected Void doInBackground(Void... params) {
-
-
-            Bitmap bitmap = bitmaps;
-            ByteArrayOutputStream stream = new ByteArrayOutputStream();
-            bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream); // convertir Bitmap to ByteArrayOutputStream
-            InputStream in = new ByteArrayInputStream(stream.toByteArray()); // convertirr ByteArrayOutputStream to ByteArrayInputStream
-
-            DefaultHttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost(
-                    getActivity().getResources().getString(R.string.sUrl_saveToFile));
-
-            MultiPartEntity reqEntity = new MultiPartEntity();
-            reqEntity.addPart(getActivity().getResources().getString(R.string.sImagenes), usuarioEmpresaPOJO.getI_idUsuario() + getActivity().getResources().getString(R.string.sFormatoPerfil), in);
-            Log.e(getClass().getName(), reqEntity.toString());
-            httppost.setEntity(reqEntity);
-
-            Log.e(getClass().getName(), "request " + httppost.getRequestLine());
-
-            HttpResponse response = null;
-            try {
-                response = httpclient.execute(httppost);
-            } catch (ClientProtocolException e) {
-                // TODO Auto-generated catch block
-
-            } catch (IOException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
-            try {
-                if (response != null) {
-
-                    InputStream is = response.getEntity().getContent();
-                    BufferedReader bufferedReader = new BufferedReader(
-                            new InputStreamReader(is));
-                    StringBuilder str = new StringBuilder();
-
-                    String line;
-
-                    while ((line = bufferedReader.readLine()) != null) {
-                        str.append(line).append("\n");
-                    }
-
-                    Log.e(getClass().getName(), "uploadFile Path is : " + destination);
-
-                }
-                Log.e(getClass().getName(), "response " + (response != null ? response.getStatusLine().toString() : null));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            if (in != null) {
-                try {
-                    in.close();
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-            if (stream != null) {
-                try {
-                    stream.close();
-                } catch (IOException e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
-                }
-            }
-            Log.e(getClass().getName(), "UploadImage");
-
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Void result) {
-            // TODO Auto-generated method stub
-            super.onPostExecute(result);
-            progressDialog.dismiss();
-            Log.e(getClass().getName(), "onPost");
-            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.uploaded), Toast.LENGTH_LONG).show();
-        }
-    }
-
-    /**
-     *
-     */
-    public static class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
-
-        private final String fileURL;
-        private final ImageView imageView;
-        private final Context _context;
-        private String newFile;
-
-
-        /**
-         *
-         */
-        public ImageDownloadTask(final Context context, final String imageURL, final ImageView imageView) {
-            this.fileURL = imageURL;
-            this.imageView = imageView;
-            this._context = context;
-
-
-        }
-
-        @Override
-        protected Boolean doInBackground(final String... args) {
-
-            HttpURLConnection con = null;
-            Boolean estado = false;
-
-
-            try {
-                HttpURLConnection.setFollowRedirects(false);
-                newFile = _context.getString(R.string.sRutaImagenes) + fileURL + _context.getString(R.string.sFormatoPerfil);
-                con = (HttpURLConnection) new URL(newFile).openConnection();
-                con.setRequestMethod("HEAD");
-
-                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
-
-
-                    if (con.getURL().getFile().equalsIgnoreCase(_context.getString(R.string.upload) + fileURL + _context.getString(R.string.sFormatoPerfil))) {
-                        {
-
-
-                            estado = true;
-                        }
-                    }
-
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-
-            } finally {
-                assert con != null;
-                con.disconnect();
-            }
-
-
-            return estado;
-        }
-
-
-        @Override
-        protected void onPostExecute(final Boolean result) {
-
-
-            if (result)
-                launchPicasso(_context, result, this.imageView, newFile);
-            else
-                imageView.setBackground(_context.getResources().getDrawable(R.drawable.icono_usuario));
-
-            Log.e(getClass().getName(), "\nTermina Image: " + fileURL);
-
-
-        }
-
-    }
-
-    /**
-     * @param context
-     * @param isImage
-     * @param image
-     * @param file
-     */
-    private static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
-
-
-        image.setVisibility(View.VISIBLE);
-
-        if (isImage) {
-
-            Picasso.
-                    with(context).
-                    load(file)
-                    .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
-                    .transform(new BordesRedondos(SIZE_FOTO, 0))
-                    .resize((int) context.getResources().getDimension(R.dimen.fotoPerfil), (int) context.getResources().getDimension(R.dimen.fotoPerfil))
-                    .centerInside()
-                    .error(R.drawable.icono_usuario)
-                    .into(image);
-
-
-            Utilidades utilidades = new Utilidades();
-            utilidades.clearImageDiskCache(context.getApplicationContext());
-        } else {
-
-            image.setBackground(context.getResources().getDrawable(R.drawable.icono_usuario));
-
-        }
-
     }
 
     /**
@@ -1825,7 +1658,6 @@ public class PerfilEmpresaFragment extends Fragment {
         this.et_email = et_email;
     }
 
-
     private CustomFontEditText getEt_nombre() {
         return et_nombre;
     }
@@ -1906,7 +1738,6 @@ public class PerfilEmpresaFragment extends Fragment {
         this.sp_via = sp_via;
     }
 
-
     private TextInputLayout getTilCp() {
         return tilCp;
     }
@@ -1961,6 +1792,188 @@ public class PerfilEmpresaFragment extends Fragment {
 
     private void setTilPassword(TextInputLayout tilPassword) {
         this.tilPassword = tilPassword;
+    }
+
+    /**
+     *
+     */
+    public static class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
+
+        private final String fileURL;
+        private final ImageView imageView;
+        private final Context _context;
+        private String newFile;
+
+
+        /**
+         *
+         */
+        public ImageDownloadTask(final Context context, final String imageURL, final ImageView imageView) {
+            this.fileURL = imageURL;
+            this.imageView = imageView;
+            this._context = context;
+
+
+        }
+
+        @Override
+        protected Boolean doInBackground(final String... args) {
+
+            HttpURLConnection con = null;
+            Boolean estado = false;
+
+
+            try {
+                HttpURLConnection.setFollowRedirects(false);
+                newFile = _context.getString(R.string.sRutaImagenes) + fileURL + _context.getString(R.string.sFormatoPerfil);
+                con = (HttpURLConnection) new URL(newFile).openConnection();
+                con.setRequestMethod("HEAD");
+
+                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
+
+
+                    if (con.getURL().getFile().equalsIgnoreCase(_context.getString(R.string.upload) + fileURL + _context.getString(R.string.sFormatoPerfil))) {
+                        {
+
+
+                            estado = true;
+                        }
+                    }
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+
+
+            } finally {
+                assert con != null;
+                con.disconnect();
+            }
+
+
+            return estado;
+        }
+
+
+        @Override
+        protected void onPostExecute(final Boolean result) {
+
+
+            if (result)
+                launchPicasso(_context, result, this.imageView, newFile);
+            else
+                imageView.setBackground(_context.getResources().getDrawable(R.drawable.icono_usuario));
+
+            Log.e(getClass().getName(), "\nTermina Image: " + fileURL);
+
+
+        }
+
+    }
+
+    /**
+     *
+     */
+    public class UploadImage extends AsyncTask<Void, Void, Void> {
+
+
+        private final Bitmap bitmaps;
+        private ProgressDialog progressDialog;
+
+        public UploadImage(Bitmap bitmaps) {
+            this.bitmaps = bitmaps;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            progressDialog = new ProgressDialog(getActivity());
+            progressDialog.show();
+
+        }
+
+
+        @Override
+        protected Void doInBackground(Void... params) {
+
+
+            Bitmap bitmap = bitmaps;
+            ByteArrayOutputStream stream = new ByteArrayOutputStream();
+            bitmap.compress(Bitmap.CompressFormat.PNG, 90, stream); // convertir Bitmap to ByteArrayOutputStream
+            InputStream in = new ByteArrayInputStream(stream.toByteArray()); // convertirr ByteArrayOutputStream to ByteArrayInputStream
+
+            DefaultHttpClient httpclient = new DefaultHttpClient();
+            HttpPost httppost = new HttpPost(
+                    getActivity().getResources().getString(R.string.sUrl_saveToFile));
+
+            MultiPartEntity reqEntity = new MultiPartEntity();
+            reqEntity.addPart(getActivity().getResources().getString(R.string.sImagenes), usuarioEmpresaPOJO.getI_idUsuario() + getActivity().getResources().getString(R.string.sFormatoPerfil), in);
+            Log.e(getClass().getName(), reqEntity.toString());
+            httppost.setEntity(reqEntity);
+
+            Log.e(getClass().getName(), "request " + httppost.getRequestLine());
+
+            HttpResponse response = null;
+            try {
+                response = httpclient.execute(httppost);
+            } catch (ClientProtocolException e) {
+                // TODO Auto-generated catch block
+
+            } catch (IOException e) {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+            }
+            try {
+                if (response != null) {
+
+                    InputStream is = response.getEntity().getContent();
+                    BufferedReader bufferedReader = new BufferedReader(
+                            new InputStreamReader(is));
+                    StringBuilder str = new StringBuilder();
+
+                    String line;
+
+                    while ((line = bufferedReader.readLine()) != null) {
+                        str.append(line).append("\n");
+                    }
+
+                    Log.e(getClass().getName(), "uploadFile Path is : " + destination);
+
+                }
+                Log.e(getClass().getName(), "response " + (response != null ? response.getStatusLine().toString() : null));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+            if (stream != null) {
+                try {
+                    stream.close();
+                } catch (IOException e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+            Log.e(getClass().getName(), "UploadImage");
+
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            // TODO Auto-generated method stub
+            super.onPostExecute(result);
+            progressDialog.dismiss();
+            Log.e(getClass().getName(), "onPost");
+            Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.uploaded), Toast.LENGTH_LONG).show();
+        }
     }
 
 }

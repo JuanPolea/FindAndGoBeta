@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.app.Activity;
@@ -108,13 +142,9 @@ public class TabMenuUsuarioFragment extends Fragment {
 
 
     private static final UsuarioPOJO usuarioPOJO = new UsuarioPOJO();
-
-    private static Activity activity;
-
-
-    private SharedPreferences sharedPreferences;
     private static final Utilidades utilidades = new Utilidades();
-
+    private static Activity activity;
+    private SharedPreferences sharedPreferences;
     /**
      * interfaz
      */
@@ -128,6 +158,43 @@ public class TabMenuUsuarioFragment extends Fragment {
 
 
     public TabMenuUsuarioFragment() {
+    }
+
+    /**
+     * @param context
+     * @param isImage
+     * @param image
+     * @param file
+     */
+    private static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
+
+
+        if (isImage) {
+
+            Picasso.
+                    with(activity).
+                    load(file)
+                    .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
+                    .transform(new BordesRedondos(300, 0))
+                    .error(R.drawable.btn_artista)
+                    .placeholder(R.drawable.btn_usuario)
+                    .into(image);
+
+
+            Utilidades utilidades = new Utilidades();
+            utilidades.clearImageDiskCache(activity.getApplicationContext());
+        } else {
+            if (usuarioPOJO.getI_tipo() == 2) {
+
+                image.setImageDrawable(activity.getResources().getDrawable(R.drawable.btn_usuario));
+
+            } else if (usuarioPOJO.getI_tipo() == 3) {
+                image.setImageDrawable(activity.getResources().getDrawable(R.drawable.btn_artista));
+            } else {
+                image.setImageDrawable(activity.getResources().getDrawable(R.drawable.btn_asistente));
+            }
+        }
+
     }
 
     @Override
@@ -261,7 +328,6 @@ public class TabMenuUsuarioFragment extends Fragment {
         utilidades.clearImageDiskCache(activity);
     }
 
-
     /**
      * @param b
      * @param tipo
@@ -317,122 +383,6 @@ public class TabMenuUsuarioFragment extends Fragment {
 
     }
 
-
-    /**
-     *
-     */
-    public static class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
-
-        private final String fileURL;
-        private final ImageView imageView;
-        private final Context _context;
-        private String newFile;
-
-
-        /**
-         *
-         */
-        public ImageDownloadTask(final Context context, final String imageURL, final ImageView imageView) {
-            this.fileURL = imageURL;
-            this.imageView = imageView;
-            this._context = context;
-
-
-        }
-
-        @Override
-        protected Boolean doInBackground(final String... args) {
-
-            HttpURLConnection con = null;
-            Boolean estado = false;
-
-            try {
-                HttpURLConnection.setFollowRedirects(false);
-                newFile = _context.getString(R.string.sRutaImagenes) + fileURL + _context.getString(R.string.sFormatoPerfil);
-                con = (HttpURLConnection) new URL(newFile).openConnection();
-                con.setRequestMethod("HEAD");
-
-                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
-
-
-                    if (con.getURL().getFile().equalsIgnoreCase(_context.getString(R.string.upload) + fileURL + _context.getString(R.string.sFormatoPerfil))) {
-                        {
-
-
-                            estado = true;
-                        }
-                    }
-
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-
-                Log.d(getClass().getName(), "CATCH" + e.getMessage());
-
-            } finally {
-                assert con != null;
-                con.disconnect();
-            }
-
-            Log.e(getClass().getName(), "FILE_EXISTS" + estado);
-
-            return estado;
-        }
-
-
-        @Override
-        protected void onPostExecute(final Boolean result) {
-
-
-            if (result)
-                launchPicasso(_context, result, this.imageView, newFile);
-            Log.e(getClass().getName(), "\nTermina Image: " + fileURL);
-
-
-        }
-
-    }
-
-    /**
-     * @param context
-     * @param isImage
-     * @param image
-     * @param file
-     */
-    private static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
-
-
-        if (isImage) {
-
-            Picasso.
-                    with(activity).
-                    load(file)
-                    .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
-                    .transform(new BordesRedondos(300, 0))
-                    .error(R.drawable.btn_artista)
-                    .placeholder(R.drawable.btn_usuario)
-                    .into(image);
-
-
-            Utilidades utilidades = new Utilidades();
-            utilidades.clearImageDiskCache(activity.getApplicationContext());
-        } else {
-            if (usuarioPOJO.getI_tipo() == 2) {
-
-                image.setImageDrawable(activity.getResources().getDrawable(R.drawable.btn_usuario));
-
-            } else if (usuarioPOJO.getI_tipo() == 3) {
-                image.setImageDrawable(activity.getResources().getDrawable(R.drawable.btn_artista));
-            } else {
-                image.setImageDrawable(activity.getResources().getDrawable(R.drawable.btn_asistente));
-            }
-        }
-
-    }
-
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
 
@@ -448,7 +398,6 @@ public class TabMenuUsuarioFragment extends Fragment {
 
         super.onCreateOptionsMenu(menu, inflater);
     }
-
 
     /**
      * http://stackoverflow.com/questions/6612316/how-set-spannable-object-font-with-custom-font/10741161#10741161
@@ -550,13 +499,89 @@ public class TabMenuUsuarioFragment extends Fragment {
         this.tv_numDenunciasIn = tv_numDenunciasIn;
     }
 
-
     private CustomFontTextView getTv_numDenunciasOut() {
         return tv_numDenunciasOut;
     }
 
     private void setTv_numDenunciasOut(CustomFontTextView tv_numDenunciasOut) {
         this.tv_numDenunciasOut = tv_numDenunciasOut;
+    }
+
+    /**
+     *
+     */
+    public static class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
+
+        private final String fileURL;
+        private final ImageView imageView;
+        private final Context _context;
+        private String newFile;
+
+
+        /**
+         *
+         */
+        public ImageDownloadTask(final Context context, final String imageURL, final ImageView imageView) {
+            this.fileURL = imageURL;
+            this.imageView = imageView;
+            this._context = context;
+
+
+        }
+
+        @Override
+        protected Boolean doInBackground(final String... args) {
+
+            HttpURLConnection con = null;
+            Boolean estado = false;
+
+            try {
+                HttpURLConnection.setFollowRedirects(false);
+                newFile = _context.getString(R.string.sRutaImagenes) + fileURL + _context.getString(R.string.sFormatoPerfil);
+                con = (HttpURLConnection) new URL(newFile).openConnection();
+                con.setRequestMethod("HEAD");
+
+                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
+
+
+                    if (con.getURL().getFile().equalsIgnoreCase(_context.getString(R.string.upload) + fileURL + _context.getString(R.string.sFormatoPerfil))) {
+                        {
+
+
+                            estado = true;
+                        }
+                    }
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+
+
+                Log.d(getClass().getName(), "CATCH" + e.getMessage());
+
+            } finally {
+                assert con != null;
+                con.disconnect();
+            }
+
+            Log.e(getClass().getName(), "FILE_EXISTS" + estado);
+
+            return estado;
+        }
+
+
+        @Override
+        protected void onPostExecute(final Boolean result) {
+
+
+            if (result)
+                launchPicasso(_context, result, this.imageView, newFile);
+            Log.e(getClass().getName(), "\nTermina Image: " + fileURL);
+
+
+        }
+
     }
 
 

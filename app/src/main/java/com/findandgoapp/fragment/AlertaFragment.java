@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 /**
@@ -176,6 +210,20 @@ public class AlertaFragment extends Fragment implements DialogSemana.NoticeDialo
 
     }
 
+    /**
+     * @param c
+     * @param alertaPOJO
+     * @param idSesion
+     */
+    private static void showNoticeDialogSemana(Context c, AlertaPOJO alertaPOJO, int idSesion) {
+        // Create an instance of the dialog fragment and show it
+        activity.getIntent().putExtra("diasSemana", alertaPOJO);
+        activity.getIntent().putExtra("idSesion", idSesion);
+
+        DialogSemana dialog = DialogSemana.newInstance(alertaPOJO, idSesion);
+        dialog.show(fragmentManager, c.getString(R.string.fragment_dialog_semana));
+    }
+
     private CheckBox getCbFecha() {
         return cbFecha;
     }
@@ -192,13 +240,11 @@ public class AlertaFragment extends Fragment implements DialogSemana.NoticeDialo
         this.cbHora = cbHora;
     }
 
-
     @Override
     public void setTextInTextView(boolean[] linkedlist) {
         Log.e(getClass().getName(), "SetText");
 
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -694,7 +740,6 @@ public class AlertaFragment extends Fragment implements DialogSemana.NoticeDialo
         });
     }
 
-
     /**
      *
      */
@@ -751,7 +796,6 @@ public class AlertaFragment extends Fragment implements DialogSemana.NoticeDialo
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         requestQueue.add(stringRequest);
     }
-
 
     /**
      *
@@ -820,7 +864,6 @@ public class AlertaFragment extends Fragment implements DialogSemana.NoticeDialo
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
         requestQueue.add(stringRequest);
     }
-
 
     /**
      * @params String, String, JSONArray
@@ -917,7 +960,6 @@ public class AlertaFragment extends Fragment implements DialogSemana.NoticeDialo
         requestQueue.add(stringRequest);
     }
 
-
     private Map<String, String> toArray(AlertaPOJO alertaPOJO) {
 
 
@@ -970,7 +1012,6 @@ public class AlertaFragment extends Fragment implements DialogSemana.NoticeDialo
 
         return params;
     }
-
 
     /**
      * @params String, String, JSONArray
@@ -1172,25 +1213,9 @@ public class AlertaFragment extends Fragment implements DialogSemana.NoticeDialo
         Log.e(getClass().getName(), "rellenarFichaAlerta " + jsonObject.toString());
     }
 
-
     private void updateFecha() {
         getTvAlertaFecha().setText(new StringBuilder().append(alertaPOJO.getI_ano()).append("-").append(alertaPOJO.getI_mes() + 1).append("-").append(alertaPOJO.getI_dia()));
     }
-
-    /**
-     * @param c
-     * @param alertaPOJO
-     * @param idSesion
-     */
-    private static void showNoticeDialogSemana(Context c, AlertaPOJO alertaPOJO, int idSesion) {
-        // Create an instance of the dialog fragment and show it
-        activity.getIntent().putExtra("diasSemana", alertaPOJO);
-        activity.getIntent().putExtra("idSesion", idSesion);
-
-        DialogSemana dialog = DialogSemana.newInstance(alertaPOJO, idSesion);
-        dialog.show(fragmentManager, c.getString(R.string.fragment_dialog_semana));
-    }
-
 
     @Override
     public void onPrepareOptionsMenu(Menu menu) {

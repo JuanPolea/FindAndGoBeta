@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 
@@ -98,9 +132,9 @@ public class FragmentDialogAdminPenalizacion extends DialogFragment {
     private static final java.lang.String ARG_PARAM1 = "penalizacion";
     private static final java.lang.String ARG_PARAM2 = "idSesion";
     private static final String TAG = "DgAdFragPena";
+    private static UsuarioPOJO _usp;
     private Button buttonOK, buttonCancel;
     private ListView list;
-    private static UsuarioPOJO _usp;
     private NoticeDialogListener mCallback;
 
     public static FragmentDialogAdminPenalizacion newInstance(int idUsuario) {
@@ -123,17 +157,11 @@ public class FragmentDialogAdminPenalizacion extends DialogFragment {
         }
     }
 
-    public interface NoticeDialogListener {
-        void onDialogPositiveClick();
-
-    }
-
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
 
     }
-
 
     @NonNull
     @Override
@@ -180,12 +208,10 @@ public class FragmentDialogAdminPenalizacion extends DialogFragment {
 
     }
 
-
     @Override
     public void onDetach() {
         super.onDetach();
     }
-
 
     /**
      * @param context
@@ -233,6 +259,80 @@ public class FragmentDialogAdminPenalizacion extends DialogFragment {
             }
 
         });
+    }
+
+    private void penalizarUsuario() {
+
+        //Creating a string request
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, getActivity().getResources().getString(R.string.sUrl_insertUsuarioPenalizacion),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+
+                        Utilidades utilidades = new Utilidades();
+                        Log.e(getClass().getName(), "penalizarUsuario " + response);
+
+                        dismiss();
+                        try {
+
+                            JSONObject json = new JSONObject(response);
+
+                            int success;
+                            success = json.getInt(getString(R.string.success));
+                            if (success != 1) {
+                                utilidades.errorConsultaBBDD(getActivity(), getActivity().getResources().getString(R.string.sErrorBBDD));
+                            }
+                            if (success == 1) {
+
+                                mCallback.onDialogPositiveClick();
+                            }
+
+
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+
+
+                        }
+
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //You can handle error here if you want
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                //Adding parameters to request
+
+                return _usp.formatoPenalizacion();
+            }
+        };
+
+        //Adding the string request to the queue
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+
+    }
+
+    private Button getButtonCancel() {
+        return buttonCancel;
+    }
+
+    private void setButtonCancel(Button buttonCancel) {
+        this.buttonCancel = buttonCancel;
+    }
+
+    private ListView getList() {
+        return list;
+    }
+
+    public interface NoticeDialogListener {
+        void onDialogPositiveClick();
+
     }
 
     /**
@@ -295,76 +395,6 @@ public class FragmentDialogAdminPenalizacion extends DialogFragment {
             TextView tvTexto;
 
         }
-    }
-
-    private void penalizarUsuario() {
-
-        //Creating a string request
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, getActivity().getResources().getString(R.string.sUrl_insertUsuarioPenalizacion),
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-
-                        Utilidades utilidades = new Utilidades();
-                        Log.e(getClass().getName(), "penalizarUsuario " + response);
-
-                        dismiss();
-                        try {
-
-                            JSONObject json = new JSONObject(response);
-
-                            int success;
-                            success = json.getInt(getString(R.string.success));
-                            if (success != 1) {
-                                utilidades.errorConsultaBBDD(getActivity(), getActivity().getResources().getString(R.string.sErrorBBDD));
-                            }
-                            if (success == 1) {
-
-                                mCallback.onDialogPositiveClick();
-                            }
-
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-
-
-                        }
-
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //You can handle error here if you want
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-
-                //Adding parameters to request
-
-                return _usp.formatoPenalizacion();
-            }
-        };
-
-        //Adding the string request to the queue
-        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-        requestQueue.add(stringRequest);
-
-    }
-
-
-    private Button getButtonCancel() {
-        return buttonCancel;
-    }
-
-    private void setButtonCancel(Button buttonCancel) {
-        this.buttonCancel = buttonCancel;
-    }
-
-    private ListView getList() {
-        return list;
     }
 
 }

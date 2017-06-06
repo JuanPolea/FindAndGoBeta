@@ -49,54 +49,88 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/AlertDialog.AppCompat.Light"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:orientation="vertical"
-    style="@style/AlertDialog.AppCompat.Light">
+    android:orientation="vertical">
 
-    <GridLayout android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <GridLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/gridLayout"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
         android:layout_alignParentStart="true"
         android:background="@color/grisClaro"
         android:paddingBottom="@dimen/size_10"
         android:paddingTop="@dimen/size_10">
 
         <com.findandgoapp.custom.CustomFontTextView
-            android:text="@string/sAvisoSemana"
-            app:font="@string/font_name_source_amatic_regular_bold"
-            android:textColor="@color/amarillo"
-            android:textSize="@dimen/size_20"
+            android:layout_column="0"
             android:layout_marginLeft="@dimen/size_10"
             android:layout_row="0"
-            android:layout_column="0" />
+            android:text="@string/sAvisoSemana"
+            android:textColor="@color/amarillo"
+            android:textSize="@dimen/size_20"
+            app:font="@string/font_name_source_amatic_regular_bold" />
 
 
         <ImageView
             android:id="@+id/idBokSemana"
             android:layout_width="@dimen/size_30"
             android:layout_height="@dimen/size_30"
-            android:background="@drawable/btn_aceptar"
+            android:layout_column="2"
             android:layout_marginLeft="@dimen/size_10"
             android:layout_row="0"
-            android:layout_column="2"
+            android:background="@drawable/btn_aceptar"
             tools:ignore="ContentDescription" />
 
         <ImageView
             android:id="@+id/bCancelarDias"
             android:layout_width="@dimen/size_30"
             android:layout_height="@dimen/size_30"
-            android:background="@drawable/btn_cancelar"
+            android:layout_column="3"
             android:layout_marginLeft="@dimen/size_20"
             android:layout_row="0"
-            android:layout_column="3"
+            android:background="@drawable/btn_cancelar"
             tools:ignore="ContentDescription" />
 
     </GridLayout>
@@ -107,9 +141,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/gridLayout"
+        android:background="@color/blancoTpte"
         android:divider="@color/transparente"
-        android:dividerHeight="@dimen/size_1"
-        android:background="@color/blancoTpte" />
+        android:dividerHeight="@dimen/size_1" />
 
 
 </RelativeLayout>

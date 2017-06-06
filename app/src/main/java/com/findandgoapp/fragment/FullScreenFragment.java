@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.Manifest;
@@ -120,10 +154,10 @@ import static android.content.Context.MODE_PRIVATE;
 public class FullScreenFragment extends Fragment {
 
     private static final String TAG = "FullScreenFragment";
-    private final int SIZE_FOTO = 600;
-    private SharedPreferences permissionStatus;
     private static final int REQUEST_PERMISSION_SETTING = 101;
     private static final int EXTERNAL_STORAGE_PERMISSION_CONSTANT = 100;
+    private final int SIZE_FOTO = 600;
+    private SharedPreferences permissionStatus;
     private int idSesion;
     private File destination;
     private ImageView imageView;

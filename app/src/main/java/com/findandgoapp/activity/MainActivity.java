@@ -66,6 +66,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 
 package com.findandgoapp.activity;
 
@@ -91,6 +125,25 @@ public class MainActivity extends AppCompatActivity {
 
 
     private static boolean isGps = true;
+
+    /**
+     * Función para desactivar las notificaciones del usuario
+     *
+     * @param ctx
+     */
+    private static void cancelAllNotification(Context ctx) {
+        String ns = Context.NOTIFICATION_SERVICE;
+        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
+        nMgr.cancelAll();
+    }
+
+    private static boolean isGps() {
+        return isGps;
+    }
+
+    private static void setIsGps(boolean isGps) {
+        MainActivity.isGps = isGps;
+    }
 
     @Override
     protected void onDestroy() {
@@ -125,17 +178,6 @@ public class MainActivity extends AppCompatActivity {
         getBaseContext().getResources().updateConfiguration(configuration, metrics);
 
 
-    }
-
-    /**
-     * Función para desactivar las notificaciones del usuario
-     *
-     * @param ctx
-     */
-    private static void cancelAllNotification(Context ctx) {
-        String ns = Context.NOTIFICATION_SERVICE;
-        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
-        nMgr.cancelAll();
     }
 
     @Override
@@ -208,7 +250,6 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     @Override
     public void onBackPressed() {
         setIsGps(true);
@@ -219,15 +260,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(startMain);
 
 
-    }
-
-
-    private static boolean isGps() {
-        return isGps;
-    }
-
-    private static void setIsGps(boolean isGps) {
-        MainActivity.isGps = isGps;
     }
 
 

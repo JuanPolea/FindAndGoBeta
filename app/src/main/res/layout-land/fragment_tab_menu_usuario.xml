@@ -83,6 +83,40 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -92,8 +126,8 @@
     tools:context="com.findandgoapp.fragment.TabMenuUsuarioFragment">
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -107,13 +141,13 @@
             android:id="@+id/idTvBienvenido"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sBienvenido"
-            android:textSize="@dimen/size_20"
-            app:font="@string/font_name_source_amatic_regular"
-            android:textColor="@color/negro"
-            android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/sBienvenido"
+            android:textColor="@color/negro"
+            android:textSize="@dimen/size_20"
+            app:font="@string/font_name_source_amatic_regular"
             tools:ignore="RelativeOverlap,SpUsage"
 
             />
@@ -123,179 +157,179 @@
             android:id="@+id/idTvNombre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/idTvBienvenido"
             android:text=""
             android:textAppearance="?android:attr/textAppearanceSmall"
-            app:font="@string/font_name_source_amatic_regular_bold"
             android:textColor="@color/azulVioleta"
             android:textSize="@dimen/text_menu"
-            tools:ignore="SpUsage"
+            app:font="@string/font_name_source_amatic_regular_bold"
 
-            android:layout_below="@+id/idTvBienvenido" />
+            tools:ignore="SpUsage" />
 
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvEstado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/idTvNombre"
+            android:layout_marginTop="@dimen/size_20"
             android:text="@string/sEstado"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            app:font="@string/font_name_source_amatic_regular"
             android:textColor="@color/negro"
             android:textSize="@dimen/tamano_subtitulo_menu"
-            tools:ignore="SpUsage"
-            android:layout_below="@+id/idTvNombre"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/size_20" />
+            app:font="@string/font_name_source_amatic_regular"
+            tools:ignore="SpUsage" />
 
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvEstadoResultado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_above="@+id/idTvConfirmacion"
+            android:layout_toEndOf="@+id/idTvBienvenido"
             android:text="@string/sActivo"
             android:textAppearance="?android:attr/textAppearanceSmall"
-            app:font="@string/font_name_source_amatic_regular_bold"
             android:textColor="@color/verdeClaro"
             android:textSize="@dimen/tamano_subtitulo_menu"
-            android:layout_above="@+id/idTvConfirmacion"
-            android:layout_toEndOf="@+id/idTvBienvenido" />
+            app:font="@string/font_name_source_amatic_regular_bold" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvConfirmacion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/idTvEstado"
             android:layout_marginTop="@dimen/size_10"
             android:text="@string/sConfirmaciones"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            app:font="@string/font_name_source_amatic_regular"
             android:textColor="@color/negro"
             android:textSize="@dimen/tamano_subtitulo_menu"
-            android:layout_below="@+id/idTvEstado"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvConfRealizadasTotal"
+            style="@style/Texto"
             android:layout_width="@dimen/size_circulo"
             android:layout_height="@dimen/size_circulo"
-            style="@style/Texto"
-            android:text="@string/iCero"
-            android:textSize="@dimen/size_numeros"
-            android:gravity="center_vertical|center_horizontal"
-            app:font="@string/font_name_source_amatic_regular"
-            android:background="@drawable/borde_blanco"
-            android:textColor="@drawable/btn_redondo_azul"
             android:layout_alignBottom="@+id/idTvConfRealizadas"
-            android:layout_alignParentEnd="true" />
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/borde_blanco"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/iCero"
+            android:textColor="@drawable/btn_redondo_azul"
+            android:textSize="@dimen/size_numeros"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvConfRecibidasTotal"
+            style="@style/Texto"
             android:layout_width="@dimen/size_circulo"
             android:layout_height="@dimen/size_circulo"
-            style="@style/Texto"
-            android:text="@string/iCero"
-            android:gravity="center_vertical|center_horizontal"
-            app:font="@string/font_name_source_amatic_regular"
+            android:layout_alignBottom="@+id/idTvConfRecibidas"
+            android:layout_alignParentEnd="true"
             android:background="@drawable/borde_blanco"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/iCero"
             android:textColor="@drawable/btn_redondo_azul"
             android:textSize="@dimen/size_numeros"
-            android:layout_alignBottom="@+id/idTvConfRecibidas"
-            android:layout_alignParentEnd="true" />
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvDenuncias"
-            android:textSize="@dimen/tamano_subtitulo_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/idTvConfRecibidas"
+            android:layout_marginTop="@dimen/size_20"
             android:text="@string/sDenuncias"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            app:font="@string/font_name_source_amatic_regular"
             android:textColor="@color/negro"
-            android:layout_below="@+id/idTvConfRecibidas"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="@dimen/size_20" />
+            android:textSize="@dimen/tamano_subtitulo_menu"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvDenunciasRecibidasTotal"
+            style="@style/Texto"
             android:layout_width="@dimen/size_circulo"
             android:layout_height="@dimen/size_circulo"
-            style="@style/Texto"
-            android:text="@string/iCero"
-            android:gravity="center_vertical|center_horizontal"
-            app:font="@string/font_name_source_amatic_regular"
-            android:background="@drawable/borde_blanco"
-            android:textColor="@drawable/btn_redondo_azul"
             android:layout_alignBottom="@+id/idTvDenunciasRecibidas"
-            android:textSize="@dimen/size_numeros"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/size_30" />
+            android:layout_marginTop="@dimen/size_30"
+            android:background="@drawable/borde_blanco"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/iCero"
+            android:textColor="@drawable/btn_redondo_azul"
+            android:textSize="@dimen/size_numeros"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvDenunciasRealizadasTotal"
+            style="@style/Texto"
             android:layout_width="@dimen/size_circulo"
             android:layout_height="@dimen/size_circulo"
-            android:textSize="@dimen/size_numeros"
-            style="@style/Texto"
-            android:text="@string/iCero"
-            android:gravity="center_vertical|center_horizontal"
-            app:font="@string/font_name_source_amatic_regular"
-            android:background="@drawable/borde_blanco"
-            android:textColor="@drawable/btn_redondo_azul"
             android:layout_alignBottom="@+id/idTvDenunciasRealizadas"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="@dimen/size_30" />
+            android:layout_marginTop="@dimen/size_30"
+            android:background="@drawable/borde_blanco"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/iCero"
+            android:textColor="@drawable/btn_redondo_azul"
+            android:textSize="@dimen/size_numeros"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvConfRealizadas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/idTvConfRecibidas"
+            android:layout_alignStart="@+id/idTvConfRecibidas"
+            android:layout_below="@+id/idTvConfirmacion"
             android:text="@string/sRealizadas"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            app:font="@string/font_name_source_amatic_regular_bold"
             android:textColor="@color/negro"
-            android:layout_below="@+id/idTvConfirmacion"
-            android:layout_alignLeft="@+id/idTvConfRecibidas"
-            android:layout_alignStart="@+id/idTvConfRecibidas" />
+            app:font="@string/font_name_source_amatic_regular_bold" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvDenunciasRealizadas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/idTvConfRecibidas"
+            android:layout_alignStart="@+id/idTvConfRecibidas"
+            android:layout_below="@+id/idTvDenuncias"
+            android:layout_marginTop="18dp"
             android:text="@string/sRealizadas"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            app:font="@string/font_name_source_amatic_regular_bold"
             android:textColor="@color/negro"
-            android:layout_marginTop="18dp"
-            android:layout_below="@+id/idTvDenuncias"
-            android:layout_alignLeft="@+id/idTvConfRecibidas"
-            android:layout_alignStart="@+id/idTvConfRecibidas" />
+            app:font="@string/font_name_source_amatic_regular_bold" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvDenunciasRecibidas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/idTvDenunciasRealizadas"
+            android:layout_alignStart="@+id/idTvDenunciasRealizadas"
+            android:layout_below="@+id/idTvDenunciasRealizadas"
+            android:layout_marginTop="15dp"
             android:text="@string/sRecibidas"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            app:font="@string/font_name_source_amatic_regular_bold"
             android:textColor="@color/negro"
-            android:layout_marginTop="15dp"
-            android:layout_below="@+id/idTvDenunciasRealizadas"
-            android:layout_alignLeft="@+id/idTvDenunciasRealizadas"
-            android:layout_alignStart="@+id/idTvDenunciasRealizadas" />
+            app:font="@string/font_name_source_amatic_regular_bold" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvConfRecibidas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sRecibidas"
-            android:textSize="@dimen/size_25"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            app:font="@string/font_name_source_amatic_regular_bold"
-            android:textColor="@color/negro"
-            android:layout_marginTop="15dp"
             android:layout_below="@+id/idTvConfRealizadas"
+            android:layout_marginTop="15dp"
+            android:layout_toEndOf="@+id/idTvEstado"
             android:layout_toRightOf="@+id/idTvEstado"
-            android:layout_toEndOf="@+id/idTvEstado" />
+            android:text="@string/sRecibidas"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/negro"
+            android:textSize="@dimen/size_25"
+            app:font="@string/font_name_source_amatic_regular_bold" />
 
 
     </RelativeLayout>

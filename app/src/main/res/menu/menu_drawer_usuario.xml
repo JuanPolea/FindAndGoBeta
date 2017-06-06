@@ -49,6 +49,40 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 
@@ -58,30 +92,30 @@
 
             android:id="@+id/miIdPerfilUsuario"
 
-            android:icon="@drawable/ic_launcher"
+            android:checkable="false"
 
-            android:title="@string/perfil"
-            android:checkable="false" />
+            android:icon="@drawable/ic_launcher"
+            android:title="@string/perfil" />
         <item
             android:id="@+id/miIdNotificaciones"
+            android:checkable="false"
             android:icon="@drawable/ic_notificacion"
-            android:title="@string/sNotificaciones"
-            android:checkable="false" />
+            android:title="@string/sNotificaciones" />
 
-        <item android:id="@+id/miIdActualizarUsuarios"
+        <item xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/miIdActualizarUsuarios"
+            android:checkable="false"
             android:icon="@drawable/ic_action_reload"
             android:title="@string/sActualizar"
-            app:showAsAction="never"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:checkable="false" />
+            app:showAsAction="never" />
 
 
-        <item android:id="@+id/action_settings"
-            android:title="@string/action_settings"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            app:showAsAction="never"
+        <item xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/action_settings"
+            android:checkable="false"
             android:icon="@drawable/ic_setting_light"
-            android:checkable="false" />
+            android:title="@string/action_settings"
+            app:showAsAction="never" />
 
 
     </group>

@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.activity;
 
 import android.app.AlertDialog;
@@ -102,11 +136,9 @@ import java.util.List;
 
 public class TabAdmin extends AppCompatActivity implements AdapterView.OnItemClickListener, NavigationView.OnNavigationItemSelectedListener {
 
-    private int tab;
-
-    private TabLayout tabs;
-
     private static final String[] values = {"Drawer 1", "Drawer 2", "Drawer 3"};
+    private int tab;
+    private TabLayout tabs;
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
     private SharedPreferences sharedPreferences;
@@ -450,6 +482,83 @@ public class TabAdmin extends AppCompatActivity implements AdapterView.OnItemCli
         mDrawer.closeDrawers();
     }
 
+    @Override
+    public void onBackPressed() {
+
+        int count = getSupportFragmentManager().getBackStackEntryCount();
+
+        Log.e(getClass().getName(), String.valueOf(getFragmentManager().getBackStackEntryCount()));
+
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        List<Fragment> list = fragmentManager.getFragments();
+        for (Fragment f : list) {
+            if (f != null)
+                Log.e(getClass().getName(), "onBackPressed " + f.getTag());
+        }
+
+        if (count == 0) {
+            salir();
+
+        } else {
+            Log.e(getClass().getName(), "else");
+            super.onBackPressed();
+
+        }
+    }
+
+    private void salir() {
+        TextView textView = new TextView(getApplicationContext());
+        textView.setText(getApplicationContext().getResources().getString(R.string.sWarning));
+        textView.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegular)));
+        textView.setPadding(15, 10, 0, 0);
+        textView.setTextSize(getApplicationContext().getResources().getDimension(R.dimen.size_15));
+        textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.rojo));
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(TabAdmin.this);
+        builder.setCustomTitle(textView)
+                .setMessage(getApplicationContext().getResources().getString(R.string.sCerrarSesion))
+                .setCancelable(false)
+                .setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_action_alarms))
+                .setNegativeButton(getApplicationContext().getResources().getString(R.string.sNO), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+                .setPositiveButton(getApplicationContext().getResources().getString(R.string.sSi), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        TabAdmin.this.finish();
+                        Intent intent = new Intent(TabAdmin.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(intent);
+                    }
+                });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+        alert.getWindow().getAttributes();
+
+        Button button = new Button(getApplicationContext());
+        button = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+        button.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.link));
+        button.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.blanco));
+
+        //Preparamos las fuentes personalizadas
+        Typeface fontTextoBoton = Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegularBold));
+        button.setTypeface(fontTextoBoton);
+
+
+        Button buttonCancel = new Button(getApplicationContext());
+        buttonCancel = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
+        buttonCancel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.blanco));
+        buttonCancel.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.link));
+        //Preparamos las fuentes personalizadas
+        Typeface fontTextoCancel = Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegularBold));
+        button.setTypeface(fontTextoCancel);
+
+        TextView textView1 = (TextView) alert.findViewById(android.R.id.message);
+        textView1.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegular)));
+        textView1.setTextSize(getApplicationContext().getResources().getDimension(R.dimen.size_10));
+    }
 
     /**
      * A placeholder fragment containing a simple view.
@@ -536,85 +645,6 @@ public class TabAdmin extends AppCompatActivity implements AdapterView.OnItemCli
             }
             return null;
         }
-    }
-
-    @Override
-    public void onBackPressed() {
-
-        int count = getSupportFragmentManager().getBackStackEntryCount();
-
-        Log.e(getClass().getName(), String.valueOf(getFragmentManager().getBackStackEntryCount()));
-
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        List<Fragment> list = fragmentManager.getFragments();
-        for (Fragment f : list) {
-            if (f != null)
-                Log.e(getClass().getName(), "onBackPressed " + f.getTag());
-        }
-
-        if (count == 0) {
-            salir();
-
-        } else {
-            Log.e(getClass().getName(), "else");
-            super.onBackPressed();
-
-        }
-    }
-
-
-    private void salir() {
-        TextView textView = new TextView(getApplicationContext());
-        textView.setText(getApplicationContext().getResources().getString(R.string.sWarning));
-        textView.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegular)));
-        textView.setPadding(15, 10, 0, 0);
-        textView.setTextSize(getApplicationContext().getResources().getDimension(R.dimen.size_15));
-        textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.rojo));
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(TabAdmin.this);
-        builder.setCustomTitle(textView)
-                .setMessage(getApplicationContext().getResources().getString(R.string.sCerrarSesion))
-                .setCancelable(false)
-                .setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_action_alarms))
-                .setNegativeButton(getApplicationContext().getResources().getString(R.string.sNO), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                })
-                .setPositiveButton(getApplicationContext().getResources().getString(R.string.sSi), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        TabAdmin.this.finish();
-                        Intent intent = new Intent(TabAdmin.this, MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        startActivity(intent);
-                    }
-                });
-
-        AlertDialog alert = builder.create();
-        alert.show();
-        alert.getWindow().getAttributes();
-
-        Button button = new Button(getApplicationContext());
-        button = alert.getButton(DialogInterface.BUTTON_POSITIVE);
-        button.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.link));
-        button.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.blanco));
-
-        //Preparamos las fuentes personalizadas
-        Typeface fontTextoBoton = Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegularBold));
-        button.setTypeface(fontTextoBoton);
-
-
-        Button buttonCancel = new Button(getApplicationContext());
-        buttonCancel = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
-        buttonCancel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.blanco));
-        buttonCancel.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.link));
-        //Preparamos las fuentes personalizadas
-        Typeface fontTextoCancel = Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegularBold));
-        button.setTypeface(fontTextoCancel);
-
-        TextView textView1 = (TextView) alert.findViewById(android.R.id.message);
-        textView1.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegular)));
-        textView1.setTextSize(getApplicationContext().getResources().getDimension(R.dimen.size_10));
     }
 
 

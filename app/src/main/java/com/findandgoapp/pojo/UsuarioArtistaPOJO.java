@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.pojo;
 
 import android.os.Parcel;
@@ -64,12 +98,6 @@ import java.util.Map;
 public class UsuarioArtistaPOJO extends UsuarioPOJO {
 
 
-    private static final String TAG = "UsuarioArtistaPOJO";
-    private static final int tipoUsuario = 3;
-    private String s_categoria;
-    private String s_descripcion;
-    private String s_web;
-
     public static final Parcelable.Creator<UsuarioArtistaPOJO> CREATOR = new Parcelable.Creator<UsuarioArtistaPOJO>() {
         @Override
         public UsuarioArtistaPOJO createFromParcel(Parcel in) {
@@ -81,6 +109,11 @@ public class UsuarioArtistaPOJO extends UsuarioPOJO {
             return new UsuarioArtistaPOJO[size];
         }
     };
+    private static final String TAG = "UsuarioArtistaPOJO";
+    private static final int tipoUsuario = 3;
+    private String s_categoria;
+    private String s_descripcion;
+    private String s_web;
 
     public UsuarioArtistaPOJO(Parcel in) {
         super.setItems(in.createStringArray());

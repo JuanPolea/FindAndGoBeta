@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.app.Activity;
@@ -119,10 +153,31 @@ public class FragmentDialog extends DialogFragment {
         return fragmentDialog;
     }
 
+    /**
+     * @param context
+     * @param image
+     * @param file
+     */
+    private static void launchPicasso(Context context, ImageView image, String file) {
 
-    public interface NoticeDialogListener {
-        void onDialogPositiveClick(int res);
 
+        Picasso.
+                with(context).
+                load(file)
+                .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
+                .transform(new BordesRedondos(300, 0))
+                .error(R.drawable.btn_artista)
+                .placeholder(R.drawable.btn_usuario)
+                .into(image);
+
+
+        Utilidades utilidades = new Utilidades();
+        utilidades.clearImageDiskCache(context.getApplicationContext());
+
+        int ancho = (int) context.getResources().getDimension(R.dimen.fotoAnchoComentario);
+        int alto = (int) context.getResources().getDimension(R.dimen.fotoAltoComentario);
+        image.getLayoutParams().height = ancho;
+        image.getLayoutParams().width = alto;
     }
 
     @Override
@@ -463,93 +518,6 @@ public class FragmentDialog extends DialogFragment {
         });
     }
 
-
-    /**
-     *
-     */
-    private class ListAdapterDialogo extends BaseAdapter {
-
-        final Context _c;
-        final LinkedList<ComentarioPOJO> linkedList;
-
-        public ListAdapterDialogo(Context c, LinkedList<ComentarioPOJO> list) {
-
-            linkedList = list;
-            _c = c;
-        }
-
-        public int getCount() {
-            // TODO Auto-generated method stub
-            return linkedList.size();
-        }
-
-        public Object getItem(int position) {
-            // TODO Auto-generated method stub
-            return linkedList.get(position);
-        }
-
-        public long getItemId(int position) {
-            // TODO Auto-generated method stub
-            return position;
-        }
-
-        public View getView(int position, View convertView, ViewGroup parent) {
-            // TODO Auto-generated method stub
-            final ViewHolder viewHolder;
-
-            final int pos = position;
-            if (convertView == null) {
-
-
-                viewHolder = new ViewHolder();
-                LayoutInflater vi = (LayoutInflater) _c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                convertView = vi.inflate(R.layout.fragment_comentario_evento_seleccionado, null);
-
-                convertView.setTag(viewHolder);
-            } else {
-
-                viewHolder = (ViewHolder) convertView.getTag();
-
-            }
-            viewHolder.relativeLayout = (RelativeLayout) convertView.findViewById(R.id.LayoutComentarios);
-            viewHolder.tvNombre = (TextView) convertView.findViewById(R.id.idTvComenta);
-            viewHolder.tvDesc = (TextView) convertView.findViewById(R.id.idTvComentario);
-            viewHolder.ivFotoComentario = (ImageView) convertView.findViewById(R.id.ivFotoComentario);
-            String url = getString(R.string.sRutaImagenes) + String.valueOf(linkedList.get(position).getIdUsuario()) + getString(R.string.sFormatoPerfil);
-
-            if (position % 2 == 0)
-                viewHolder.relativeLayout.setBackgroundColor(convertView.getResources().getColor(R.color.gris));
-
-
-            launchPicasso(getActivity(), viewHolder.ivFotoComentario, url);
-
-            viewHolder.tvNombre.setText(String.valueOf(linkedList.get(position).getNombreUsuario()));
-            viewHolder.tvDesc.setBackgroundColor(_c.getResources().getColor(R.color.transparente));
-
-            viewHolder.tvDesc.setText(linkedList.get(position).getComentario());
-            viewHolder.tvDesc.setTextColor(Color.BLACK);
-
-            viewHolder.tvNombre.setBackgroundColor(_c.getResources().getColor(R.color.transparente));
-            viewHolder.ivFotoComentario.setClickable(true);
-            viewHolder.ivFotoComentario.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    selectCreador(linkedList.get(pos).getIdUsuario(), linkedList.get(pos).getNombreUsuario());
-                }
-            });
-            return convertView;
-        }
-
-
-        private class ViewHolder {
-            TextView tvNombre;
-            TextView tvDesc;
-            ImageView ivFotoComentario;
-
-            RelativeLayout relativeLayout;
-        }
-    }
-
     /**
      * @param i_idUsuario
      * @param nombre
@@ -684,7 +652,6 @@ public class FragmentDialog extends DialogFragment {
         requestQueue.add(stringRequest);
     }
 
-
     /**
      * @param evento
      * @param comentarioPOJO
@@ -746,34 +713,6 @@ public class FragmentDialog extends DialogFragment {
 
     }
 
-
-    /**
-     * @param context
-     * @param image
-     * @param file
-     */
-    private static void launchPicasso(Context context, ImageView image, String file) {
-
-
-        Picasso.
-                with(context).
-                load(file)
-                .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
-                .transform(new BordesRedondos(300, 0))
-                .error(R.drawable.btn_artista)
-                .placeholder(R.drawable.btn_usuario)
-                .into(image);
-
-
-        Utilidades utilidades = new Utilidades();
-        utilidades.clearImageDiskCache(context.getApplicationContext());
-
-        int ancho = (int) context.getResources().getDimension(R.dimen.fotoAnchoComentario);
-        int alto = (int) context.getResources().getDimension(R.dimen.fotoAltoComentario);
-        image.getLayoutParams().height = ancho;
-        image.getLayoutParams().width = alto;
-    }
-
     private Button getButtonOK() {
         return buttonOK;
     }
@@ -794,9 +733,99 @@ public class FragmentDialog extends DialogFragment {
         return list;
     }
 
-
     @Override
     public void onDestroy() {
         super.onDestroy();
+    }
+
+    public interface NoticeDialogListener {
+        void onDialogPositiveClick(int res);
+
+    }
+
+    /**
+     *
+     */
+    private class ListAdapterDialogo extends BaseAdapter {
+
+        final Context _c;
+        final LinkedList<ComentarioPOJO> linkedList;
+
+        public ListAdapterDialogo(Context c, LinkedList<ComentarioPOJO> list) {
+
+            linkedList = list;
+            _c = c;
+        }
+
+        public int getCount() {
+            // TODO Auto-generated method stub
+            return linkedList.size();
+        }
+
+        public Object getItem(int position) {
+            // TODO Auto-generated method stub
+            return linkedList.get(position);
+        }
+
+        public long getItemId(int position) {
+            // TODO Auto-generated method stub
+            return position;
+        }
+
+        public View getView(int position, View convertView, ViewGroup parent) {
+            // TODO Auto-generated method stub
+            final ViewHolder viewHolder;
+
+            final int pos = position;
+            if (convertView == null) {
+
+
+                viewHolder = new ViewHolder();
+                LayoutInflater vi = (LayoutInflater) _c.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                convertView = vi.inflate(R.layout.fragment_comentario_evento_seleccionado, null);
+
+                convertView.setTag(viewHolder);
+            } else {
+
+                viewHolder = (ViewHolder) convertView.getTag();
+
+            }
+            viewHolder.relativeLayout = (RelativeLayout) convertView.findViewById(R.id.LayoutComentarios);
+            viewHolder.tvNombre = (TextView) convertView.findViewById(R.id.idTvComenta);
+            viewHolder.tvDesc = (TextView) convertView.findViewById(R.id.idTvComentario);
+            viewHolder.ivFotoComentario = (ImageView) convertView.findViewById(R.id.ivFotoComentario);
+            String url = getString(R.string.sRutaImagenes) + String.valueOf(linkedList.get(position).getIdUsuario()) + getString(R.string.sFormatoPerfil);
+
+            if (position % 2 == 0)
+                viewHolder.relativeLayout.setBackgroundColor(convertView.getResources().getColor(R.color.gris));
+
+
+            launchPicasso(getActivity(), viewHolder.ivFotoComentario, url);
+
+            viewHolder.tvNombre.setText(String.valueOf(linkedList.get(position).getNombreUsuario()));
+            viewHolder.tvDesc.setBackgroundColor(_c.getResources().getColor(R.color.transparente));
+
+            viewHolder.tvDesc.setText(linkedList.get(position).getComentario());
+            viewHolder.tvDesc.setTextColor(Color.BLACK);
+
+            viewHolder.tvNombre.setBackgroundColor(_c.getResources().getColor(R.color.transparente));
+            viewHolder.ivFotoComentario.setClickable(true);
+            viewHolder.ivFotoComentario.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    selectCreador(linkedList.get(pos).getIdUsuario(), linkedList.get(pos).getNombreUsuario());
+                }
+            });
+            return convertView;
+        }
+
+
+        private class ViewHolder {
+            TextView tvNombre;
+            TextView tvDesc;
+            ImageView ivFotoComentario;
+
+            RelativeLayout relativeLayout;
+        }
     }
 }

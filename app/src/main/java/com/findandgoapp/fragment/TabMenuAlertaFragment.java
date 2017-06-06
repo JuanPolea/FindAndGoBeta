@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.app.Notification;
@@ -109,24 +143,13 @@ public class TabMenuAlertaFragment extends Fragment {
 
 
     private static JSONArray jsonArray;
-
+    private static boolean isAlerta = true;
     private SharedPreferences sharedPreferences;
     private AlertaPOJO tabAlertaPOJO;
-
-
-    private static boolean isAlerta = true;
-
-    @Override
-    public void onResume() {
-
-        super.onResume();
-
-    }
 
     public TabMenuAlertaFragment() {
 
     }
-
 
     /**
      * @param c
@@ -168,6 +191,17 @@ public class TabMenuAlertaFragment extends Fragment {
 
         isAlerta = false;
 
+
+    }
+
+    public static void setIsAlerta(boolean isAlerta) {
+        TabMenuAlertaFragment.isAlerta = isAlerta;
+    }
+
+    @Override
+    public void onResume() {
+
+        super.onResume();
 
     }
 
@@ -476,10 +510,6 @@ public class TabMenuAlertaFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
 
-    }
-
-    public static void setIsAlerta(boolean isAlerta) {
-        TabMenuAlertaFragment.isAlerta = isAlerta;
     }
 
 }

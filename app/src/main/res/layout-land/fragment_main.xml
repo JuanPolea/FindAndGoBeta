@@ -66,6 +66,40 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -192,15 +226,15 @@
             android:src="@drawable/ic_exit" />
 
         <CheckBox
-            android:text="@string/recordar"
-            android:textSize="@dimen/size_10"
-            android:textColor="@color/verdeAgua"
+            android:id="@+id/cbRecordar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cbRecordar"
-
+            android:layout_alignParentEnd="true"
             android:layout_below="@+id/til_password"
-            android:layout_alignParentEnd="true" />
+            android:text="@string/recordar"
+
+            android:textColor="@color/verdeAgua"
+            android:textSize="@dimen/size_10" />
 
 
         <com.google.android.gms.common.SignInButton
@@ -215,11 +249,11 @@
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
-            android:layout_below="@+id/sign_in_button"
             android:layout_alignStart="@+id/idBUsuarioNuevo"
+            android:layout_below="@+id/sign_in_button"
+            android:layout_marginTop="@dimen/size_5"
 
-            android:layout_marginTop="@dimen/size_5" />
+            app:font="@string/font_name_source_amatic_regular" />
 
     </RelativeLayout>
 </android.support.v4.widget.NestedScrollView>

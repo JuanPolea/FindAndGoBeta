@@ -49,6 +49,40 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -246,8 +280,8 @@
                     android:id="@+id/tilEventoNuevoFecha"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    app:errorEnabled="true"
-                    android:layout_toStartOf="@+id/cbHoraEv">
+                    android:layout_toStartOf="@+id/cbHoraEv"
+                    app:errorEnabled="true">
 
                 </android.support.design.widget.TextInputLayout>
             </android.support.design.widget.TextInputLayout>
@@ -267,11 +301,11 @@
 
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:errorEnabled="true"
                 android:layout_above="@+id/cbHoraEv"
+                android:layout_alignEnd="@+id/idBEventoNuevoFecha"
                 android:layout_alignTop="@+id/cbFechaEv"
                 android:layout_toStartOf="@+id/cbFechaEv"
-                android:layout_alignEnd="@+id/idBEventoNuevoFecha">
+                app:errorEnabled="true">
 
             </android.support.design.widget.TextInputLayout>
 
@@ -279,49 +313,49 @@
                 android:id="@+id/idTvEventoNuevoHora"
                 android:layout_width="82dp"
                 android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/cbHoraEv"
+                android:layout_alignBottom="@+id/cbHoraEv"
+                android:layout_toEndOf="@+id/idBEventoNuevoHora"
                 android:paddingStart="@dimen/size_20"
                 android:text="@string/sHHMM"
                 android:textSize="@dimen/size_14"
-                app:font="@string/font_name_source_amatic_regular"
-                android:layout_alignBaseline="@+id/cbHoraEv"
-                android:layout_alignBottom="@+id/cbHoraEv"
-                android:layout_toEndOf="@+id/idBEventoNuevoHora" />
+                app:font="@string/font_name_source_amatic_regular" />
 
             <CheckBox
 
                 android:id="@+id/cbFechaEv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/idBEventoNuevoFecha"
+                android:layout_toEndOf="@+id/idTvEventoNuevoFecha"
                 android:text="@string/sCualquierFecha"
                 android:textColor="@color/link"
-                android:textSize="@dimen/size_checkBox"
-                android:layout_alignTop="@+id/idBEventoNuevoFecha"
-                android:layout_toEndOf="@+id/idTvEventoNuevoFecha" />
+                android:textSize="@dimen/size_checkBox" />
 
             <CheckBox
                 android:id="@+id/cbHoraEv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
+                android:layout_alignStart="@+id/cbFechaEv"
+                android:layout_below="@+id/idBEventoNuevoFecha"
                 android:text="@string/sCualquierHora"
                 android:textColor="@color/link"
-                android:textSize="@dimen/size_checkBox"
-                android:layout_below="@+id/idBEventoNuevoFecha"
-                android:layout_alignStart="@+id/cbFechaEv" />
+                android:textSize="@dimen/size_checkBox" />
 
             <com.findandgoapp.custom.CustomFontTextView
                 android:id="@+id/idTvEventoNuevoFecha"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:paddingLeft="@dimen/size_20"
+                android:layout_alignBaseline="@+id/cbFechaEv"
 
+                android:layout_alignBottom="@+id/cbFechaEv"
+                android:layout_toEndOf="@+id/idBEventoNuevoFecha"
+                android:paddingLeft="@dimen/size_20"
                 android:paddingRight="@dimen/size_20"
                 android:text="@string/sAAMMDD"
                 android:textSize="@dimen/size_14"
-                app:font="@string/font_name_source_amatic_regular"
-                android:layout_alignBaseline="@+id/cbFechaEv"
-                android:layout_alignBottom="@+id/cbFechaEv"
-                android:layout_toEndOf="@+id/idBEventoNuevoFecha" />
+                app:font="@string/font_name_source_amatic_regular" />
 
 
         </RelativeLayout>

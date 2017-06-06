@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.activity;
 
 /**
@@ -68,6 +102,10 @@ package com.findandgoapp.activity;
  * <p>
  * You should have received a copy of the GNU General Public License
  * along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ * <p>
+ * Based on http://clover.studio/2016/08/09/getting-current-location-in-android-using-location-manager/
+ * <p>
+ * Based on http://clover.studio/2016/08/09/getting-current-location-in-android-using-location-manager/
  * <p>
  * Based on http://clover.studio/2016/08/09/getting-current-location-in-android-using-location-manager/
  * <p>
@@ -105,6 +143,8 @@ import android.widget.TextView;
 
 public class TrackGPS extends Service implements LocationListener {
 
+    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10;
+    private static final long MIN_TIME_BW_UPDATES = 1000 * 60;
     private final Context mContext;
     private boolean checkGPS = false;
     private boolean checkNetwork = false;
@@ -112,12 +152,6 @@ public class TrackGPS extends Service implements LocationListener {
     private Location loc;
     private double latitude;
     private double longitude;
-
-
-    private static final long MIN_DISTANCE_CHANGE_FOR_UPDATES = 10;
-
-
-    private static final long MIN_TIME_BW_UPDATES = 1000 * 60;
     private LocationManager locationManager;
 
     public TrackGPS(Context mContext) {

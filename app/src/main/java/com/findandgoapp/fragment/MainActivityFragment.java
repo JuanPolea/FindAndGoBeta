@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 
@@ -142,15 +176,93 @@ public class MainActivityFragment extends Fragment implements GoogleApiClient.Co
 
 
     private static final int RC_SIGN_IN = 1;
-
+    private static Activity activity;
     private UsuarioPOJO usuarioPOJO;
     private CallbackManager mCallbackManager;
     private AccessTokenTracker mTokenTracker;
     private ProfileTracker mProfileTracker;
-    private static Activity activity;
-
     //elementos de fragment_main
     private CustomFontEditText etEmail;
+    /**
+     * Variable para el login de facebook
+     */
+    private final FacebookCallback<LoginResult> mFacebookCallback = new FacebookCallback<LoginResult>() {
+
+        /**
+         *
+         * @param loginResult
+         */
+        @Override
+        public void onSuccess(LoginResult loginResult) {
+
+            final AccessToken accessToken = loginResult.getAccessToken();
+            Profile profile = Profile.getCurrentProfile();
+
+            mTokenTracker.stopTracking();
+            mProfileTracker.stopTracking();
+
+
+            GraphRequest request = GraphRequest.newMeRequest(
+                    loginResult.getAccessToken(),
+                    new GraphRequest.GraphJSONObjectCallback() {
+                        @Override
+                        public void onCompleted(final JSONObject object, GraphResponse response) {
+                            // Application code
+
+                            UsuarioPOJO usuarioPOJO = new UsuarioPOJO();
+
+                            final EditText input = new EditText(getActivity());
+
+
+                            input.setTransformationMethod(PasswordTransformationMethod.getInstance());
+
+
+                            // Write your code here to execute after dialog
+
+                            getEtEmail().setText(object.optString(getActivity().getResources().getString(R.string.email)));
+
+
+                            usuarioPOJO.setS_password(input.getText().toString());
+                            usuarioPOJO.setS_email(object.optString(getActivity().getResources().getString(R.string.email)));
+                            String nombre;
+                            nombre = object.optString(getActivity().getResources().getString(R.string.sfirst_name));
+                            String apellidos;
+                            apellidos = object.optString(getActivity().getResources().getString(R.string.last_name));
+                            if (!apellidos.isEmpty()) {
+                                nombre = nombre.concat(getString(R.string.espacio));
+                                nombre = nombre.concat(apellidos);
+                            }
+
+                            usuarioPOJO.setS_nombre(nombre);
+                            usuarioPOJO.setI_idFcbk(object.optLong(getActivity().getResources().getString(R.string.sId)));
+
+                            LoginFacebook loginFacebook = new LoginFacebook(getActivity(), usuarioPOJO);
+                            loginFacebook.execute();
+
+
+                            Log.e(getClass().getName(), response.toString());
+
+
+                        }
+                    });
+            Bundle parameters = new Bundle();
+            parameters.putString("fields", "id, first_name, last_name, email");
+            request.setParameters(parameters);
+            request.executeAsync();
+
+
+        }
+
+        public void onCancel() {
+            Log.e(getClass().getName(), getString(R.string.sOnCancel));
+        }
+
+        @Override
+        public void onError(FacebookException e) {
+            Log.e(getClass().getName(), getActivity().getResources().getString(R.string.sErrorFacebook) + e);
+        }
+
+    };
     private EditText etPassword;
     private CustomFontButton bEnviar;
     private CustomFontButton bUsuarioNuevo;
@@ -158,20 +270,30 @@ public class MainActivityFragment extends Fragment implements GoogleApiClient.Co
     private TextInputLayout tilNombre;
     private TextInputLayout tilPassword;
     private CheckBox cbRecordad;
-
-
     private ImageView ivSalir;
     private int recordar;
     private ProgressDialog progressDialog;
     private boolean checked;
     private GoogleApiClient mGoogleApiClient;
-
-
     private SignInButton signInButton;
+
 
     public MainActivityFragment() {
     }
 
+    /**
+     * @param ctx
+     */
+
+    private static void cancelAllNotification(Context ctx) {
+        String ns = Context.NOTIFICATION_SERVICE;
+        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
+        nMgr.cancelAll();
+    }
+
+    private static void setActivity(Activity activity) {
+        MainActivityFragment.activity = activity;
+    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -548,17 +670,6 @@ public class MainActivityFragment extends Fragment implements GoogleApiClient.Co
     }
 
     /**
-     * @param ctx
-     */
-
-    private static void cancelAllNotification(Context ctx) {
-        String ns = Context.NOTIFICATION_SERVICE;
-        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
-        nMgr.cancelAll();
-    }
-
-
-    /**
      * Comprueba el email y la password en la url de login, permitiendo el acceso al menú principal en caso de
      * ser correctos.
      */
@@ -712,95 +823,11 @@ public class MainActivityFragment extends Fragment implements GoogleApiClient.Co
         requestQueue.add(stringRequest);
     }
 
-
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         Log.i(getClass().getName(), getString(R.string.sOnViewCreated));
 
     }
-
-
-    /**
-     * Variable para el login de facebook
-     */
-    private final FacebookCallback<LoginResult> mFacebookCallback = new FacebookCallback<LoginResult>() {
-
-        /**
-         *
-         * @param loginResult
-         */
-        @Override
-        public void onSuccess(LoginResult loginResult) {
-
-            final AccessToken accessToken = loginResult.getAccessToken();
-            Profile profile = Profile.getCurrentProfile();
-
-            mTokenTracker.stopTracking();
-            mProfileTracker.stopTracking();
-
-
-            GraphRequest request = GraphRequest.newMeRequest(
-                    loginResult.getAccessToken(),
-                    new GraphRequest.GraphJSONObjectCallback() {
-                        @Override
-                        public void onCompleted(final JSONObject object, GraphResponse response) {
-                            // Application code
-
-                            UsuarioPOJO usuarioPOJO = new UsuarioPOJO();
-
-                            final EditText input = new EditText(getActivity());
-
-
-                            input.setTransformationMethod(PasswordTransformationMethod.getInstance());
-
-
-                            // Write your code here to execute after dialog
-
-                            getEtEmail().setText(object.optString(getActivity().getResources().getString(R.string.email)));
-
-
-                            usuarioPOJO.setS_password(input.getText().toString());
-                            usuarioPOJO.setS_email(object.optString(getActivity().getResources().getString(R.string.email)));
-                            String nombre;
-                            nombre = object.optString(getActivity().getResources().getString(R.string.sfirst_name));
-                            String apellidos;
-                            apellidos = object.optString(getActivity().getResources().getString(R.string.last_name));
-                            if (!apellidos.isEmpty()) {
-                                nombre = nombre.concat(getString(R.string.espacio));
-                                nombre = nombre.concat(apellidos);
-                            }
-
-                            usuarioPOJO.setS_nombre(nombre);
-                            usuarioPOJO.setI_idFcbk(object.optLong(getActivity().getResources().getString(R.string.sId)));
-
-                            LoginFacebook loginFacebook = new LoginFacebook(getActivity(), usuarioPOJO);
-                            loginFacebook.execute();
-
-
-                            Log.e(getClass().getName(), response.toString());
-
-
-                        }
-                    });
-            Bundle parameters = new Bundle();
-            parameters.putString("fields", "id, first_name, last_name, email");
-            request.setParameters(parameters);
-            request.executeAsync();
-
-
-        }
-
-        public void onCancel() {
-            Log.e(getClass().getName(), getString(R.string.sOnCancel));
-        }
-
-        @Override
-        public void onError(FacebookException e) {
-            Log.e(getClass().getName(), getActivity().getResources().getString(R.string.sErrorFacebook) + e);
-        }
-
-    };
-
 
     @Override
     public void onStart() {
@@ -821,7 +848,6 @@ public class MainActivityFragment extends Fragment implements GoogleApiClient.Co
         Log.i(getClass().getName(), getString(R.string.sOnResume) + constructWelcomeMessage(profile));
 
     }
-
 
     @Override
     public void onStop() {
@@ -845,7 +871,6 @@ public class MainActivityFragment extends Fragment implements GoogleApiClient.Co
 
 
     }
-
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -1099,6 +1124,137 @@ public class MainActivityFragment extends Fragment implements GoogleApiClient.Co
         Toast.makeText(getActivity(), getString(R.string.apiNoConnect), Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     *
+     */
+    private void setupProfileTracker() {
+        Log.i(getClass().getName(), "setupProfileTracker");
+        mProfileTracker = new ProfileTracker() {
+            @Override
+            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
+                try {
+                    Log.d(getClass().getName(), "onCurrentProfileChanged->" + currentProfile);
+                } catch (Exception e) {
+                    e.printStackTrace();
+
+                }
+                //mTextDetails.setText(constructWelcomeMessage(currentProfile));
+            }
+        };
+    }
+
+    /**
+     * @param view
+     * @description Inicializar los elementos del facebook
+     */
+    private void setupLoginButton(View view) {
+        Log.i(getClass().getName(), "setupLoginButton");
+        LoginButton mButtonLogin = (LoginButton) view.findViewById(R.id.login_button);
+        mButtonLogin.setText("");
+        mButtonLogin.setFragment(this);
+        mButtonLogin.setReadPermissions("public_profile, email,user_friends");
+        mButtonLogin.registerCallback(mCallbackManager, mFacebookCallback);
+    }
+
+
+    private String constructWelcomeMessage(Profile profile) {
+
+        StringBuilder stringBuffer = new StringBuilder();
+        if (profile != null) {
+            stringBuffer.append("Welcome ").append(profile.getName());
+        }
+        return stringBuffer.toString();
+    }
+
+    private TextInputLayout getTilPassword() {
+        return tilPassword;
+    }
+
+    private void setTilPassword(TextInputLayout tilPassword) {
+        this.tilPassword = tilPassword;
+    }
+
+    private TextInputLayout getTilNombre() {
+        return tilNombre;
+    }
+
+    private void setTilNombre(TextInputLayout tilNombre) {
+        this.tilNombre = tilNombre;
+    }
+
+    private ImageView getIvSalir() {
+        return ivSalir;
+    }
+
+    private void setIvSalir(ImageView ivSalir) {
+        this.ivSalir = ivSalir;
+    }
+
+    private CheckBox getCbRecordad() {
+        return cbRecordad;
+    }
+
+    private void setCbRecordad(CheckBox cbRecordad) {
+        this.cbRecordad = cbRecordad;
+    }
+
+
+    private void setmCallbackManager(CallbackManager mCallbackManager) {
+        this.mCallbackManager = mCallbackManager;
+    }
+
+    private AccessTokenTracker getmTokenTracker() {
+        return mTokenTracker;
+    }
+
+
+    private ProfileTracker getmProfileTracker() {
+        return mProfileTracker;
+    }
+
+    private CustomFontEditText getEtEmail() {
+        return etEmail;
+    }
+
+    private void setEtEmail(CustomFontEditText etEmail) {
+        this.etEmail = etEmail;
+    }
+
+    private EditText getEtPassword() {
+        return etPassword;
+    }
+
+    private void setEtPassword(EditText etPassword) {
+        this.etPassword = etPassword;
+    }
+
+    private CustomFontButton getbEnviar() {
+        return bEnviar;
+    }
+
+    private void setbEnviar(CustomFontButton bEnviar) {
+        this.bEnviar = bEnviar;
+    }
+
+    private CustomFontButton getbUsuarioNuevo() {
+        return bUsuarioNuevo;
+    }
+
+    private void setbUsuarioNuevo(CustomFontButton bUsuarioNuevo) {
+        this.bUsuarioNuevo = bUsuarioNuevo;
+    }
+
+    private CustomFontButton getbOlvidoPassword() {
+        return bOlvidoPassword;
+    }
+
+    private void setbOlvidoPassword(CustomFontButton bOlvidoPassword) {
+        this.bOlvidoPassword = bOlvidoPassword;
+    }
+
+    private SignInButton getSignInButton() {
+        return signInButton;
+    }
 
     /**
      * @params String, String, JSONObject
@@ -1277,143 +1433,6 @@ public class MainActivityFragment extends Fragment implements GoogleApiClient.Co
 
         }
 
-    }
-
-    /**
-     *
-     */
-    private void setupProfileTracker() {
-        Log.i(getClass().getName(), "setupProfileTracker");
-        mProfileTracker = new ProfileTracker() {
-            @Override
-            protected void onCurrentProfileChanged(Profile oldProfile, Profile currentProfile) {
-                try {
-                    Log.d(getClass().getName(), "onCurrentProfileChanged->" + currentProfile);
-                } catch (Exception e) {
-                    e.printStackTrace();
-
-                }
-                //mTextDetails.setText(constructWelcomeMessage(currentProfile));
-            }
-        };
-    }
-
-    /**
-     * @param view
-     * @description Inicializar los elementos del facebook
-     */
-    private void setupLoginButton(View view) {
-        Log.i(getClass().getName(), "setupLoginButton");
-        LoginButton mButtonLogin = (LoginButton) view.findViewById(R.id.login_button);
-        mButtonLogin.setText("");
-        mButtonLogin.setFragment(this);
-        mButtonLogin.setReadPermissions("public_profile, email,user_friends");
-        mButtonLogin.registerCallback(mCallbackManager, mFacebookCallback);
-    }
-
-
-    private String constructWelcomeMessage(Profile profile) {
-
-        StringBuilder stringBuffer = new StringBuilder();
-        if (profile != null) {
-            stringBuffer.append("Welcome ").append(profile.getName());
-        }
-        return stringBuffer.toString();
-    }
-
-    private TextInputLayout getTilPassword() {
-        return tilPassword;
-    }
-
-    private void setTilPassword(TextInputLayout tilPassword) {
-        this.tilPassword = tilPassword;
-    }
-
-    private TextInputLayout getTilNombre() {
-        return tilNombre;
-    }
-
-    private void setTilNombre(TextInputLayout tilNombre) {
-        this.tilNombre = tilNombre;
-    }
-
-    private ImageView getIvSalir() {
-        return ivSalir;
-    }
-
-    private void setIvSalir(ImageView ivSalir) {
-        this.ivSalir = ivSalir;
-    }
-
-    private CheckBox getCbRecordad() {
-        return cbRecordad;
-    }
-
-    private void setCbRecordad(CheckBox cbRecordad) {
-        this.cbRecordad = cbRecordad;
-    }
-
-
-    private void setmCallbackManager(CallbackManager mCallbackManager) {
-        this.mCallbackManager = mCallbackManager;
-    }
-
-    private AccessTokenTracker getmTokenTracker() {
-        return mTokenTracker;
-    }
-
-
-    private ProfileTracker getmProfileTracker() {
-        return mProfileTracker;
-    }
-
-
-    private static void setActivity(Activity activity) {
-        MainActivityFragment.activity = activity;
-    }
-
-    private CustomFontEditText getEtEmail() {
-        return etEmail;
-    }
-
-    private void setEtEmail(CustomFontEditText etEmail) {
-        this.etEmail = etEmail;
-    }
-
-    private EditText getEtPassword() {
-        return etPassword;
-    }
-
-    private void setEtPassword(EditText etPassword) {
-        this.etPassword = etPassword;
-    }
-
-    private CustomFontButton getbEnviar() {
-        return bEnviar;
-    }
-
-    private void setbEnviar(CustomFontButton bEnviar) {
-        this.bEnviar = bEnviar;
-    }
-
-    private CustomFontButton getbUsuarioNuevo() {
-        return bUsuarioNuevo;
-    }
-
-    private void setbUsuarioNuevo(CustomFontButton bUsuarioNuevo) {
-        this.bUsuarioNuevo = bUsuarioNuevo;
-    }
-
-    private CustomFontButton getbOlvidoPassword() {
-        return bOlvidoPassword;
-    }
-
-    private void setbOlvidoPassword(CustomFontButton bOlvidoPassword) {
-        this.bOlvidoPassword = bOlvidoPassword;
-    }
-
-    private SignInButton getSignInButton() {
-        return signInButton;
     }
 
 }

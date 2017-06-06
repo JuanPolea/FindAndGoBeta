@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.pojo;
 
 import android.content.Context;
@@ -74,6 +108,17 @@ import java.util.Map;
  */
 public class AlertaPOJO extends EventoPOJO implements Parcelable {
 
+    public static final Creator<AlertaPOJO> CREATOR = new Creator<AlertaPOJO>() {
+        @Override
+        public AlertaPOJO createFromParcel(Parcel in) {
+            return new AlertaPOJO(in);
+        }
+
+        @Override
+        public AlertaPOJO[] newArray(int size) {
+            return new AlertaPOJO[size];
+        }
+    };
     private int i_idalerta;
     private int i_idSesion;
     private int i_idUsuario;
@@ -83,20 +128,16 @@ public class AlertaPOJO extends EventoPOJO implements Parcelable {
     private String s_nombreUsuario;
     private int posicion;
     private ListView listView;
-
     private int i_ano;
     private int i_mes;
     private int i_dia;
     private int i_hora;
     private int i_minutos;
-
     private Context context;
     private String[] s_semana;
     private LinkedList<Integer> ll_diaSeleccionado = new LinkedList<>();
     private boolean isAlerta;
-
     private boolean[] isSelectedArray = {true, true, true, true, true, true, true};
-
     private int[] i_idiaSeleccionado = {1, 1, 1, 1, 1, 1, 1};
 
     public AlertaPOJO(Context context) {
@@ -125,10 +166,10 @@ public class AlertaPOJO extends EventoPOJO implements Parcelable {
         this.s_nombreUsuario = s_nombreUsuario;
     }
 
+
     public AlertaPOJO() {
 
     }
-
 
     /**
      * @param in
@@ -150,13 +191,13 @@ public class AlertaPOJO extends EventoPOJO implements Parcelable {
 
     }
 
+
     public AlertaPOJO(int i_idalerta, int i_idUsuario, int estado) {
 
         setI_idalerta(i_idalerta);
         setI_idUsuario(i_idUsuario);
         setI_estado(estado);
     }
-
 
     @Override
     public int describeContents() {
@@ -175,19 +216,6 @@ public class AlertaPOJO extends EventoPOJO implements Parcelable {
 
 
     }
-
-
-    public static final Creator<AlertaPOJO> CREATOR = new Creator<AlertaPOJO>() {
-        @Override
-        public AlertaPOJO createFromParcel(Parcel in) {
-            return new AlertaPOJO(in);
-        }
-
-        @Override
-        public AlertaPOJO[] newArray(int size) {
-            return new AlertaPOJO[size];
-        }
-    };
 
     /**
      * métodos de la clase

@@ -49,6 +49,40 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -213,9 +247,9 @@
             android:layout_alignStart="@+id/idTvAlertaFecha"
             android:paddingLeft="@dimen/size_10"
             android:text="@string/sRepetir"
+            android:textColor="@color/verdeAgua"
             android:textSize="@dimen/size_14"
             app:font="@string/font_name_source_amatic_regular"
-            android:textColor="@color/verdeAgua"
 
             />
 
@@ -256,50 +290,50 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:layout_marginLeft="@dimen/size_10"
-            android:paddingLeft="@dimen/size_10"
-            android:text="@string/sAAMMDD"
-            android:textSize="@dimen/size_14"
-            app:font="@string/font_name_source_amatic_regular"
-            android:textColor="@color/grisMuyOscuro"
             android:layout_alignBaseline="@+id/cbFecha"
             android:layout_alignBottom="@+id/cbFecha"
-            android:layout_toEndOf="@+id/idIvAlertaFecha" />
+            android:layout_marginLeft="@dimen/size_10"
+            android:layout_toEndOf="@+id/idIvAlertaFecha"
+            android:paddingLeft="@dimen/size_10"
+            android:text="@string/sAAMMDD"
+            android:textColor="@color/grisMuyOscuro"
+            android:textSize="@dimen/size_14"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <CheckBox
 
-            android:text="@string/sCualquierFecha"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/cbFecha"
-            android:textSize="@dimen/size_checkBox"
-            android:textColor="@color/link"
-            android:layout_below="@+id/tilAlertaNombreSala"
-            android:layout_alignStart="@+id/idBAlertaRegistrar"
-            android:layout_marginStart="30dp" />
-
-        <CheckBox
-            android:text="@string/sCualquierHora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cbHora"
-            android:textSize="@dimen/size_checkBox"
+            android:layout_alignStart="@+id/idBAlertaRegistrar"
+            android:layout_below="@+id/tilAlertaNombreSala"
+            android:layout_marginStart="30dp"
+            android:text="@string/sCualquierFecha"
             android:textColor="@color/link"
+            android:textSize="@dimen/size_checkBox" />
+
+        <CheckBox
+            android:id="@+id/cbHora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/cbFecha"
             android:layout_below="@+id/cbFecha"
-            android:layout_alignStart="@+id/cbFecha" />
+            android:text="@string/sCualquierHora"
+            android:textColor="@color/link"
+            android:textSize="@dimen/size_checkBox" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvAlertaHora"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/size_20"
-            android:text="@string/sHHMM"
-            android:textSize="@dimen/size_14"
-            app:font="@string/font_name_source_amatic_regular"
-            android:textColor="@color/grisMuyOscuro"
             android:layout_alignBaseline="@+id/cbHora"
             android:layout_alignBottom="@+id/cbHora"
-            android:layout_toEndOf="@+id/idIvAlertaHora" />
+            android:layout_marginLeft="@dimen/size_20"
+            android:layout_toEndOf="@+id/idIvAlertaHora"
+            android:text="@string/sHHMM"
+            android:textColor="@color/grisMuyOscuro"
+            android:textSize="@dimen/size_14"
+            app:font="@string/font_name_source_amatic_regular" />
 
     </RelativeLayout>
 

@@ -49,6 +49,40 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -78,11 +112,11 @@
                 android:id="@+id/idEtAsistenteNombre"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_below="@+id/tvCambiarFotoAsistente"
                 android:hint="@string/sNombre"
-                app:font="@string/font_name_source_amatic_regular"
-                android:layout_alignParentLeft="true" />
+                app:font="@string/font_name_source_amatic_regular" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -97,11 +131,11 @@
                 android:id="@+id/idEtAsistenteEmail"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:hint="@string/sEmail"
                 android:inputType="textEmailAddress"
-                app:font="@string/font_name_source_amatic_regular"
-                android:layout_alignParentLeft="true" />
+                app:font="@string/font_name_source_amatic_regular" />
         </android.support.design.widget.TextInputLayout>
 
 
@@ -128,31 +162,31 @@
             android:id="@+id/idSpAsistenteCiudad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/tilAsistentePassword"
             android:layout_marginTop="17dp"
-            android:background="@drawable/btn_dropdown"
-            android:layout_alignParentLeft="true" />
+            android:background="@drawable/btn_dropdown" />
 
         <ImageView
             android:id="@+id/idIvAsistenteRegistrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:contentDescription="@string/sRegistrar"
-            android:background="@drawable/btn_save"
-            android:layout_below="@id/idSpAsistenteCiudad"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true" />
+            android:layout_below="@id/idSpAsistenteCiudad"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/btn_save"
+            android:contentDescription="@string/sRegistrar" />
 
         <ImageView
             android:id="@+id/ivAsistenteFoto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:visibility="invisible"
             android:layout_marginBottom="@dimen/size_10"
+            android:layout_marginTop="10dp"
+            android:visibility="invisible"
             tools:ignore="ContentDescription" />
     </RelativeLayout>
 

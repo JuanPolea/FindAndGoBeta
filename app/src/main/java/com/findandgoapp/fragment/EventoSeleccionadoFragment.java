@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.Manifest;
@@ -168,8 +202,14 @@ public class EventoSeleccionadoFragment extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     private static final int TAKE_FOTO = 137;
+    private static final int REQUEST_PERMISSION_SETTING = 101;
+    private static final int EXTERNAL_STORAGE_PERMISSION_CONSTANT = 100;
     private static Activity activity;
-
+    private static boolean isImage = false;
+    private static String formato = "jpeg";
+    private static String urlShare;
+    private final EventoPOJO evento = new EventoPOJO();
+    private final PuntuacionPOJO puntuacion = new PuntuacionPOJO();
     private CustomFontTextView tv_nombre;
     private CustomFontTextView tv_descripcion;
     private CustomFontTextView tv_categoria;
@@ -186,24 +226,15 @@ public class EventoSeleccionadoFragment extends Fragment {
     private CustomFontTextView tv_confirmacion;
     private CustomFontTextView tv_numComentario;
     private CustomFontTextView tv_creador;
-
     private CustomFontTextView tv_nombreUsuarioComenta;
     private ImageView Iv_confirmar;
     private ImageView Iv_denunciar;
-
     private ImageView iv_comentario;
-
     private EditText et_comenta;
     private int i_idEvento;
     private int i_idUsuario;
     private int i_estado;
-    private static boolean isImage = false;
-
-
-    private final EventoPOJO evento = new EventoPOJO();
     private DireccionPOJO direccionPOJO = new DireccionPOJO();
-    private final PuntuacionPOJO puntuacion = new PuntuacionPOJO();
-
     private OnFragmentInteractionListener mListener;
     private FragmentManager fragmentManager;
     private SharedPreferences sharedPreferences;
@@ -217,81 +248,13 @@ public class EventoSeleccionadoFragment extends Fragment {
     private String fromFragment;
     private Toolbar toolbar;
     private File destination;
-    private static String formato = "jpeg";
     private ImageView imageview;
-
-    private static String urlShare;
     private SharedPreferences permissionStatus;
-    private static final int REQUEST_PERMISSION_SETTING = 101;
-    private static final int EXTERNAL_STORAGE_PERMISSION_CONSTANT = 100;
     private int SIZE_FOTO = 300;
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        imageview = (ImageView) getActivity().findViewById(R.id.toolbarImage);
-
-
-        ImageDownloadTask imageDownloadTask = new ImageDownloadTask(getContext(), String.valueOf(evento.getI_idEvento())
-                , imageview);
-        imageDownloadTask.execute();
-
-
-    }
 
     public EventoSeleccionadoFragment() {
         // Required empty public constructor
     }
-
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
-    }
-
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-        mListener = null;
-    }
-
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-
-        void onDialogPositive(int res);
-
-        void setTitle(String title);
-
-    }
-
-
-    @Override
-    public void onAttach(Activity activity) {
-        super.onAttach(activity);
-
-        try {
-            mListener = (OnFragmentInteractionListener) activity;
-        } catch (ClassCastException e) {
-            throw new ClassCastException(activity.toString() + " must implement OnFragmentInteractionListener");
-        }
-
-
-    }
-
 
     /**
      * Use this factory method to create a new instance of
@@ -309,6 +272,102 @@ public class EventoSeleccionadoFragment extends Fragment {
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    /**
+     * @param context
+     * @param image
+     * @param file
+     */
+    public static void launchPicasso(Context context, ImageView image, String file) {
+
+
+        Picasso.
+                with(context).
+                load(file)
+                .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
+                .transform(new BordesRedondos(300, 0))
+                .error(R.drawable.ic_logo_user)
+                .into(image);
+
+
+        Utilidades utilidades = new Utilidades();
+        utilidades.clearImageDiskCache(context.getApplicationContext());
+
+        int ancho = (int) context.getResources().getDimension(R.dimen.fotoAnchoComentario);
+        int alto = (int) context.getResources().getDimension(R.dimen.fotoAltoComentario);
+        image.getLayoutParams().height = ancho;
+        image.getLayoutParams().width = alto;
+    }
+
+    /**
+     *
+     */
+    public static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
+
+
+        if (isImage) {
+
+            try {
+
+
+                Picasso.
+                        with(context).
+                        load(file)
+                        .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE).
+                        error(context.getResources().getDrawable(R.drawable.ic_imagen_por_insertar))
+                        .into(image);
+            } catch (Exception e) {
+
+                e.printStackTrace();
+
+            }
+
+            Utilidades utilidades = new Utilidades();
+            utilidades.clearImageDiskCache(context.getApplicationContext());
+        } else {
+            image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_logo));
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        imageview = (ImageView) getActivity().findViewById(R.id.toolbarImage);
+
+
+        ImageDownloadTask imageDownloadTask = new ImageDownloadTask(getContext(), String.valueOf(evento.getI_idEvento())
+                , imageview);
+        imageDownloadTask.execute();
+
+
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        toolbar = (Toolbar) getActivity().findViewById(R.id.toolbar);
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+    @Override
+    public void onAttach(Activity activity) {
+        super.onAttach(activity);
+
+        try {
+            mListener = (OnFragmentInteractionListener) activity;
+        } catch (ClassCastException e) {
+            throw new ClassCastException(activity.toString() + " must implement OnFragmentInteractionListener");
+        }
+
+
     }
 
     @Override
@@ -1100,7 +1159,6 @@ public class EventoSeleccionadoFragment extends Fragment {
         return hashMap;
     }
 
-
     /**
      * @param i i = 1 confirma,
      *          i = 2 denuncia
@@ -1241,7 +1299,6 @@ public class EventoSeleccionadoFragment extends Fragment {
 
     }
 
-
     /**
      * @return
      */
@@ -1352,7 +1409,6 @@ public class EventoSeleccionadoFragment extends Fragment {
 
     }
 
-
     /**
      * @param posicion
      * @param comentarioPOJO
@@ -1373,7 +1429,6 @@ public class EventoSeleccionadoFragment extends Fragment {
         Log.d("formatoUpdatePuntuacion", hashMap.toString());
         return hashMap;
     }
-
 
     /**
      * @param llcomentario
@@ -1399,7 +1454,6 @@ public class EventoSeleccionadoFragment extends Fragment {
         FragmentDialogShare dialog = FragmentDialogShare.newInstance(urlShare, evento);
         dialog.show(getActivity().getSupportFragmentManager(), "showNoticeShare");
     }
-
 
     private void selectEventoSeleccionado() {
 
@@ -1791,7 +1845,6 @@ public class EventoSeleccionadoFragment extends Fragment {
 
     }
 
-
     /**
      * @param activity
      * @param _evento
@@ -1805,7 +1858,6 @@ public class EventoSeleccionadoFragment extends Fragment {
         FragmentDialogPenalizaciones dialog = FragmentDialogPenalizaciones.newInstance(evento, idSesion);
         dialog.show(fragmentManager, "DialogFragmentPenalizacion");
     }
-
 
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
@@ -1858,7 +1910,6 @@ public class EventoSeleccionadoFragment extends Fragment {
 
         super.onCreateOptionsMenu(menu, inflater);
     }
-
 
     /**
      * @param item
@@ -2081,7 +2132,6 @@ public class EventoSeleccionadoFragment extends Fragment {
         return super.onOptionsItemSelected(item);
     }
 
-
     /**
      *
      */
@@ -2138,7 +2188,6 @@ public class EventoSeleccionadoFragment extends Fragment {
         }
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
         Log.e(getClass().getName(), "request " + requestCode);
@@ -2162,7 +2211,6 @@ public class EventoSeleccionadoFragment extends Fragment {
             }
         }
     }
-
 
     /**
      *
@@ -2311,7 +2359,6 @@ public class EventoSeleccionadoFragment extends Fragment {
         super.onActivityResult(requestCode, resultCode, data);
     }
 
-
     /**
      *
      */
@@ -2344,6 +2391,330 @@ public class EventoSeleccionadoFragment extends Fragment {
         }
     }
 
+    private void deleteEvento() {
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, getActivity().getResources().getString(R.string.sUrl_deleteEventoSeleccionado),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+
+
+                        int success;
+                        Utilidades utilidades = new Utilidades();
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+
+                            utilidades.errorConsultaBBDD(getActivity(), jsonObject.getString("mensaje"));
+
+                            success = jsonObject.getInt("success");
+
+
+                            if (success == 1) {
+
+
+                                activity.finish();
+                                activity.overridePendingTransition(0, 0);
+
+                                Intent i;
+                                if (idSesion == 1) {
+                                    i = new Intent(activity, TabAdmin.class);
+                                } else {
+                                    i = new Intent(activity, MenuPrincipal.class);
+                                }
+
+                                SharedPreferences sharedPreferences = activity.getSharedPreferences(activity.getResources().getString(R.string.sDATOS), Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+
+                                editor.putInt(activity.getResources().getString(R.string.sIdSesion), idSesion);
+                                editor.putInt(activity.getResources().getString(R.string.tab), 0);
+
+                                editor.apply();
+                                activity.startActivity(i);
+                                activity.finish();
+
+                            } else {
+                                Toast.makeText(activity, activity.getResources().getString(R.string.sNoEliminaEvento), Toast.LENGTH_SHORT).show();
+
+                            }
+                        } catch (JSONException e) {
+                            Log.e("deleteEvento Catch", e.getMessage());
+                        }
+                    }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        //You can handle error here if you want
+                        Log.e("deleteEvento Error", error.getMessage());
+                    }
+                }) {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+
+                //Adding parameters to request
+
+
+                return evento.formatoIdEventoidUsuario(getActivity());
+            }
+        };
+
+        //Adding the string request to the queue
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
+        requestQueue.add(stringRequest);
+
+    }
+
+    private ImageView getIv_comentario() {
+        return iv_comentario;
+    }
+
+    private void setIv_comentario(ImageView iv_comentario) {
+        this.iv_comentario = iv_comentario;
+    }
+
+    private ImageView getIv_confirmar() {
+        return Iv_confirmar;
+    }
+
+    private void setIv_confirmar(ImageView iv_confirmar) {
+        Iv_confirmar = iv_confirmar;
+    }
+
+    private ImageView getIv_denunciar() {
+        return Iv_denunciar;
+    }
+
+    private void setIv_denunciar(ImageView iv_denunciar) {
+        Iv_denunciar = iv_denunciar;
+    }
+
+    private CustomFontTextView getTv_artista() {
+        return tv_artista;
+    }
+
+    private void setTv_artista(CustomFontTextView tv_artista) {
+        this.tv_artista = tv_artista;
+    }
+
+    private CustomFontTextView getTv_categoria() {
+        return tv_categoria;
+    }
+
+    private void setTv_categoria(CustomFontTextView tv_categoria) {
+        this.tv_categoria = tv_categoria;
+    }
+
+    private CustomFontTextView getTv_clasificacion() {
+        return tv_clasificacion;
+    }
+
+    private void setTv_clasificacion(CustomFontTextView tv_clasificacion) {
+        this.tv_clasificacion = tv_clasificacion;
+    }
+
+    private CustomFontTextView getTv_confirmacion() {
+        return tv_confirmacion;
+    }
+
+    private void setTv_confirmacion(CustomFontTextView tv_confirmacion) {
+        this.tv_confirmacion = tv_confirmacion;
+    }
+
+    private CustomFontTextView getTv_creador() {
+        return tv_creador;
+    }
+
+    private void setTv_creador(CustomFontTextView tv_creador) {
+        this.tv_creador = tv_creador;
+    }
+
+    private CustomFontTextView getTv_denuncia() {
+        return tv_denuncia;
+    }
+
+    private void setTv_denuncia(CustomFontTextView tv_denuncia) {
+        this.tv_denuncia = tv_denuncia;
+    }
+
+    private CustomFontTextView getTv_descripcion() {
+        return tv_descripcion;
+    }
+
+    private void setTv_descripcion(CustomFontTextView tv_descripcion) {
+        this.tv_descripcion = tv_descripcion;
+    }
+
+    private CustomFontTextView getTv_direccion() {
+        return tv_direccion;
+    }
+
+    private void setTv_direccion(CustomFontTextView tv_direccion) {
+        this.tv_direccion = tv_direccion;
+    }
+
+    private CustomFontTextView getTv_fecha() {
+        return tv_fecha;
+    }
+
+    private void setTv_fecha(CustomFontTextView tv_fecha) {
+        this.tv_fecha = tv_fecha;
+    }
+
+    private CustomFontTextView getTv_hora() {
+        return tv_hora;
+    }
+
+    private void setTv_hora(CustomFontTextView tv_hora) {
+        this.tv_hora = tv_hora;
+    }
+
+    private CustomFontTextView getTv_lugar() {
+        return tv_lugar;
+    }
+
+    private void setTv_lugar(CustomFontTextView tv_lugar) {
+        this.tv_lugar = tv_lugar;
+    }
+
+    private CustomFontTextView getTv_precio() {
+        return tv_precio;
+    }
+
+    private void setTv_precio(CustomFontTextView tv_precio) {
+        this.tv_precio = tv_precio;
+    }
+
+    private CustomFontTextView getTv_tipo() {
+        return tv_tipo;
+    }
+
+    private void setTv_tipo(CustomFontTextView tv_tipo) {
+        this.tv_tipo = tv_tipo;
+    }
+
+    private DireccionPOJO getDireccionPOJO() {
+        return direccionPOJO;
+    }
+
+    private CustomFontTextView getTv_numComentario() {
+        return tv_numComentario;
+    }
+
+    private void setTv_numComentario(CustomFontTextView tv_numComentario) {
+        this.tv_numComentario = tv_numComentario;
+    }
+
+    private int getPosicion() {
+        return posicion;
+    }
+
+    private void setPosicion(int posicion) {
+        this.posicion = posicion;
+    }
+
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p/>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
+
+        void onDialogPositive(int res);
+
+        void setTitle(String title);
+
+    }
+
+    public static class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
+
+        private final String fileURL;
+        private final ImageView imageView;
+        private final Context _context;
+        private String newFile;
+
+
+        /**
+         *
+         */
+        public ImageDownloadTask(final Context context, final String imageURL, final ImageView imageView) {
+            this.fileURL = imageURL;
+            this.imageView = imageView;
+            this._context = context;
+
+
+        }
+
+        @Override
+        protected Boolean doInBackground(final String... args) {
+
+            HttpURLConnection con = null;
+            Boolean estado = false;
+
+
+            try {
+                HttpURLConnection.setFollowRedirects(false);
+
+                newFile = _context.getString(R.string.sRutaImagenes) + fileURL + _context.getString(R.string.sFormatoEvento);
+                con = (HttpURLConnection) new URL(newFile).openConnection();
+                con.setRequestMethod("HEAD");
+
+                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
+
+
+                    if (con.getURL().getFile().equalsIgnoreCase(_context.getString(R.string.upload)
+                            + fileURL
+                            + _context.getString(R.string.sFormatoEvento))) {
+                        {
+
+                            urlShare = newFile;
+                            estado = true;
+                        }
+                    }
+
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+
+
+            } finally {
+                assert con != null;
+                assert con != null;
+                con.disconnect();
+            }
+
+
+            if (!newFile.contains(".jpeg"))
+                newFile = newFile.concat(".jpeg");
+            return estado;
+        }
+
+
+        @Override
+        protected void onPostExecute(final Boolean result) {
+
+            isImage = result;
+
+
+            if (result) {
+                {
+                    launchPicasso(_context, result, this.imageView, newFile);
+                    urlShare = newFile;
+                }
+            }
+
+
+        }
+
+    }
 
     /**
      *
@@ -2445,374 +2816,6 @@ public class EventoSeleccionadoFragment extends Fragment {
 
             Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.uploaded), Toast.LENGTH_LONG).show();
         }
-    }
-
-
-    public static class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
-
-        private final String fileURL;
-        private final ImageView imageView;
-        private final Context _context;
-        private String newFile;
-
-
-        /**
-         *
-         */
-        public ImageDownloadTask(final Context context, final String imageURL, final ImageView imageView) {
-            this.fileURL = imageURL;
-            this.imageView = imageView;
-            this._context = context;
-
-
-        }
-
-        @Override
-        protected Boolean doInBackground(final String... args) {
-
-            HttpURLConnection con = null;
-            Boolean estado = false;
-
-
-            try {
-                HttpURLConnection.setFollowRedirects(false);
-
-                newFile = _context.getString(R.string.sRutaImagenes) + fileURL + _context.getString(R.string.sFormatoEvento);
-                con = (HttpURLConnection) new URL(newFile).openConnection();
-                con.setRequestMethod("HEAD");
-
-                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
-
-
-                    if (con.getURL().getFile().equalsIgnoreCase(_context.getString(R.string.upload)
-                            + fileURL
-                            + _context.getString(R.string.sFormatoEvento))) {
-                        {
-
-                            urlShare = newFile;
-                            estado = true;
-                        }
-                    }
-
-
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-
-            } finally {
-                assert con != null;
-                assert con != null;
-                con.disconnect();
-            }
-
-
-            if (!newFile.contains(".jpeg"))
-                newFile = newFile.concat(".jpeg");
-            return estado;
-        }
-
-
-        @Override
-        protected void onPostExecute(final Boolean result) {
-
-            isImage = result;
-
-
-            if (result) {
-                {
-                    launchPicasso(_context, result, this.imageView, newFile);
-                    urlShare = newFile;
-                }
-            }
-
-
-        }
-
-    }
-
-    /**
-     * @param context
-     * @param image
-     * @param file
-     */
-    public static void launchPicasso(Context context, ImageView image, String file) {
-
-
-        Picasso.
-                with(context).
-                load(file)
-                .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
-                .transform(new BordesRedondos(300, 0))
-                .error(R.drawable.ic_logo_user)
-                .into(image);
-
-
-        Utilidades utilidades = new Utilidades();
-        utilidades.clearImageDiskCache(context.getApplicationContext());
-
-        int ancho = (int) context.getResources().getDimension(R.dimen.fotoAnchoComentario);
-        int alto = (int) context.getResources().getDimension(R.dimen.fotoAltoComentario);
-        image.getLayoutParams().height = ancho;
-        image.getLayoutParams().width = alto;
-    }
-
-    /**
-     *
-     */
-    public static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
-
-
-        if (isImage) {
-
-            try {
-
-
-                Picasso.
-                        with(context).
-                        load(file)
-                        .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE).
-                        error(context.getResources().getDrawable(R.drawable.ic_imagen_por_insertar))
-                        .into(image);
-            } catch (Exception e) {
-
-                e.printStackTrace();
-
-            }
-
-            Utilidades utilidades = new Utilidades();
-            utilidades.clearImageDiskCache(context.getApplicationContext());
-        } else {
-            image.setImageDrawable(context.getResources().getDrawable(R.drawable.ic_logo));
-        }
-
-    }
-
-
-    private void deleteEvento() {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, getActivity().getResources().getString(R.string.sUrl_deleteEventoSeleccionado),
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-
-
-                        int success;
-                        Utilidades utilidades = new Utilidades();
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-
-                            utilidades.errorConsultaBBDD(getActivity(), jsonObject.getString("mensaje"));
-
-                            success = jsonObject.getInt("success");
-
-
-                            if (success == 1) {
-
-
-                                activity.finish();
-                                activity.overridePendingTransition(0, 0);
-
-                                Intent i;
-                                if (idSesion == 1) {
-                                    i = new Intent(activity, TabAdmin.class);
-                                } else {
-                                    i = new Intent(activity, MenuPrincipal.class);
-                                }
-
-                                SharedPreferences sharedPreferences = activity.getSharedPreferences(activity.getResources().getString(R.string.sDATOS), Context.MODE_PRIVATE);
-                                SharedPreferences.Editor editor = sharedPreferences.edit();
-
-                                editor.putInt(activity.getResources().getString(R.string.sIdSesion), idSesion);
-                                editor.putInt(activity.getResources().getString(R.string.tab), 0);
-
-                                editor.apply();
-                                activity.startActivity(i);
-                                activity.finish();
-
-                            } else {
-                                Toast.makeText(activity, activity.getResources().getString(R.string.sNoEliminaEvento), Toast.LENGTH_SHORT).show();
-
-                            }
-                        } catch (JSONException e) {
-                            Log.e("deleteEvento Catch", e.getMessage());
-                        }
-                    }
-
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        //You can handle error here if you want
-                        Log.e("deleteEvento Error", error.getMessage());
-                    }
-                }) {
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-
-                //Adding parameters to request
-
-
-                return evento.formatoIdEventoidUsuario(getActivity());
-            }
-        };
-
-        //Adding the string request to the queue
-        RequestQueue requestQueue = Volley.newRequestQueue(getActivity());
-        requestQueue.add(stringRequest);
-
-    }
-
-
-    private ImageView getIv_comentario() {
-        return iv_comentario;
-    }
-
-    private void setIv_comentario(ImageView iv_comentario) {
-        this.iv_comentario = iv_comentario;
-    }
-
-    private ImageView getIv_confirmar() {
-        return Iv_confirmar;
-    }
-
-    private void setIv_confirmar(ImageView iv_confirmar) {
-        Iv_confirmar = iv_confirmar;
-    }
-
-    private ImageView getIv_denunciar() {
-        return Iv_denunciar;
-    }
-
-    private void setIv_denunciar(ImageView iv_denunciar) {
-        Iv_denunciar = iv_denunciar;
-    }
-
-
-    private CustomFontTextView getTv_artista() {
-        return tv_artista;
-    }
-
-    private void setTv_artista(CustomFontTextView tv_artista) {
-        this.tv_artista = tv_artista;
-    }
-
-    private CustomFontTextView getTv_categoria() {
-        return tv_categoria;
-    }
-
-    private void setTv_categoria(CustomFontTextView tv_categoria) {
-        this.tv_categoria = tv_categoria;
-    }
-
-    private CustomFontTextView getTv_clasificacion() {
-        return tv_clasificacion;
-    }
-
-    private void setTv_clasificacion(CustomFontTextView tv_clasificacion) {
-        this.tv_clasificacion = tv_clasificacion;
-    }
-
-
-    private CustomFontTextView getTv_confirmacion() {
-        return tv_confirmacion;
-    }
-
-    private void setTv_confirmacion(CustomFontTextView tv_confirmacion) {
-        this.tv_confirmacion = tv_confirmacion;
-    }
-
-    private CustomFontTextView getTv_creador() {
-        return tv_creador;
-    }
-
-    private void setTv_creador(CustomFontTextView tv_creador) {
-        this.tv_creador = tv_creador;
-    }
-
-    private CustomFontTextView getTv_denuncia() {
-        return tv_denuncia;
-    }
-
-    private void setTv_denuncia(CustomFontTextView tv_denuncia) {
-        this.tv_denuncia = tv_denuncia;
-    }
-
-    private CustomFontTextView getTv_descripcion() {
-        return tv_descripcion;
-    }
-
-    private void setTv_descripcion(CustomFontTextView tv_descripcion) {
-        this.tv_descripcion = tv_descripcion;
-    }
-
-    private CustomFontTextView getTv_direccion() {
-        return tv_direccion;
-    }
-
-    private void setTv_direccion(CustomFontTextView tv_direccion) {
-        this.tv_direccion = tv_direccion;
-    }
-
-    private CustomFontTextView getTv_fecha() {
-        return tv_fecha;
-    }
-
-    private void setTv_fecha(CustomFontTextView tv_fecha) {
-        this.tv_fecha = tv_fecha;
-    }
-
-    private CustomFontTextView getTv_hora() {
-        return tv_hora;
-    }
-
-    private void setTv_hora(CustomFontTextView tv_hora) {
-        this.tv_hora = tv_hora;
-    }
-
-    private CustomFontTextView getTv_lugar() {
-        return tv_lugar;
-    }
-
-    private void setTv_lugar(CustomFontTextView tv_lugar) {
-        this.tv_lugar = tv_lugar;
-    }
-
-
-    private CustomFontTextView getTv_precio() {
-        return tv_precio;
-    }
-
-    private void setTv_precio(CustomFontTextView tv_precio) {
-        this.tv_precio = tv_precio;
-    }
-
-    private CustomFontTextView getTv_tipo() {
-        return tv_tipo;
-    }
-
-    private void setTv_tipo(CustomFontTextView tv_tipo) {
-        this.tv_tipo = tv_tipo;
-    }
-
-    private DireccionPOJO getDireccionPOJO() {
-        return direccionPOJO;
-    }
-
-    private CustomFontTextView getTv_numComentario() {
-        return tv_numComentario;
-    }
-
-    private void setTv_numComentario(CustomFontTextView tv_numComentario) {
-        this.tv_numComentario = tv_numComentario;
-    }
-
-    private int getPosicion() {
-        return posicion;
-    }
-
-    private void setPosicion(int posicion) {
-        this.posicion = posicion;
     }
 
 

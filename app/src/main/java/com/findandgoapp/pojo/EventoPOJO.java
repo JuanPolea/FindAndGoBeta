@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.pojo;
 
 import android.app.Application;
@@ -74,47 +108,48 @@ import java.util.Map;
 public class EventoPOJO extends Application implements Parcelable {
 
 
+    /**
+     *
+     */
+    public static final Parcelable.Creator<EventoPOJO> CREATOR = new Parcelable.Creator<EventoPOJO>() {
+        @Override
+        public EventoPOJO createFromParcel(Parcel in) {
+            return new EventoPOJO(in);
+        }
+
+        @Override
+        public EventoPOJO[] newArray(int size) {
+            return new EventoPOJO[size];
+        }
+    };
+    private final DireccionPOJO direccionPOJO = new DireccionPOJO();
+    private final LinkedList<ComentarioPOJO> ll_comentario = new LinkedList<>();
+    private final LinkedList<PenalizacionPOJO> ll_penalizacion = new LinkedList<>();
+    private final Map<String, String> llNvp = new HashMap<>();
     private String[] items = {"Evento no existente",
             "Contiene datos erróneos",
             "Contenido ofensivo",
     };
-
     private int i_idEvento;
     private int i_idUsuario;
     private int i_ano;
     private int i_mes;
     private int i_dia;
     private int i_hora;
-
     private int i_minutos;
-    private final DireccionPOJO direccionPOJO = new DireccionPOJO();
     private int i_numComenta;
-
-
     private String s_comentario;
-
     private String s_nombreUsuarioComenta;
-
-    private final LinkedList<ComentarioPOJO> ll_comentario = new LinkedList<>();
-    private final LinkedList<PenalizacionPOJO> ll_penalizacion = new LinkedList<>();
-
-
     private boolean b_isImage;
-
-
     /**
      * Tab Evento
      */
 
     private int i_seleccion;
     private ListView listView;
-
-
     private String s_nombreEvento;
     private String s_categoria;
     private String s_clasificacion;
-
-
     private String s_nombreSala;
     private String s_tipo;
     private String s_ciudad;
@@ -131,12 +166,6 @@ public class EventoPOJO extends Application implements Parcelable {
     private String s_creador;
     private String emailUsuarioSesion;
     private String s_hora;
-
-    public Map<String, String> getLlNvp() {
-        return llNvp;
-    }
-
-    private final Map<String, String> llNvp = new HashMap<>();
 
     public EventoPOJO(Context context) {
     }
@@ -200,21 +229,9 @@ public class EventoPOJO extends Application implements Parcelable {
 
     }
 
-    /**
-     *
-     */
-    public static final Parcelable.Creator<EventoPOJO> CREATOR = new Parcelable.Creator<EventoPOJO>() {
-        @Override
-        public EventoPOJO createFromParcel(Parcel in) {
-            return new EventoPOJO(in);
-        }
-
-        @Override
-        public EventoPOJO[] newArray(int size) {
-            return new EventoPOJO[size];
-        }
-    };
-
+    public Map<String, String> getLlNvp() {
+        return llNvp;
+    }
 
     @Override
     public int describeContents() {

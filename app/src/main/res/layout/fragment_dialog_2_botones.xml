@@ -49,42 +49,76 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/AlertDialog.AppCompat.Light"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
-    android:orientation="vertical"
-    style="@style/AlertDialog.AppCompat.Light">
+    android:orientation="vertical">
 
 
     <Button
         android:id="@+id/bCancela"
         android:layout_width="@dimen/size_30"
         android:layout_height="@dimen/size_30"
-        android:background="@drawable/btn_exit"
+        android:layout_above="@+id/listaMenuComentarios"
+        android:layout_alignEnd="@+id/listaMenuComentarios"
         android:layout_marginEnd="@dimen/size_20"
         android:layout_marginTop="@dimen/size_20"
-        android:layout_above="@+id/listaMenuComentarios"
-        android:layout_alignEnd="@+id/listaMenuComentarios" />
+        android:background="@drawable/btn_exit" />
 
     <Button
         android:id="@+id/bAddComent"
         android:layout_width="@dimen/size_30"
         android:layout_height="@dimen/size_30"
-        android:background="@drawable/btn_add_comentario"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/listaMenuComentarios"
         android:layout_marginStart="@dimen/size_20"
         android:layout_marginTop="@dimen/size_20"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/listaMenuComentarios" />
+        android:background="@drawable/btn_add_comentario" />
 
     <ListView
         android:id="@+id/listaMenuComentarios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/bAddComent"
-        android:divider="@color/azulVioleta"
-        android:dividerHeight="@dimen/size_1"
+        android:layout_marginTop="@dimen/size_10"
         android:background="@color/blanco"
-        android:layout_marginTop="@dimen/size_10" />
+        android:divider="@color/azulVioleta"
+        android:dividerHeight="@dimen/size_1" />
 
 </RelativeLayout>

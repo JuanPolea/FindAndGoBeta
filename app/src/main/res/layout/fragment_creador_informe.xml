@@ -49,11 +49,45 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -63,20 +97,20 @@
             android:id="@+id/tvCreadorNumPenalizaciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
-            android:text="@string/iCero"
             android:layout_alignBaseline="@+id/tvCreadorValoraciones"
             android:layout_alignBottom="@+id/tvCreadorValoraciones"
-            android:layout_alignStart="@+id/tvCreadorNumValoraciones" />
+            android:layout_alignStart="@+id/tvCreadorNumValoraciones"
+            android:text="@string/iCero"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <ImageView
             android:id="@+id/ivCreador"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/icono_transparente"
-            android:layout_marginTop="17dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:background="@drawable/icono_transparente"
             android:paddingBottom="@dimen/size_10"
             tools:ignore="ContentDescription" />
 
@@ -85,144 +119,144 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
-            android:background="@drawable/ic_exit"
-            android:layout_marginEnd="17dp"
-            android:layout_alignTop="@+id/ivCreador"
             android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/ivCreador"
+            android:layout_marginEnd="17dp"
+            android:background="@drawable/ic_exit"
             tools:ignore="ContentDescription" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvCreadorEventos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
-            android:layout_marginRight="@dimen/size_10"
-            android:layout_marginTop="@dimen/size_20"
-            android:text="@string/sEventos"
-            android:layout_marginStart="18dp"
-            android:layout_below="@+id/ivCreador"
             android:layout_alignParentStart="true"
+            android:layout_below="@+id/ivCreador"
+            android:layout_marginRight="@dimen/size_10"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="@dimen/size_20"
             android:paddingBottom="@dimen/size_10"
-            android:textColor="@color/negro" />
+            android:text="@string/sEventos"
+            android:textColor="@color/negro"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvCreadorValoraciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
+            android:layout_alignStart="@+id/tvCreadorPenalizaciones"
+            android:layout_below="@+id/tvCreadorPenalizaciones"
             android:layout_marginEnd="@dimen/size_10"
             android:paddingBottom="@dimen/size_10"
             android:text="@string/sPenalizaciones"
-            android:layout_below="@+id/tvCreadorPenalizaciones"
-            android:layout_alignStart="@+id/tvCreadorPenalizaciones"
-            android:textColor="@color/negro" />
+            android:textColor="@color/negro"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvCreadorPenalizaciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
-            android:layout_marginRight="@dimen/size_10"
-            android:textColor="@color/negro"
-            android:text="@string/sConfirmacione"
-            android:layout_below="@+id/tvCreadorEventos"
             android:layout_alignStart="@+id/tvCreadorEventos"
-            android:paddingBottom="@dimen/size_10" />
+            android:layout_below="@+id/tvCreadorEventos"
+            android:layout_marginRight="@dimen/size_10"
+            android:paddingBottom="@dimen/size_10"
+            android:text="@string/sConfirmacione"
+            android:textColor="@color/negro"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvCreadorNumEventos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
-            android:text="@string/iCero"
-            android:paddingBottom="@dimen/size_10"
             android:layout_above="@+id/tvCreadorPenalizaciones"
-            android:layout_toStartOf="@+id/ivCreadorCancela" />
+            android:layout_toStartOf="@+id/ivCreadorCancela"
+            android:paddingBottom="@dimen/size_10"
+            android:text="@string/iCero"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvCreadorNumValoraciones"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
-            android:text="@string/iCero"
+            android:layout_alignStart="@+id/tvCreadorNumEventos"
             android:layout_below="@+id/tvCreadorNumEventos"
-            android:layout_alignStart="@+id/tvCreadorNumEventos" />
+            android:text="@string/iCero"
+            app:font="@string/font_name_source_amatic_regular" />
 
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
+            android:layout_alignStart="@+id/tvCreadorPenalizaciones"
+            android:layout_below="@+id/tvCreadorValoraciones"
             android:layout_marginEnd="@dimen/size_10"
             android:paddingBottom="@dimen/size_10"
             android:text="@string/Tipo"
-            android:layout_below="@+id/tvCreadorValoraciones"
-            android:layout_alignStart="@+id/tvCreadorPenalizaciones"
-            android:textColor="@color/negro" />
+            android:textColor="@color/negro"
+            app:font="@string/font_name_source_amatic_regular" />
 
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvCategoria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
+            android:layout_alignStart="@+id/tvCreadorPenalizaciones"
+            android:layout_below="@+id/tvDescripcion"
             android:layout_marginEnd="@dimen/size_10"
             android:paddingBottom="@dimen/size_10"
             android:text="@string/Categoria"
-            android:layout_below="@+id/tvDescripcion"
-            android:layout_alignStart="@+id/tvCreadorPenalizaciones"
-            android:textColor="@color/negro" />
+            android:textColor="@color/negro"
+            app:font="@string/font_name_source_amatic_regular" />
 
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvProvincia"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
+            android:layout_alignStart="@+id/tvCreadorPenalizaciones"
+            android:layout_below="@+id/tvCategoria"
             android:layout_marginEnd="@dimen/size_10"
             android:paddingBottom="@dimen/size_10"
             android:text="@string/sProvincia"
-            android:layout_below="@+id/tvCategoria"
-            android:layout_alignStart="@+id/tvCreadorPenalizaciones"
-            android:textColor="@color/negro" />
+            android:textColor="@color/negro"
+            app:font="@string/font_name_source_amatic_regular" />
 
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvDescripcionTexto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
-            android:text=""
+            android:layout_alignEnd="@+id/tvCreadorNumPenalizaciones"
+            android:layout_below="@+id/tvCreadorValoraciones"
             android:maxLength="@integer/size_textoInformeCreador"
             android:maxLines="@integer/uno"
-            android:layout_below="@+id/tvCreadorValoraciones"
-            android:layout_alignEnd="@+id/tvCreadorNumPenalizaciones"
-            android:textDirection="rtl" />
+            android:text=""
+            android:textDirection="rtl"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvCategoriaDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
-            android:text=""
-            android:maxLength="@integer/size_textoInformeCreador"
-            android:maxLines="@integer/uno"
             android:layout_alignBaseline="@+id/tvCategoria"
             android:layout_alignBottom="@+id/tvCategoria"
             android:layout_alignEnd="@+id/tvDescripcionTexto"
-            android:textDirection="rtl" />
+            android:maxLength="@integer/size_textoInformeCreador"
+            android:maxLines="@integer/uno"
+            android:text=""
+            android:textDirection="rtl"
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/tvProvinciaDescripcion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
+            android:layout_alignEnd="@+id/tvCategoriaDescripcion"
+            android:layout_below="@+id/tvCategoria"
             android:maxLength="@integer/size_textoInformeCreador"
             android:maxLines="@integer/uno"
             android:text=""
             android:textDirection="rtl"
-            android:layout_below="@+id/tvCategoria"
-            android:layout_alignEnd="@+id/tvCategoriaDescripcion" />
+            app:font="@string/font_name_source_amatic_regular" />
     </RelativeLayout>
 </ScrollView>

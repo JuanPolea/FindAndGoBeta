@@ -49,6 +49,40 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
@@ -56,42 +90,42 @@
         <item xmlns:app="http://schemas.android.com/apk/res-auto"
 
             android:id="@+id/miIdBuscarPorDatos"
+            android:checkable="false"
             android:icon="@drawable/ic_action_search"
-            app:showAsAction="ifRoom"
             android:title="@string/sBuscarPorDatos"
-            android:checkable="false" />
+            app:showAsAction="ifRoom" />
         <item xmlns:app="http://schemas.android.com/apk/res-auto"
             android:id="@+id/miIdCrearEvento"
+            android:checkable="false"
             android:icon="@drawable/ic_action_new_event"
-            app:showAsAction="never"
             android:title="@string/sCrearEvento"
-            android:checkable="false" />
+            app:showAsAction="never" />
         <item
             android:id="@+id/miIdMisEventos"
 
+            android:checkable="false"
             android:icon="@drawable/ic_action_mis_eventos"
             android:title="@string/sMisEventos"
-            app:showAsAction="never"
-            android:checkable="false" />
-        <item android:id="@+id/miIdActualizarEventos"
+            app:showAsAction="never" />
+        <item xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/miIdActualizarEventos"
+            android:checkable="false"
             android:icon="@drawable/ic_eye"
             android:title="@string/verTodos"
-            app:showAsAction="never"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:checkable="false" />
-        <item android:id="@+id/miIdLeyenda"
+            app:showAsAction="never" />
+        <item xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/miIdLeyenda"
+            android:checkable="false"
             android:icon="@drawable/ic_leyenda"
             android:title="@string/Leyenda"
-            app:showAsAction="never"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:checkable="false" />
-        <item android:id="@+id/action_settings"
+            app:showAsAction="never" />
+        <item xmlns:app="http://schemas.android.com/apk/res-auto"
 
-            android:title="@string/action_settings"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            app:showAsAction="never"
+            android:id="@+id/action_settings"
+            android:checkable="false"
             android:icon="@drawable/ic_setting_light"
-            android:checkable="false" />
+            android:title="@string/action_settings"
+            app:showAsAction="never" />
     </group>
 
 

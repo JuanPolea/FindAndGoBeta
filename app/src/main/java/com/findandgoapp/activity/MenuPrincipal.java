@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.activity;
 
 import android.annotation.SuppressLint;
@@ -118,22 +152,72 @@ public class MenuPrincipal extends AppCompatActivity implements AdapterView.OnIt
         EventoSeleccionadoFragment.OnFragmentInteractionListener, NavigationView.OnNavigationItemSelectedListener {
 
     private static final int C_FRAGMENTS_TO_KEEP_IN_MEMORY = 2;
+    private static final String[] values = {"Drawer 1", "Drawer 2", "Drawer 3"};
+    private static int tab;
+    private static int tipo;
     private RecyclerView recycler;
     private DrawerLayout mDrawer;
     private ListView mDrawerOptions;
-    private static final String[] values = {"Drawer 1", "Drawer 2", "Drawer 3"};
-    private static int tab;
     private Toolbar toolbar;
     private SharedPreferences sharedPreferences;
-
     private ActionBarDrawerToggle toggle;
     private NavigationView navigationView;
     private int iIdSesion = 0;
-    private static int tipo;
     private int estado;
     private boolean facebook;
     private UsuarioPOJO usuarioPOJO;
 
+    /**
+     * @param context
+     * @param isImage
+     * @param image
+     * @param file
+     */
+    private static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
+
+
+        if (isImage) {
+
+            Picasso.
+                    with(context).
+                    load(file)
+                    .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
+                    .transform(new BordesRedondos(300, 0))
+                    .resize((int) context.getResources().getDimension(R.dimen.fotoAncho), (int) context.getResources().getDimension(R.dimen.fotoAncho))
+                    .centerInside()
+                    .error(R.drawable.ic_logo_tab)
+                    .into(image);
+
+
+            /**
+             *  Utilidades utilidades = new Utilidades();
+             utilidades.clearImageDiskCache(context.getApplicationContext());
+             */
+
+        } else {
+
+            if (tipo == 2)
+                image.setImageResource(R.drawable.icono_usuario);
+            else if (tipo == 3)
+                image.setImageResource(R.drawable.icono_artista);
+            else if (tipo == 4)
+                image.setImageResource(R.drawable.icono_asistente);
+            else
+                image.setImageResource(R.drawable.ic_logo_tab);
+        }
+
+
+    }
+
+    /**
+     * @param ctx
+     */
+
+    public static void cancelAllNotification(Context ctx) {
+        String ns = Context.NOTIFICATION_SERVICE;
+        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
+        nMgr.cancelAll();
+    }
 
     @Override
     public void onAttachFragment(Fragment fragment) {
@@ -155,7 +239,6 @@ public class MenuPrincipal extends AppCompatActivity implements AdapterView.OnIt
         toggle.syncState();
 
     }
-
 
     @Override
 
@@ -286,7 +369,7 @@ public class MenuPrincipal extends AppCompatActivity implements AdapterView.OnIt
 
 
         // Set up the ViewPager with the sections adapter.
-        
+
         /*
       The {@link ViewPager} that will host the section contents.
      */
@@ -547,7 +630,6 @@ public class MenuPrincipal extends AppCompatActivity implements AdapterView.OnIt
         return true;
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -618,6 +700,153 @@ public class MenuPrincipal extends AppCompatActivity implements AdapterView.OnIt
 
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+
+        return super.onOptionsItemSelected(item) || toggle.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+        Toast.makeText(this, "Pulsado " + values[position], Toast.LENGTH_SHORT).show();
+
+        mDrawer.closeDrawers();
+    }
+
+    @Override
+    public void onDialogPositive(int res) {
+
+    }
+
+    @Override
+    public void setTitle(String title) {
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+
+
+        String fromFragment = sharedPreferences.getString(getString(R.string.fromFragment), getString(R.string.svacio));
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+
+        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
+
+            if (fromFragment.equalsIgnoreCase(getString(R.string.fragment_evento_consulta))) {
+                fragmentManager.popBackStack();
+                toolbar.setTitle(getString(R.string.title_activity_menu_ppal));
+                editor.putString(getString(R.string.fromFragment), getString(R.string.title_activity_menu_ppal));
+                fragmentTransaction.commit();
+
+            } else if (fromFragment.equalsIgnoreCase(getString(R.string.fragment_evento_listado))) {
+                fragmentManager.popBackStack();
+                toolbar.setTitle(getString(R.string.sConsultar));
+                editor.putString(getString(R.string.fromFragment), getString(R.string.fragment_evento_consulta));
+                fragmentTransaction.commit();
+
+            } else if (fromFragment.equalsIgnoreCase(getString(R.string.title_activity_menu_ppal))) {
+                toolbar.setTitle(getString(R.string.title_activity_menu_ppal));
+
+                editor.putString(getString(R.string.fromFragment), getString(R.string.title_activity_menu_ppal));
+
+            } else
+                salir();
+
+
+            editor.apply();
+
+
+        } else {
+
+            if (fromFragment.equalsIgnoreCase(getString(R.string.fragment_evento_consulta))) {
+                super.onBackPressed();
+                super.onBackPressed();
+                toolbar.setTitle(getString(R.string.title_activity_menu_ppal));
+                editor.putString(getString(R.string.fromFragment), getString(R.string.title_activity_menu_ppal));
+                editor.apply();
+            } else if (fromFragment.equalsIgnoreCase(getString(R.string.fragment_evento_listado))) {
+                super.onBackPressed();
+            } else {
+                salir();
+            }
+        }
+    }
+
+    private void salir() {
+        TextView textView = new TextView(getApplicationContext());
+        textView.setText(getApplicationContext().getResources().getString(R.string.sWarning));
+        textView.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegular)));
+        textView.setPadding(15, 10, 0, 0);
+        textView.setTextSize(getApplicationContext().getResources().getDimension(R.dimen.size_aviso));
+        textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.rojo));
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(MenuPrincipal.this);
+        builder.setCustomTitle(textView)
+                .setMessage(getApplicationContext().getResources().getString(R.string.sCerrarSesion))
+                .setCancelable(false)
+                .setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_action_alarms))
+                .setNegativeButton(getApplicationContext().getResources().getString(R.string.sNO), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.cancel();
+                    }
+                })
+                .setPositiveButton(getApplicationContext().getResources().getString(R.string.sSi), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.CHECKED), Context.MODE_PRIVATE);
+                        SharedPreferences.Editor sharedChecked = sharedPreferences.edit();
+                        //SharedPreferences sharedPreferencesDatos = getSharedPreferences(getString(R.string.DATOS),Context.MODE_PRIVATE);
+                        boolean checked = sharedPreferences.getBoolean(getString(R.string.checked), false);
+
+                        Intent intent = new Intent(MenuPrincipal.this, MainActivity.class);
+                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        MenuPrincipal.this.finish();
+
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        if (!checked) {
+                            editor.clear();
+                            editor.apply();
+                        }
+
+                        startActivity(intent);
+                    }
+                });
+
+        AlertDialog alert = builder.create();
+        alert.show();
+        alert.getWindow().getAttributes();
+
+        Button button = new Button(getApplicationContext());
+        button = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+        button.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.link));
+        button.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.blanco));
+
+        //Preparamos las fuentes personalizadas
+        Typeface fontTextoBoton = Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegularBold));
+        button.setTypeface(fontTextoBoton);
+
+
+        Button buttonCancel = new Button(getApplicationContext());
+        buttonCancel = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
+        buttonCancel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.blanco));
+        buttonCancel.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.link));
+        //Preparamos las fuentes personalizadas
+        Typeface fontTextoCancel = Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegularBold));
+        button.setTypeface(fontTextoCancel);
+
+        TextView textView1 = (TextView) alert.findViewById(android.R.id.message);
+        textView1.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegular)));
+        textView1.setTextSize(getApplicationContext().getResources().getDimension(R.dimen.size_aviso));
+
+        //getApplicationContext().getSharedPreferences(getString(R.string.DATOS),0).edit().clear().apply();
+
+    }
+
     /**
      *
      */
@@ -625,8 +854,8 @@ public class MenuPrincipal extends AppCompatActivity implements AdapterView.OnIt
 
         private final String fileURL;
         private final ImageView imageView;
-        private Boolean estado = false;
         private final Context _context;
+        private Boolean estado = false;
         private String newFile;
 
 
@@ -711,74 +940,6 @@ public class MenuPrincipal extends AppCompatActivity implements AdapterView.OnIt
     }
 
     /**
-     * @param context
-     * @param isImage
-     * @param image
-     * @param file
-     */
-    private static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
-
-
-        if (isImage) {
-
-            Picasso.
-                    with(context).
-                    load(file)
-                    .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
-                    .transform(new BordesRedondos(300, 0))
-                    .resize((int) context.getResources().getDimension(R.dimen.fotoAncho), (int) context.getResources().getDimension(R.dimen.fotoAncho))
-                    .centerInside()
-                    .error(R.drawable.ic_logo_tab)
-                    .into(image);
-
-
-            /**
-             *  Utilidades utilidades = new Utilidades();
-             utilidades.clearImageDiskCache(context.getApplicationContext());
-             */
-
-        } else {
-
-            if (tipo == 2)
-                image.setImageResource(R.drawable.icono_usuario);
-            else if (tipo == 3)
-                image.setImageResource(R.drawable.icono_artista);
-            else if (tipo == 4)
-                image.setImageResource(R.drawable.icono_asistente);
-            else
-                image.setImageResource(R.drawable.ic_logo_tab);
-        }
-
-
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-
-        return super.onOptionsItemSelected(item) || toggle.onOptionsItemSelected(item);
-    }
-
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-        Toast.makeText(this, "Pulsado " + values[position], Toast.LENGTH_SHORT).show();
-
-        mDrawer.closeDrawers();
-    }
-
-    @Override
-    public void onDialogPositive(int res) {
-
-    }
-
-    @Override
-    public void setTitle(String title) {
-
-
-    }
-
-    /**
      *
      */
     public static class PlaceholderFragment extends Fragment {
@@ -858,139 +1019,6 @@ public class MenuPrincipal extends AppCompatActivity implements AdapterView.OnIt
             }
             return null;
         }
-    }
-
-
-    @Override
-    public void onBackPressed() {
-
-
-        String fromFragment = sharedPreferences.getString(getString(R.string.fromFragment), getString(R.string.svacio));
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
-        if (getSupportFragmentManager().getBackStackEntryCount() > 0) {
-
-            if (fromFragment.equalsIgnoreCase(getString(R.string.fragment_evento_consulta))) {
-                fragmentManager.popBackStack();
-                toolbar.setTitle(getString(R.string.title_activity_menu_ppal));
-                editor.putString(getString(R.string.fromFragment), getString(R.string.title_activity_menu_ppal));
-                fragmentTransaction.commit();
-
-            } else if (fromFragment.equalsIgnoreCase(getString(R.string.fragment_evento_listado))) {
-                fragmentManager.popBackStack();
-                toolbar.setTitle(getString(R.string.sConsultar));
-                editor.putString(getString(R.string.fromFragment), getString(R.string.fragment_evento_consulta));
-                fragmentTransaction.commit();
-
-            } else if (fromFragment.equalsIgnoreCase(getString(R.string.title_activity_menu_ppal))) {
-                toolbar.setTitle(getString(R.string.title_activity_menu_ppal));
-
-                editor.putString(getString(R.string.fromFragment), getString(R.string.title_activity_menu_ppal));
-
-            } else
-                salir();
-
-
-            editor.apply();
-
-
-        } else {
-
-            if (fromFragment.equalsIgnoreCase(getString(R.string.fragment_evento_consulta))) {
-                super.onBackPressed();
-                super.onBackPressed();
-                toolbar.setTitle(getString(R.string.title_activity_menu_ppal));
-                editor.putString(getString(R.string.fromFragment), getString(R.string.title_activity_menu_ppal));
-                editor.apply();
-            } else if (fromFragment.equalsIgnoreCase(getString(R.string.fragment_evento_listado))) {
-                super.onBackPressed();
-            } else {
-                salir();
-            }
-        }
-    }
-
-
-    private void salir() {
-        TextView textView = new TextView(getApplicationContext());
-        textView.setText(getApplicationContext().getResources().getString(R.string.sWarning));
-        textView.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegular)));
-        textView.setPadding(15, 10, 0, 0);
-        textView.setTextSize(getApplicationContext().getResources().getDimension(R.dimen.size_aviso));
-        textView.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.rojo));
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(MenuPrincipal.this);
-        builder.setCustomTitle(textView)
-                .setMessage(getApplicationContext().getResources().getString(R.string.sCerrarSesion))
-                .setCancelable(false)
-                .setIcon(ContextCompat.getDrawable(getApplicationContext(), R.drawable.ic_action_alarms))
-                .setNegativeButton(getApplicationContext().getResources().getString(R.string.sNO), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.cancel();
-                    }
-                })
-                .setPositiveButton(getApplicationContext().getResources().getString(R.string.sSi), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-
-                        SharedPreferences sharedPreferences = getSharedPreferences(getString(R.string.CHECKED), Context.MODE_PRIVATE);
-                        SharedPreferences.Editor sharedChecked = sharedPreferences.edit();
-                        //SharedPreferences sharedPreferencesDatos = getSharedPreferences(getString(R.string.DATOS),Context.MODE_PRIVATE);
-                        boolean checked = sharedPreferences.getBoolean(getString(R.string.checked), false);
-
-                        Intent intent = new Intent(MenuPrincipal.this, MainActivity.class);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        MenuPrincipal.this.finish();
-
-                        SharedPreferences.Editor editor = sharedPreferences.edit();
-                        if (!checked) {
-                            editor.clear();
-                            editor.apply();
-                        }
-
-                        startActivity(intent);
-                    }
-                });
-
-        AlertDialog alert = builder.create();
-        alert.show();
-        alert.getWindow().getAttributes();
-
-        Button button = new Button(getApplicationContext());
-        button = alert.getButton(DialogInterface.BUTTON_POSITIVE);
-        button.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.link));
-        button.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.blanco));
-
-        //Preparamos las fuentes personalizadas
-        Typeface fontTextoBoton = Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegularBold));
-        button.setTypeface(fontTextoBoton);
-
-
-        Button buttonCancel = new Button(getApplicationContext());
-        buttonCancel = alert.getButton(DialogInterface.BUTTON_NEGATIVE);
-        buttonCancel.setTextColor(ContextCompat.getColor(getApplicationContext(), R.color.blanco));
-        buttonCancel.setBackgroundColor(ContextCompat.getColor(getApplicationContext(), R.color.link));
-        //Preparamos las fuentes personalizadas
-        Typeface fontTextoCancel = Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegularBold));
-        button.setTypeface(fontTextoCancel);
-
-        TextView textView1 = (TextView) alert.findViewById(android.R.id.message);
-        textView1.setTypeface(Typeface.createFromAsset(getApplicationContext().getAssets(), getApplicationContext().getResources().getString(R.string.fontAmaticRegular)));
-        textView1.setTextSize(getApplicationContext().getResources().getDimension(R.dimen.size_aviso));
-
-        //getApplicationContext().getSharedPreferences(getString(R.string.DATOS),0).edit().clear().apply();
-
-    }
-
-    /**
-     * @param ctx
-     */
-
-    public static void cancelAllNotification(Context ctx) {
-        String ns = Context.NOTIFICATION_SERVICE;
-        NotificationManager nMgr = (NotificationManager) ctx.getSystemService(ns);
-        nMgr.cancelAll();
     }
 
 }

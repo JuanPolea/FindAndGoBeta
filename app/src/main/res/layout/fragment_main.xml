@@ -49,6 +49,40 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -72,8 +106,8 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="@dimen/margen_izq"
-            android:src="@drawable/ic_logo"
-            android:contentDescription="@string/sMenuIdioma" />
+            android:contentDescription="@string/sMenuIdioma"
+            android:src="@drawable/ic_logo" />
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/til_nombre"
@@ -85,17 +119,17 @@
             >
 
             <com.findandgoapp.custom.CustomFontEditText
-                app:font="@string/font_name_source_amatic_regular"
                 android:id="@+id/idEtEmail"
                 android:layout_width="280dp"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="@dimen/size_30"
                 android:hint="@string/sEmail"
-                android:textColorHint="@color/verdeAgua"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/verdeAgua"
-                android:textSize="@dimen/size_menu" />
+                android:textColorHint="@color/verdeAgua"
+                android:textSize="@dimen/size_menu"
+                app:font="@string/font_name_source_amatic_regular" />
 
         </android.support.design.widget.TextInputLayout>
 
@@ -112,60 +146,60 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:hint="@string/spassword"
-                android:textColorHint="@color/verdeAgua"
-                android:inputType="textPassword"
                 android:layout_marginBottom="@dimen/size_5"
+                android:hint="@string/spassword"
+                android:inputType="textPassword"
                 android:textColor="@color/verdeAgua"
+                android:textColorHint="@color/verdeAgua"
                 android:textSize="@dimen/size_menu" />
         </android.support.design.widget.TextInputLayout>
 
         <com.findandgoapp.custom.CustomFontButton
             android:id="@+id/idBEnviar"
+            style="@style/linked"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/sEnviar"
-            app:font="@string/font_name_source_amatic_regular"
-            style="@style/linked"
-            android:background="@drawable/bordes_botones"
+            android:layout_below="@id/til_password"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_below="@id/til_password"
             android:layout_marginBottom="@dimen/size_5"
-            android:textSize="@dimen/size_button" />
+            android:background="@drawable/bordes_botones"
+            android:text="@string/sEnviar"
+            android:textSize="@dimen/size_button"
+            app:font="@string/font_name_source_amatic_regular" />
 
 
         <ImageView
             android:id="@+id/idIvSalir"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_exit"
+            android:layout_alignParentEnd="true"
             android:layout_marginTop="@dimen/size_20"
             android:contentDescription="@string/sSalir"
-            android:layout_alignParentEnd="true" />
+            android:src="@drawable/ic_exit" />
 
         <CheckBox
-            android:text="@string/recordar"
-            android:textSize="@dimen/size_10"
-            android:textColor="@color/verdeAgua"
+            android:id="@+id/cbRecordar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/cbRecordar"
-            android:saveEnabled="false"
+            android:layout_alignParentEnd="true"
             android:layout_below="@+id/til_password"
-            android:layout_alignParentEnd="true" />
+            android:saveEnabled="false"
+            android:text="@string/recordar"
+            android:textColor="@color/verdeAgua"
+            android:textSize="@dimen/size_10" />
 
         <com.findandgoapp.custom.CustomFontButton
             android:id="@+id/idBOlvidoPassword"
+            style="@style/linked"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sOlvidoPassword"
-            app:font="@string/font_name_source_amatic_regular"
-            style="@style/linked"
-            android:background="@drawable/bordes_botones"
-            android:layout_marginStart="@dimen/size_5"
+            android:layout_alignParentEnd="true"
             android:layout_below="@+id/idBUsuarioNuevo"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginStart="@dimen/size_5"
+            android:background="@drawable/bordes_botones"
+            android:text="@string/sOlvidoPassword"
+            app:font="@string/font_name_source_amatic_regular" />
 
 
         <com.google.android.gms.common.SignInButton
@@ -180,27 +214,27 @@
             android:id="@+id/login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:font="@string/font_name_source_amatic_regular"
-            android:layout_below="@+id/sign_in_button"
             android:layout_alignStart="@+id/idBUsuarioNuevo"
+            android:layout_below="@+id/sign_in_button"
+            android:layout_marginTop="@dimen/size_5"
 
-            android:layout_marginTop="@dimen/size_5" />
+            app:font="@string/font_name_source_amatic_regular" />
 
         <com.findandgoapp.custom.CustomFontButton
             android:id="@+id/idBUsuarioNuevo"
+            style="@style/linked"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_below="@id/idBEnviar"
-            android:text="@string/sUsuarioNuevo"
-            app:font="@string/font_name_source_amatic_regular"
-            style="@style/linked"
-            android:background="@drawable/bordes_botones"
-            android:layout_marginStart="@dimen/size_5"
             android:layout_marginBottom="@dimen/size_5"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true" />
+            android:layout_marginStart="@dimen/size_5"
+            android:background="@drawable/bordes_botones"
+            android:text="@string/sUsuarioNuevo"
+            app:font="@string/font_name_source_amatic_regular" />
 
 
     </RelativeLayout>

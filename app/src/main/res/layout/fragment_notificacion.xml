@@ -49,10 +49,44 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/rlNotificacion"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
 
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -62,45 +96,45 @@
 
     <com.findandgoapp.custom.CustomFontTextView
         android:id="@+id/tvContadorNotificacion"
+        style="@style/Texto"
         android:layout_width="@dimen/size_30"
         android:layout_height="@dimen/size_30"
-        style="@style/Texto"
-        android:text="@string/iCero"
-        app:font="@string/font_name_source_amatic_regular"
-        android:background="@drawable/borde_rojo"
-        android:gravity="center_vertical|center_horizontal"
-        android:textColor="@color/blanco"
         android:layout_alignParentTop="true"
+        android:layout_marginEnd="13dp"
+        android:layout_marginRight="13dp"
         android:layout_toLeftOf="@+id/ivNext"
         android:layout_toStartOf="@+id/ivNext"
-        android:layout_marginRight="13dp"
-        android:layout_marginEnd="13dp" />
+        android:background="@drawable/borde_rojo"
+        android:gravity="center_vertical|center_horizontal"
+        android:text="@string/iCero"
+        android:textColor="@color/blanco"
+        app:font="@string/font_name_source_amatic_regular" />
 
     <com.findandgoapp.custom.CustomFontTextView
         android:id="@+id/tvNotificacion"
+        style="@style/Texto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Texto"
-        android:text=""
-        app:font="@string/font_name_source_amatic_regular"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-
-        android:paddingRight="@dimen/size_10"
+        android:layout_alignParentTop="true"
         android:layout_toStartOf="@+id/tvContadorNotificacion"
+        android:ellipsize="end"
+
         android:maxLines="1"
-        android:ellipsize="end" />
+        android:paddingRight="@dimen/size_10"
+        android:text=""
+        app:font="@string/font_name_source_amatic_regular" />
 
 
     <ImageView
         android:id="@+id/ivNext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/ic_arrow"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_arrow"
         tools:ignore="ContentDescription" />
 
 

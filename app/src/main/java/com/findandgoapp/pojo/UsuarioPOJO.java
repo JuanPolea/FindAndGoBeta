@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.pojo;
 
 import android.content.Context;
@@ -75,6 +109,17 @@ import java.util.Map;
 public class UsuarioPOJO implements Parcelable {
 
 
+    public static final Parcelable.Creator<UsuarioPOJO> CREATOR = new Parcelable.Creator<UsuarioPOJO>() {
+        @Override
+        public UsuarioPOJO createFromParcel(Parcel in) {
+            return new UsuarioPOJO(in);
+        }
+
+        @Override
+        public UsuarioPOJO[] newArray(int size) {
+            return new UsuarioPOJO[size];
+        }
+    };
     private String s_email;
     private String s_password;
     private int i_idUsuario;
@@ -91,19 +136,13 @@ public class UsuarioPOJO implements Parcelable {
     private ListView listView;
     private String s_fechaPenalizacion;
     private String s_fechaAlta;
-
-
     private int i_penalizacion;
-
     private String[] items;
-
-
     private int i_confirmaIn;
     private int i_confirmaOut;
     private int i_denunciaIn;
     private int i_denunciaOut;
     private int i_idGoogle;
-
     private boolean isImage = true;
 
     public UsuarioPOJO(String s_email, String s_password) {
@@ -126,6 +165,7 @@ public class UsuarioPOJO implements Parcelable {
         this.s_ciudad = s_ciudad;
     }
 
+
     public UsuarioPOJO(int i_idUsuario, String s_nombre, String s_email, String s_password, String s_ciudad) {
         this.i_idUsuario = i_idUsuario;
         this.s_nombre = s_nombre;
@@ -135,7 +175,6 @@ public class UsuarioPOJO implements Parcelable {
         this.i_idSesion = i_idUsuario;
     }
 
-
     public UsuarioPOJO(UsuarioPOJO usuarioPOJO) {
         this.s_nombre = usuarioPOJO.getS_nombre();
         this.s_email = usuarioPOJO.getS_email();
@@ -143,18 +182,6 @@ public class UsuarioPOJO implements Parcelable {
         this.s_ciudad = usuarioPOJO.getS_ciudad();
 
     }
-
-    public static final Parcelable.Creator<UsuarioPOJO> CREATOR = new Parcelable.Creator<UsuarioPOJO>() {
-        @Override
-        public UsuarioPOJO createFromParcel(Parcel in) {
-            return new UsuarioPOJO(in);
-        }
-
-        @Override
-        public UsuarioPOJO[] newArray(int size) {
-            return new UsuarioPOJO[size];
-        }
-    };
 
     public UsuarioPOJO() {
     }

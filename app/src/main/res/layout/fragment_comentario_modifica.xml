@@ -49,6 +49,40 @@
   ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
   -->
 
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
+<!--
+  ~ This file is part of FindAndGoApp.
+  ~
+  ~   FindAndGoApp is free software: you can redistribute it and/or modify
+  ~   it under the terms of the GNU General Public License as published by
+  ~   the Free Software Foundation, either version 3 of the License, or
+  ~   (at your option) any later version.
+  ~
+  ~   FindAndGoApp is distributed in the hope that it will be useful,
+  ~   but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  ~   GNU General Public License for more details.
+  ~
+  ~   You should have received a copy of the GNU General Public License
+  ~   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+  -->
+
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -64,22 +98,22 @@
     tools:context="com.findandgoapp.fragment.ComentarioFragment">
 
     <LinearLayout
+        android:id="@+id/llComentariosTitulo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/llComentariosTitulo">
+        android:layout_height="wrap_content">
 
         <com.findandgoapp.custom.CustomFontTextView
             android:id="@+id/idTvAddComen"
             android:layout_width="368dp"
             android:layout_height="wrap_content"
-            android:text="@string/sModificaEliminaComentario"
-            android:textSize="@dimen/size_20"
             android:layout_gravity="center"
-            android:textColor="@color/verdeAgua"
-            app:font="@string/font_name_source_amatic_regular_bold"
-
+            android:paddingBottom="@dimen/size_10"
             android:paddingTop="@dimen/size_10"
-            android:paddingBottom="@dimen/size_10" />
+            android:text="@string/sModificaEliminaComentario"
+            android:textColor="@color/verdeAgua"
+
+            android:textSize="@dimen/size_20"
+            app:font="@string/font_name_source_amatic_regular_bold" />
     </LinearLayout>
 
 
@@ -87,47 +121,47 @@
         android:id="@+id/idEtAddComen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/llComentariosTitulo"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/llComentariosTitulo"
         android:layout_gravity="center_horizontal"
         android:hint="@string/sComenta"
-        android:textColor="@color/negro"
-        app:font="@string/font_name_source_amatic_regular"
         android:paddingTop="@dimen/size_20"
-        android:layout_below="@+id/llComentariosTitulo"
 
-        android:layout_alignParentStart="true"
+        android:textColor="@color/negro"
 
-        android:layout_alignEnd="@+id/llComentariosTitulo" />
+        app:font="@string/font_name_source_amatic_regular" />
 
     <Button
         android:id="@+id/idBCancelaAddComen"
         android:layout_width="@dimen/size_30"
         android:layout_height="@dimen/size_30"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/btn_cancelar"
-        android:layout_below="@+id/idEtAddComen"
-        android:layout_alignRight="@+id/idEtAddComen"
         android:layout_alignEnd="@+id/idEtAddComen"
-        android:layout_marginLeft="@dimen/size_10" />
+        android:layout_alignRight="@+id/idEtAddComen"
+        android:layout_below="@+id/idEtAddComen"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="@dimen/size_10"
+        android:background="@drawable/btn_cancelar" />
 
     <Button
         android:id="@+id/idBDeleteComen"
         android:layout_width="@dimen/size_30"
         android:layout_height="@dimen/size_30"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/btn_delete"
         android:layout_alignLeft="@+id/idEtAddComen"
         android:layout_alignStart="@+id/idEtAddComen"
-        android:layout_below="@id/idEtAddComen" />
+        android:layout_below="@id/idEtAddComen"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/btn_delete" />
 
     <Button
         android:id="@+id/idBAddComen"
         android:layout_width="@dimen/size_30"
         android:layout_height="@dimen/size_30"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/btn_aceptar"
         android:layout_alignTop="@+id/idBCancelaAddComen"
+        android:layout_gravity="center_horizontal"
         android:layout_toLeftOf="@+id/idBCancelaAddComen"
-        android:layout_toStartOf="@+id/idBCancelaAddComen" />
+        android:layout_toStartOf="@+id/idBCancelaAddComen"
+        android:background="@drawable/btn_aceptar" />
 
 
 </RelativeLayout>

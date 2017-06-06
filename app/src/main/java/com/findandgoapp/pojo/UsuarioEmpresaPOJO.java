@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.pojo;
 
 import android.os.Parcel;
@@ -62,16 +96,6 @@ import java.util.Map;
  */
 public class UsuarioEmpresaPOJO extends UsuarioArtistaPOJO {
 
-    private static final String TAG = "UsuarioEmpresaPOJO";
-    private static final int tipo = 2;
-    private String s_cp;
-    private String s_localidad;
-    private String s_calle;
-    private String s_numero;
-    private String s_tipo;
-    private String s_via;
-
-
     public static final Parcelable.Creator<UsuarioEmpresaPOJO> CREATOR = new Parcelable.Creator<UsuarioEmpresaPOJO>() {
         @Override
         public UsuarioEmpresaPOJO createFromParcel(Parcel in) {
@@ -83,6 +107,14 @@ public class UsuarioEmpresaPOJO extends UsuarioArtistaPOJO {
             return new UsuarioEmpresaPOJO[size];
         }
     };
+    private static final String TAG = "UsuarioEmpresaPOJO";
+    private static final int tipo = 2;
+    private String s_cp;
+    private String s_localidad;
+    private String s_calle;
+    private String s_numero;
+    private String s_tipo;
+    private String s_via;
 
     public UsuarioEmpresaPOJO(Parcel in) {
         super.setItems(in.createStringArray());

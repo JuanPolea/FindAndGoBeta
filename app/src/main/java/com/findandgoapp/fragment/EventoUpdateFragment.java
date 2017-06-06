@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.Manifest;
@@ -132,10 +166,9 @@ public class EventoUpdateFragment extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private SharedPreferences permissionStatus;
     private static final int REQUEST_PERMISSION_SETTING = 101;
     private static final int EXTERNAL_STORAGE_PERMISSION_CONSTANT = 100;
-
+    private SharedPreferences permissionStatus;
     /**
      * Interfaz
      */
@@ -180,20 +213,6 @@ public class EventoUpdateFragment extends Fragment {
     private int idSesion;
     private ProgressDialog progressDialog;
     private SugerenciaPOJO sugerenciaPOJO;
-
-    public EventoUpdateFragment() {
-        // Required empty public constructor
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-
-        }
-    }
-
-
     /**
      * variable timePickerDialog para inicializar el textview ocn la hora seleccionada
      */
@@ -209,32 +228,6 @@ public class EventoUpdateFragment extends Fragment {
                     .append(":").append(pad(iMinutos)));
         }
     };
-
-    /**
-     * @param c
-     * @return
-     */
-    private static String pad(int c) {
-
-        if (c >= 10)
-            return String.valueOf(c);
-        else
-            return "0" + String.valueOf(c);
-    }
-
-    /**
-     * public void updateDisplay()
-     * <p/>
-     * Se actualiza el com.gooutapp.custom.CustomFontTextView correspondiente al DatePickerDialog.onDateSetListener con los valores del dpEventoFecha
-     */
-    private void updateDisplay() {
-        // TODO Auto-generated method stub
-        // A iMes se le suma uno porque comienza en 0
-
-        this.getTv_fecha().setText(new StringBuilder().append(this.getiAno()).append("-").append(this.getiMes() + 1).append("-").append(this.getiDia()));
-    }
-
-
     /**
      * Creamos un DatePickerDialog.OnDateSetListener que usaremos para dar formato al calendario
      * <p/>
@@ -260,6 +253,43 @@ public class EventoUpdateFragment extends Fragment {
 
         }
     };
+
+
+    public EventoUpdateFragment() {
+        // Required empty public constructor
+    }
+
+    /**
+     * @param c
+     * @return
+     */
+    private static String pad(int c) {
+
+        if (c >= 10)
+            return String.valueOf(c);
+        else
+            return "0" + String.valueOf(c);
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+
+        }
+    }
+
+    /**
+     * public void updateDisplay()
+     * <p/>
+     * Se actualiza el com.gooutapp.custom.CustomFontTextView correspondiente al DatePickerDialog.onDateSetListener con los valores del dpEventoFecha
+     */
+    private void updateDisplay() {
+        // TODO Auto-generated method stub
+        // A iMes se le suma uno porque comienza en 0
+
+        this.getTv_fecha().setText(new StringBuilder().append(this.getiAno()).append("-").append(this.getiMes() + 1).append("-").append(this.getiDia()));
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -1086,94 +1116,11 @@ public class EventoUpdateFragment extends Fragment {
         return params;
     }
 
-
-    /**
-     *
-     */
-    public class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
-
-        private final String fileURL;
-
-
-        /**
-         *
-         */
-        public ImageDownloadTask(final String imageURL, final ImageView imageView) {
-            this.fileURL = imageURL;
-
-
-        }
-
-        @Override
-        protected Boolean doInBackground(final String... args) {
-
-            HttpURLConnection con = null;
-            Boolean estado = false;
-
-
-            try {
-                HttpURLConnection.setFollowRedirects(false);
-
-                con = (HttpURLConnection) new URL(fileURL).openConnection();
-                con.setRequestMethod("HEAD");
-
-                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
-
-                    estado = true;
-
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-
-                Log.d(getClass().getName(), "CATCH" + e.getMessage());
-
-            } finally {
-                assert con != null;
-                assert con != null;
-                con.disconnect();
-            }
-
-
-            return estado;
-        }
-
-
-        @Override
-        protected void onPostExecute(final Boolean result) {
-            Log.e(getClass().getName(), "FILE_EXISTS" + result);
-            evento.setB_isImage(result);
-
-
-        }
-
-    }
-
-
     @Override
     public void onDetach() {
         super.onDetach();
         mListener = null;
     }
-
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     * <p/>
-     * See the Android Training lesson <a href=
-     * "http://developer.android.com/training/basics/fragments/communicating.html"
-     * >Communicating with Other Fragments</a> for more information.
-     */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
-        void onFragmentInteraction(Uri uri);
-
-    }
-
 
     private CustomFontEditText getEt_artista() {
         return et_artista;
@@ -1198,7 +1145,6 @@ public class EventoUpdateFragment extends Fragment {
     private void setEt_calle(CustomFontEditText et_calle) {
         this.et_calle = et_calle;
     }
-
 
     private CustomFontEditText getEt_lugar() {
         return et_lugar;
@@ -1306,6 +1252,85 @@ public class EventoUpdateFragment extends Fragment {
 
     private int getiMes() {
         return iMes;
+    }
+
+    /**
+     * This interface must be implemented by activities that contain this
+     * fragment to allow an interaction in this fragment to be communicated
+     * to the activity and potentially other fragments contained in that
+     * activity.
+     * <p/>
+     * See the Android Training lesson <a href=
+     * "http://developer.android.com/training/basics/fragments/communicating.html"
+     * >Communicating with Other Fragments</a> for more information.
+     */
+    public interface OnFragmentInteractionListener {
+        // TODO: Update argument type and name
+        void onFragmentInteraction(Uri uri);
+
+    }
+
+    /**
+     *
+     */
+    public class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
+
+        private final String fileURL;
+
+
+        /**
+         *
+         */
+        public ImageDownloadTask(final String imageURL, final ImageView imageView) {
+            this.fileURL = imageURL;
+
+
+        }
+
+        @Override
+        protected Boolean doInBackground(final String... args) {
+
+            HttpURLConnection con = null;
+            Boolean estado = false;
+
+
+            try {
+                HttpURLConnection.setFollowRedirects(false);
+
+                con = (HttpURLConnection) new URL(fileURL).openConnection();
+                con.setRequestMethod("HEAD");
+
+                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
+
+                    estado = true;
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+
+
+                Log.d(getClass().getName(), "CATCH" + e.getMessage());
+
+            } finally {
+                assert con != null;
+                assert con != null;
+                con.disconnect();
+            }
+
+
+            return estado;
+        }
+
+
+        @Override
+        protected void onPostExecute(final Boolean result) {
+            Log.e(getClass().getName(), "FILE_EXISTS" + result);
+            evento.setB_isImage(result);
+
+
+        }
+
     }
 
 }

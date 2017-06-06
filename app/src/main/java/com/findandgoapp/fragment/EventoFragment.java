@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.Manifest;
@@ -127,10 +161,8 @@ public class EventoFragment extends Fragment {
     private final static EventoPOJO eventoPOJO = new EventoPOJO();
     private static final int REQUEST_PERMISSION_SETTING = 101;
     private static final int EXTERNAL_STORAGE_PERMISSION_CONSTANT = 100;
-
-    private SharedPreferences sharedPreferences;
     private static int idSesion;
-
+    private SharedPreferences sharedPreferences;
     private CustomFontEditText et_eventoNombre;
     private CustomFontEditText et_eventoLugar;
 
@@ -187,6 +219,17 @@ public class EventoFragment extends Fragment {
     public EventoFragment() {
     }
 
+    /**
+     * @param c
+     * @return
+     */
+    private static String pad(int c) {
+
+        if (c >= 10)
+            return String.valueOf(c);
+        else
+            return "0" + String.valueOf(c);
+    }
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -194,7 +237,6 @@ public class EventoFragment extends Fragment {
 
 
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -773,7 +815,6 @@ public class EventoFragment extends Fragment {
         }
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         Log.e(getClass().getName(), "request " + requestCode);
@@ -931,7 +972,6 @@ public class EventoFragment extends Fragment {
 
     }
 
-
     /**
      * @param editText
      * @param textInputLayout
@@ -988,19 +1028,6 @@ public class EventoFragment extends Fragment {
             }
 
         });
-    }
-
-
-    /**
-     * @param c
-     * @return
-     */
-    private static String pad(int c) {
-
-        if (c >= 10)
-            return String.valueOf(c);
-        else
-            return "0" + String.valueOf(c);
     }
 
     /**

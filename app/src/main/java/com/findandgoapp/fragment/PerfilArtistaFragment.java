@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.Manifest;
@@ -147,12 +181,14 @@ import static android.content.Context.MODE_PRIVATE;
  */
 public class PerfilArtistaFragment extends Fragment {
 
-    private SharedPreferences permissionStatus;
     private static final int REQUEST_PERMISSION_SETTING = 101;
     private static final int EXTERNAL_STORAGE_PERMISSION_CONSTANT = 100;
     private static final int SIZE_FOTO = 300;
+    private static final String TIPO_USUARIO = String.valueOf(3);
+    private static boolean isImage = false;
+    private static UsuarioArtistaPOJO usuario;
+    private SharedPreferences permissionStatus;
     private ImageView iv_fotoPerfil;
-
     private CustomFontEditText et_nombre;
     private CustomFontEditText et_password;
     private CustomFontEditText et_email;
@@ -163,15 +199,49 @@ public class PerfilArtistaFragment extends Fragment {
     private ImageView iv_registrar;
     private int i_idUsuario;
     private String s_password;
-    private static boolean isImage = false;
-    private static UsuarioArtistaPOJO usuario;
     private SharedPreferences sharedPreferences;
     private Activity activity;
     private String modo;
     private TextInputLayout tilNombre, tilEmail, tilPassword, tilDescripcion, tilWeb;
     private File destination;
     private boolean facebook;
-    private static final String TIPO_USUARIO = String.valueOf(3);
+
+    /**
+     * @param context
+     * @param isImage
+     * @param image
+     * @param file
+     */
+    private static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
+
+
+        image.setVisibility(View.VISIBLE);
+        if (isImage) {
+
+            Picasso.
+                    with(context).
+                    load(file)
+                    .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
+                    .transform(new BordesRedondos(SIZE_FOTO, 0))
+                    .resize((int) context.getResources().getDimension(R.dimen.fotoPerfil), (int) context.getResources().getDimension(R.dimen.fotoPerfil))
+                    .centerInside()
+                    .error(R.drawable.icono_artista)
+                    .into(image);
+
+
+            Utilidades utilidades = new Utilidades();
+            utilidades.clearImageDiskCache(context.getApplicationContext());
+        } else {
+
+            image.setImageResource(R.drawable.icono_artista);
+
+
+        }
+
+        image.setAdjustViewBounds(true);
+        image.setScaleType(ImageView.ScaleType.FIT_XY);
+
+    }
 
     /**
      * @param inflater
@@ -505,7 +575,6 @@ public class PerfilArtistaFragment extends Fragment {
         return params;
     }
 
-
     /**
      * @param usuario
      */
@@ -582,7 +651,6 @@ public class PerfilArtistaFragment extends Fragment {
 
 
     }
-
 
     /**
      * @param usuario
@@ -689,7 +757,6 @@ public class PerfilArtistaFragment extends Fragment {
 
     }
 
-
     /**
      *
      */
@@ -733,7 +800,6 @@ public class PerfilArtistaFragment extends Fragment {
         requestQueue.add(stringRequest);
 
     }
-
 
     /**
      * @param menu
@@ -901,7 +967,6 @@ public class PerfilArtistaFragment extends Fragment {
         }
     }
 
-
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String permissions[], @NonNull int[] grantResults) {
         Log.e(getClass().getName(), "request " + requestCode);
@@ -925,7 +990,6 @@ public class PerfilArtistaFragment extends Fragment {
             }
         }
     }
-
 
     private void deleteArtista() {
 
@@ -1153,7 +1217,6 @@ public class PerfilArtistaFragment extends Fragment {
         }
     }
 
-
     /**
      *
      */
@@ -1194,6 +1257,178 @@ public class PerfilArtistaFragment extends Fragment {
 
     }
 
+    private CustomFontEditText getEt_descripcion() {
+        return et_descripcion;
+    }
+
+    private void setEt_descripcion(CustomFontEditText et_descripcion) {
+        this.et_descripcion = et_descripcion;
+    }
+
+    private CustomFontEditText getEt_email() {
+        return et_email;
+    }
+
+    private void setEt_email(CustomFontEditText et_email) {
+        this.et_email = et_email;
+    }
+
+    private CustomFontEditText getEt_nombre() {
+        return et_nombre;
+    }
+
+    private void setEt_nombre(CustomFontEditText et_nombre) {
+        this.et_nombre = et_nombre;
+    }
+
+    private CustomFontEditText getEt_password() {
+        return et_password;
+    }
+
+    private void setEt_password(CustomFontEditText et_password) {
+        this.et_password = et_password;
+    }
+
+    private CustomFontEditText getEt_web() {
+        return et_web;
+    }
+
+    private void setEt_web(CustomFontEditText et_web) {
+        this.et_web = et_web;
+    }
+
+    private ImageView getIv_registrar() {
+        return iv_registrar;
+    }
+
+    private void setIv_registrar(ImageView iv_registrar) {
+        this.iv_registrar = iv_registrar;
+    }
+
+    private ImageView getIv_fotoPerfil() {
+        return iv_fotoPerfil;
+    }
+
+    private void setIv_fotoPerfil(ImageView iv_fotoPerfil) {
+        this.iv_fotoPerfil = iv_fotoPerfil;
+    }
+
+    private Spinner getSp_categoria() {
+        return sp_categoria;
+    }
+
+    private void setSp_categoria(Spinner sp_categoria) {
+        this.sp_categoria = sp_categoria;
+    }
+
+    private Spinner getSp_ciudad() {
+        return sp_ciudad;
+    }
+
+    private void setSp_ciudad(Spinner sp_ciudad) {
+        this.sp_ciudad = sp_ciudad;
+    }
+
+    private TextInputLayout getTilEmail() {
+        return tilEmail;
+    }
+
+    private void setTilEmail(TextInputLayout tilEmail) {
+        this.tilEmail = tilEmail;
+    }
+
+    private TextInputLayout getTilNombre() {
+        return tilNombre;
+    }
+
+    private void setTilNombre(TextInputLayout tilNombre) {
+        this.tilNombre = tilNombre;
+    }
+
+    private TextInputLayout getTilPassword() {
+        return tilPassword;
+    }
+
+    private void setTilPassword(TextInputLayout tilPassword) {
+        this.tilPassword = tilPassword;
+    }
+
+    /**
+     *
+     */
+    public static class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
+
+        private final String fileURL;
+        private final ImageView imageView;
+        private final Context _context;
+        private String newFile;
+
+
+        /**
+         *
+         */
+        public ImageDownloadTask(final Context context, final String imageURL, final ImageView imageView) {
+            this.fileURL = imageURL;
+            this.imageView = imageView;
+            this._context = context;
+
+
+        }
+
+        @Override
+        protected Boolean doInBackground(final String... args) {
+
+            HttpURLConnection con = null;
+            Boolean estado = false;
+
+            URL myFileUrl = null;
+            try {
+                HttpURLConnection.setFollowRedirects(false);
+                newFile = _context.getString(R.string.sRutaImagenes) + fileURL + _context.getString(R.string.sFormatoPerfil);
+                con = (HttpURLConnection) new URL(newFile).openConnection();
+                con.setRequestMethod("HEAD");
+
+                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
+
+
+                    if (con.getURL().getFile().equalsIgnoreCase(_context.getString(R.string.upload) + fileURL + _context.getString(R.string.sFormatoPerfil))) {
+                        {
+
+
+                            estado = true;
+                        }
+                    }
+
+                }
+
+            } catch (Exception e) {
+                e.printStackTrace();
+
+            } finally {
+                assert con != null;
+                con.disconnect();
+            }
+
+
+            return estado;
+        }
+
+
+        @Override
+        protected void onPostExecute(final Boolean result) {
+
+
+            if (result)
+                launchPicasso(_context, result, this.imageView, newFile);
+            else {
+                imageView.setImageResource(R.drawable.icono_artista);
+            }
+            Log.e(getClass().getName(), "\nTermina Image: " + fileURL);
+
+
+        }
+
+    }
 
     /**
      *
@@ -1297,218 +1532,6 @@ public class PerfilArtistaFragment extends Fragment {
             Log.e(getClass().getName(), "onPost");
             Toast.makeText(getActivity(), getActivity().getResources().getString(R.string.uploaded), Toast.LENGTH_LONG).show();
         }
-    }
-
-    /**
-     *
-     */
-    public static class ImageDownloadTask extends AsyncTask<String, Void, Boolean> {
-
-        private final String fileURL;
-        private final ImageView imageView;
-        private final Context _context;
-        private String newFile;
-
-
-        /**
-         *
-         */
-        public ImageDownloadTask(final Context context, final String imageURL, final ImageView imageView) {
-            this.fileURL = imageURL;
-            this.imageView = imageView;
-            this._context = context;
-
-
-        }
-
-        @Override
-        protected Boolean doInBackground(final String... args) {
-
-            HttpURLConnection con = null;
-            Boolean estado = false;
-
-            URL myFileUrl = null;
-            try {
-                HttpURLConnection.setFollowRedirects(false);
-                newFile = _context.getString(R.string.sRutaImagenes) + fileURL + _context.getString(R.string.sFormatoPerfil);
-                con = (HttpURLConnection) new URL(newFile).openConnection();
-                con.setRequestMethod("HEAD");
-
-                if ((con.getResponseCode() == HttpURLConnection.HTTP_OK)) {
-
-
-                    if (con.getURL().getFile().equalsIgnoreCase(_context.getString(R.string.upload) + fileURL + _context.getString(R.string.sFormatoPerfil))) {
-                        {
-
-
-                            estado = true;
-                        }
-                    }
-
-                }
-
-            } catch (Exception e) {
-                e.printStackTrace();
-
-            } finally {
-                assert con != null;
-                con.disconnect();
-            }
-
-
-            return estado;
-        }
-
-
-        @Override
-        protected void onPostExecute(final Boolean result) {
-
-
-            if (result)
-                launchPicasso(_context, result, this.imageView, newFile);
-            else {
-                imageView.setImageResource(R.drawable.icono_artista);
-            }
-            Log.e(getClass().getName(), "\nTermina Image: " + fileURL);
-
-
-        }
-
-    }
-
-    /**
-     * @param context
-     * @param isImage
-     * @param image
-     * @param file
-     */
-    private static void launchPicasso(Context context, Boolean isImage, ImageView image, String file) {
-
-
-        image.setVisibility(View.VISIBLE);
-        if (isImage) {
-
-            Picasso.
-                    with(context).
-                    load(file)
-                    .memoryPolicy(MemoryPolicy.NO_CACHE, MemoryPolicy.NO_STORE)
-                    .transform(new BordesRedondos(SIZE_FOTO, 0))
-                    .resize((int) context.getResources().getDimension(R.dimen.fotoPerfil), (int) context.getResources().getDimension(R.dimen.fotoPerfil))
-                    .centerInside()
-                    .error(R.drawable.icono_artista)
-                    .into(image);
-
-
-            Utilidades utilidades = new Utilidades();
-            utilidades.clearImageDiskCache(context.getApplicationContext());
-        } else {
-
-            image.setImageResource(R.drawable.icono_artista);
-
-
-        }
-
-        image.setAdjustViewBounds(true);
-        image.setScaleType(ImageView.ScaleType.FIT_XY);
-
-    }
-
-
-    private CustomFontEditText getEt_descripcion() {
-        return et_descripcion;
-    }
-
-    private void setEt_descripcion(CustomFontEditText et_descripcion) {
-        this.et_descripcion = et_descripcion;
-    }
-
-    private CustomFontEditText getEt_email() {
-        return et_email;
-    }
-
-    private void setEt_email(CustomFontEditText et_email) {
-        this.et_email = et_email;
-    }
-
-    private CustomFontEditText getEt_nombre() {
-        return et_nombre;
-    }
-
-    private void setEt_nombre(CustomFontEditText et_nombre) {
-        this.et_nombre = et_nombre;
-    }
-
-    private CustomFontEditText getEt_password() {
-        return et_password;
-    }
-
-    private void setEt_password(CustomFontEditText et_password) {
-        this.et_password = et_password;
-    }
-
-    private CustomFontEditText getEt_web() {
-        return et_web;
-    }
-
-    private void setEt_web(CustomFontEditText et_web) {
-        this.et_web = et_web;
-    }
-
-    private ImageView getIv_registrar() {
-        return iv_registrar;
-    }
-
-    private void setIv_registrar(ImageView iv_registrar) {
-        this.iv_registrar = iv_registrar;
-    }
-
-    private ImageView getIv_fotoPerfil() {
-        return iv_fotoPerfil;
-    }
-
-    private void setIv_fotoPerfil(ImageView iv_fotoPerfil) {
-        this.iv_fotoPerfil = iv_fotoPerfil;
-    }
-
-    private Spinner getSp_categoria() {
-        return sp_categoria;
-    }
-
-    private void setSp_categoria(Spinner sp_categoria) {
-        this.sp_categoria = sp_categoria;
-    }
-
-    private Spinner getSp_ciudad() {
-        return sp_ciudad;
-    }
-
-    private void setSp_ciudad(Spinner sp_ciudad) {
-        this.sp_ciudad = sp_ciudad;
-    }
-
-
-    private TextInputLayout getTilEmail() {
-        return tilEmail;
-    }
-
-    private void setTilEmail(TextInputLayout tilEmail) {
-        this.tilEmail = tilEmail;
-    }
-
-    private TextInputLayout getTilNombre() {
-        return tilNombre;
-    }
-
-    private void setTilNombre(TextInputLayout tilNombre) {
-        this.tilNombre = tilNombre;
-    }
-
-    private TextInputLayout getTilPassword() {
-        return tilPassword;
-    }
-
-    private void setTilPassword(TextInputLayout tilPassword) {
-        this.tilPassword = tilPassword;
     }
 
 }

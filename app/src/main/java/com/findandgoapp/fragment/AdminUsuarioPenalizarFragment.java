@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.app.Activity;
@@ -110,14 +144,12 @@ public class AdminUsuarioPenalizarFragment extends Fragment {
     private static Activity activity;
     private static android.support.v4.app.FragmentManager fragmentManager;
     private static int idSesion;
-
-
+    private static UsuarioPOJO usuario;
     private CustomFontTextView nombreUsuario;
     private CustomFontTextView emailUsuairo;
     private CustomFontTextView estado;
     private CustomFontTextView tipoUsuario;
     private CustomFontTextView tvTipo1;
-
     private CustomFontTextView tvEventosCreados;
     private CustomFontTextView tvDenunciasIn;
     private CustomFontTextView tvDenunciasOut;
@@ -126,11 +158,16 @@ public class AdminUsuarioPenalizarFragment extends Fragment {
     private CustomFontTextView tvComentaIn;
     private CustomFontTextView tvComentaOut;
     private ImageView ivBloqueado;
-
     private Button tipo1Add;
     private Button tipo1Quit;
-    private static UsuarioPOJO usuario;
 
+    private static void showNoticeDialogPenalizaciones(Context c) {
+        // Create an instance of the dialog fragment and show it
+        activity.getIntent().putExtra("penalizacion", usuario);
+        activity.getIntent().putExtra("idSesion", idSesion);
+        FragmentDialogAdminPenalizacion dialog = FragmentDialogAdminPenalizacion.newInstance(idSesion);
+        dialog.show(fragmentManager, "DialogAdminFragmentPenalizacion");
+    }
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -348,7 +385,6 @@ public class AdminUsuarioPenalizarFragment extends Fragment {
 
     }
 
-
     /**
      * @param button
      * @param textView
@@ -379,15 +415,6 @@ public class AdminUsuarioPenalizarFragment extends Fragment {
                 }
             }
         });
-    }
-
-
-    private static void showNoticeDialogPenalizaciones(Context c) {
-        // Create an instance of the dialog fragment and show it
-        activity.getIntent().putExtra("penalizacion", usuario);
-        activity.getIntent().putExtra("idSesion", idSesion);
-        FragmentDialogAdminPenalizacion dialog = FragmentDialogAdminPenalizacion.newInstance(idSesion);
-        dialog.show(fragmentManager, "DialogAdminFragmentPenalizacion");
     }
 
     @Override

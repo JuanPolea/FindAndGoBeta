@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.custom;
 
 import android.graphics.Paint;
@@ -64,14 +98,6 @@ import android.text.style.TypefaceSpan;
  */
 public class CustomTypeFaceSpan extends TypefaceSpan implements Parcelable {
 
-    private final Typeface newType;
-
-    public CustomTypeFaceSpan(String family, Typeface type) {
-        super(family);
-        newType = type;
-    }
-
-
     public static final Creator<CustomTypeFaceSpan> CREATOR = new Creator<CustomTypeFaceSpan>() {
         @Override
         public CustomTypeFaceSpan createFromParcel(Parcel in) {
@@ -83,15 +109,22 @@ public class CustomTypeFaceSpan extends TypefaceSpan implements Parcelable {
             return new CustomTypeFaceSpan[size];
         }
     };
+    private final Typeface newType;
 
-    @Override
-    public void updateDrawState(TextPaint ds) {
-        applyCustomTypeFace(ds, newType);
+
+    public CustomTypeFaceSpan(String family, Typeface type) {
+        super(family);
+        newType = type;
     }
 
-    @Override
-    public void updateMeasureState(TextPaint paint) {
-        applyCustomTypeFace(paint, newType);
+    public CustomTypeFaceSpan(String family) {
+        super(family);
+        newType = null;
+    }
+
+    public CustomTypeFaceSpan(Parcel src) {
+        super(src);
+        newType = null;
     }
 
     private static void applyCustomTypeFace(Paint paint, Typeface tf) {
@@ -117,6 +150,16 @@ public class CustomTypeFaceSpan extends TypefaceSpan implements Parcelable {
     }
 
     @Override
+    public void updateDrawState(TextPaint ds) {
+        applyCustomTypeFace(ds, newType);
+    }
+
+    @Override
+    public void updateMeasureState(TextPaint paint) {
+        applyCustomTypeFace(paint, newType);
+    }
+
+    @Override
     public void writeToParcel(Parcel dest, int flags) {
         super.writeToParcel(dest, flags);
     }
@@ -124,16 +167,6 @@ public class CustomTypeFaceSpan extends TypefaceSpan implements Parcelable {
     @Override
     public int describeContents() {
         return super.describeContents();
-    }
-
-    public CustomTypeFaceSpan(String family) {
-        super(family);
-        newType = null;
-    }
-
-    public CustomTypeFaceSpan(Parcel src) {
-        super(src);
-        newType = null;
     }
 
     @Override

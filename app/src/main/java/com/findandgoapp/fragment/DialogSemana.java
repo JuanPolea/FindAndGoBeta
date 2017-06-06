@@ -49,6 +49,40 @@
  *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * This file is part of FindAndGoApp.
+ *
+ *   FindAndGoApp is free software: you can redistribute it and/or modify
+ *   it under the terms of the GNU General Public License as published by
+ *   the Free Software Foundation, either version 3 of the License, or
+ *   (at your option) any later version.
+ *
+ *   FindAndGoApp is distributed in the hope that it will be useful,
+ *   but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *   GNU General Public License for more details.
+ *
+ *   You should have received a copy of the GNU General Public License
+ *   along with Foobar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 package com.findandgoapp.fragment;
 
 import android.app.Activity;
@@ -112,12 +146,6 @@ public class DialogSemana extends DialogFragment {
             throw new ClassCastException(activity.toString() + " must implement NoticeDialogListener");
         }
     }
-
-    public interface NoticeDialogListener {
-
-        void setTextInTextView(boolean[] linkedlist);
-    }
-
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
@@ -200,7 +228,6 @@ public class DialogSemana extends DialogFragment {
         return builder.create();
     }
 
-
     /**
      * @param context
      * @param listView
@@ -255,6 +282,24 @@ public class DialogSemana extends DialogFragment {
             }
 
         });
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+    }
+
+    private void setButtonOK(ImageView buttonOK) {
+        this.buttonOK = buttonOK;
+    }
+
+    private ListView getList() {
+        return list;
+    }
+
+    public interface NoticeDialogListener {
+
+        void setTextInTextView(boolean[] linkedlist);
     }
 
     /**
@@ -354,21 +399,6 @@ public class DialogSemana extends DialogFragment {
 
 
         }
-    }
-
-
-    @Override
-    public void onDetach() {
-        super.onDetach();
-    }
-
-    private void setButtonOK(ImageView buttonOK) {
-        this.buttonOK = buttonOK;
-    }
-
-
-    private ListView getList() {
-        return list;
     }
 
 }
